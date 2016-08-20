@@ -1,0 +1,34 @@
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.abstractions.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.runner.visualstudio.testadapter.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.runner.utility.desktop.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\Tests LUnit.dll.config
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\Tests LUnit.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\Tests LUnit.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\FluentAssertions.Core.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\FluentAssertions.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\JetBrains.Annotations.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\L Utilities.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\L.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\LUnit.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.assert.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.core.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.execution.desktop.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\L Utilities.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\LUnit.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\L.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\L.xml
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\FluentAssertions.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\FluentAssertions.xml
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\FluentAssertions.Core.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\FluentAssertions.Core.xml
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\JetBrains.Annotations.xml
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.assert.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.assert.xml
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.core.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.core.xml
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.execution.desktop.pdb
+D:\Dev\LCore VSTS\Tests LUnit\bin\Release\xunit.execution.desktop.xml
+D:\Dev\LCore VSTS\Tests LUnit\obj\Release\Tests LUnit.csprojResolveAssemblyReference.cache
+D:\Dev\LCore VSTS\Tests LUnit\obj\Release\Tests LUnit.dll
+D:\Dev\LCore VSTS\Tests LUnit\obj\Release\Tests LUnit.pdb

@@ -1,0 +1,12 @@
+C:\a\1\s\L\bin\Release\L.XML
+C:\a\1\s\L\bin\Release\L.dll
+C:\a\1\s\L\bin\Release\L.pdb
+C:\a\1\s\L\bin\Release\JetBrains.Annotations.dll
+C:\a\1\s\L\bin\Release\L Utilities.dll
+C:\a\1\s\L\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\a\1\s\L\bin\Release\L Utilities.pdb
+C:\a\1\s\L\bin\Release\JetBrains.Annotations.xml
+C:\a\1\s\L\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\a\1\s\L\obj\Release\L Core.csprojResolveAssemblyReference.cache
+C:\a\1\s\L\obj\Release\L.dll
+C:\a\1\s\L\obj\Release\L.pdb

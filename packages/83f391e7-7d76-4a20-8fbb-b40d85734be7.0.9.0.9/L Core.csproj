@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD24BCEC-5A94-4524-B1D3-0537C66B0761}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LCore</RootNamespace>
+    <AssemblyName>L</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;JETBRAINS_ANNOTATIONS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\L.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;JETBRAINS_ANNOTATIONS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\L.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Rosie|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Rosie\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.1.5.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.1.5\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\Methods\L.cs" />
+    <Compile Include="Extensions\Reference Types\ComparableExt.cs" />
+    <Compile Include="Extensions\Reference Types\ReflectionExt.cs" />
+    <Compile Include="Extensions\Value Types\NumberExt.cs" />
+    <Compile Include="Interfaces\IExtensionProvider.cs" />
+    <Compile Include="Interfaces\IPersistAttribute.cs" />
+    <Compile Include="Interfaces\ISubclassPersistentAttribute.cs" />
+    <Compile Include="Interfaces\ITopLevelAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\DisableNullabilityTestingAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\IDisableNullabilityTestingAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\IValidateAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestParameters.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ILUnitAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestedIndirectlyAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestSourceAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestSucceedsAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestFailsAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestBoundAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestResultAttribute.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestMethodGenericsAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestedIndirectlyAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestedAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestFailsAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestMethodGenericsAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestBoundAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestResultAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestSourceAttribute.cs" />
+    <Compile Include="LUnit\Attributes\TestSucceedesAttribute.cs" />
+    <Compile Include="Naming\Attributes\FriendlyNameAttribute.cs" />
+    <Compile Include="Dynamic Code\Attributes\AttributeList.cs" />
+    <Compile Include="Dynamic Code\Attributes\CodeExplode.cs" />
+    <Compile Include="Dynamic Code\Attributes\CodeExplodeExtend.cs" />
+    <Compile Include="Dynamic Code\Attributes\CodeExplodeMember.cs" />
+    <Compile Include="Dynamic Code\Attributes\CodeExplodeLogic.cs" />
+    <Compile Include="Dynamic Code\Attributes\CodeExplodeGenerics.cs" />
+    <Compile Include="Dynamic Code\Attributes\CodeExplodeExtensionMethod.cs" />
+    <Compile Include="Dynamic Code\Attributes\CodeExplodeGenericsReplaceArguments.cs" />
+    <Compile Include="Dynamic Code\CodeExploder.cs" />
+    <Compile Include="Dynamic Code\CodeExplode\LX_Explode_bak.cs" />
+    <Compile Include="Dynamic Code\CodeExplode\Logic_Extension_Explode_bak.cs" />
+    <Compile Include="Dynamic Code\CodeExplode\Logic_Extension_Explode.cs" />
+    <Compile Include="Dynamic Code\CodeExplode\LX_Explode.cs" />
+    <Compile Include="Interfaces\IGrouped.cs" />
+    <Compile Include="Numbers\DecimalNumber.cs" />
+    <Compile Include="Numbers\DoubleNumber.cs" />
+    <Compile Include="Numbers\FloatNumber.cs" />
+    <Compile Include="Numbers\INumber.cs" />
+    <Compile Include="Numbers\LongNumber.cs" />
+    <Compile Include="Numbers\Base\Number.cs" />
+    <Compile Include="Numbers\ByteNumber.cs" />
+    <Compile Include="Numbers\IntNumber.cs" />
+    <Compile Include="Numbers\SByteNumber.cs" />
+    <Compile Include="Numbers\ShortNumber.cs" />
+    <Compile Include="Numbers\UIntNumber.cs" />
+    <Compile Include="Numbers\ULongNumber.cs" />
+    <Compile Include="Numbers\UShortNumber.cs" />
+    <Compile Include="Statistics\IQuantitativeSampleSet.cs" />
+    <Compile Include="Statistics\IQualitativeSampleSet.cs" />
+    <Compile Include="Statistics\QuantitativeSampleSet.cs" />
+    <Compile Include="Statistics\QualitativeSampleSet.cs" />
+    <Compile Include="Statistics\SampleSet.cs" />
+    <Compile Include="Statistics\ISampleSet.cs" />
+    <Compile Include="Statistics\StatsExt.cs" />
+    <Compile Include="LUnit\Attributes\Interfaces\ITestedAttribute.cs" />
+    <Compile Include="Tools\Markdown\ExcludeFromMarkdownAttribute.cs" />
+    <Compile Include="Tools\Markdown\FontAwesomeIcon.cs" />
+    <Compile Include="Tools\Markdown\GitHubMarkdown.cs" />
+    <Compile Include="Tools\CacheData.cs" />
+    <Compile Include="Extensions\Language\CommentExt.cs" />
+    <Compile Include="Interfaces\ICodeComment.cs" />
+    <Compile Include="Tools\Markdown\GlyphIcon.cs" />
+    <Compile Include="Tools\Markdown\IExcludeFromMarkdownAttribute.cs" />
+    <Compile Include="Tools\Markdown\MarkdownGenerator.cs" />
+    <Compile Include="Tools\MethodProfileData.cs" />
+    <Compile Include="Tools\DoubleDictionary.cs" />
+    <Compile Include="Tools\RegistryHelper.cs" />
+    <Compile Include="Tools\ExceptionList.cs" />
+    <Compile Include="Naming\INamed.cs" />
+    <Compile Include="Tools\Async\Tasks\TaskTimer.cs" />
+    <Compile Include="Tools\Lists.cs" />
+    <Compile Include="Extensions\Language\LanguageExt.cs" />
+    <Compile Include="Extensions\Value Types\EnumExt.cs" />
+    <Compile Include="Extensions\Methods\LoopExt.cs" />
+    <Compile Include="Extensions\Methods\ThreadExt.cs" />
+    <Compile Include="Extensions\Methods\ExceptionExt.cs" />
+    <Compile Include="Extensions\Reference Types\ConvertibleExt.cs" />
+    <Compile Include="Extensions\Reference Types\ObjectExt.cs" />
+    <Compile Include="Extensions\Methods\BooleanExt.cs" />
+    <Compile Include="Extensions\Reference Types\DictionaryExt.cs" />
+    <Compile Include="Extensions\Language\LambdaExt.cs" />
+    <Compile Include="Extensions\Value Types\DateTimeExt.cs" />
+    <Compile Include="Extensions\Reference Types\FileExt.cs" />
+    <Compile Include="Interfaces\IReverseAttributeOrder.cs" />
+    <Compile Include="Extensions\Reference Types\StringExt.cs" />
+    <Compile Include="Naming\IFriendlyName.cs" />
+    <Compile Include="Extensions\Methods\LogicExt.cs" />
+    <Compile Include="Extensions\Reference Types\EnumerableExt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Async\Tasks\Task.cs" />
+    <Compile Include="Tools\Async\Tasks\TaskManager.cs" />
+    <Compile Include="Tools\Async\Tasks\Tasks.cs" />
+    <Compile Include="Tools\Set.cs" />
+    <Compile Include="Tools\DateTimeConverter.cs" />
+    <Compile Include="Tools\ProgressUpdater.cs" />
+    <Compile Include="Tools\Schedule.cs" />
+    <Compile Include="Tools\StatMonitor.cs" />
+    <Compile Include="Tools\StopWatch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\L Utilities\L Utilities.csproj">
+      <Project>{d586b389-6bf3-47f0-bfd6-49a0ce6acd67}</Project>
+      <Name>L Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="L Core.nuspec" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
