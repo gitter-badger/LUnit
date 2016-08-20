@@ -51,6 +51,14 @@
       <HintPath>..\packages\JetBrains.Annotations.10.1.5\lib\net\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LCore.0.9.0.10\lib\net451\L Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="L, Version=0.9.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LCore.0.9.0.10\lib\net451\L.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -91,13 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\L Utilities\L Utilities.csproj">
-      <Project>{d586b389-6bf3-47f0-bfd6-49a0ce6acd67}</Project>
-      <Name>L Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\L\L Core.csproj">
-      <Project>{cd24bcec-5a94-4524-b1d3-0537c66b0761}</Project>
-      <Name>L Core</Name>
+    <ProjectReference Include="..\LUnit\LUnit.csproj">
+      <Project>{0275fcea-4312-4003-8447-5cad2e333616}</Project>
+      <Name>LUnit</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

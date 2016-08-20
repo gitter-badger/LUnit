@@ -44,6 +44,14 @@
       <HintPath>..\packages\JetBrains.Annotations.10.1.5\lib\net\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LCore.0.9.0.10\lib\net451\L Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="L, Version=0.9.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LCore.0.9.0.10\lib\net451\L.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.UnitTestFramework.Extensions.1.0.0.3\lib\net40\Microsoft.UnitTestFramework.Extensions.dll</HintPath>
       <Private>True</Private>

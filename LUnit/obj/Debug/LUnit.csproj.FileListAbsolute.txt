@@ -64,3 +64,7 @@ D:\Dev\LCore VSTS\LUnit\bin\Debug\L Utilities.pdb
 D:\Dev\LCore VSTS\LUnit\obj\Debug\LUnit.csprojResolveAssemblyReference.cache
 D:\Dev\LCore VSTS\LUnit\obj\Debug\LUnit.dll
 D:\Dev\LCore VSTS\LUnit\obj\Debug\LUnit.pdb
+D:\Dev\LUnit\LUnit\bin\Debug\LUnit.XML
+D:\Dev\LUnit\LUnit\obj\Debug\LUnit.csprojResolveAssemblyReference.cache
+D:\Dev\LUnit\LUnit\obj\Debug\LUnit.dll
+D:\Dev\LUnit\LUnit\obj\Debug\LUnit.pdb

@@ -68,3 +68,6 @@ D:\Dev\LCore VSTS\Tests LUnit\bin\Debug\xunit.execution.desktop.xml
 D:\Dev\LCore VSTS\Tests LUnit\obj\Debug\Tests LUnit.csprojResolveAssemblyReference.cache
 D:\Dev\LCore VSTS\Tests LUnit\obj\Debug\Tests LUnit.dll
 D:\Dev\LCore VSTS\Tests LUnit\obj\Debug\Tests LUnit.pdb
+D:\Dev\LUnit\Tests LUnit\obj\Debug\Tests LUnit.csprojResolveAssemblyReference.cache
+D:\Dev\LUnit\Tests LUnit\obj\Debug\Tests LUnit.dll
+D:\Dev\LUnit\Tests LUnit\obj\Debug\Tests LUnit.pdb
