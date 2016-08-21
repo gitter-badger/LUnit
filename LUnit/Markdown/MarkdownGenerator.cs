@@ -186,7 +186,7 @@ namespace LCore.LUnit.Markdown
 
         protected virtual string GeneratedMarkdownRoot => L.Ref.GetSolutionRootPath();
 
-        protected virtual string MarkdownPath_RootFile => "readme.md";
+        protected virtual string MarkdownPath_RootFile => "README.md";
         protected virtual string MarkdownPath_Root => $"{this.GeneratedMarkdownRoot}\\{this.MarkdownPath_RootFile}";
 
         protected virtual string MarkdownPath_TableOfContentsFile => "TableOfContents.md";
