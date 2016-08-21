@@ -2,7 +2,10 @@ using LCore.Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 using JetBrains.Annotations;
+using LCore.Extensions.Optional;
 using LCore.Tools;
 
 // ReSharper disable UnusedMember.Global
@@ -27,6 +30,9 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public string Title { get; }
 
+        [CanBeNull]
+        public MarkdownGenerator Generator { get; }
+
         /// <summary>
         /// Create a new GitHumMarkdown document without specifying a file title or location
         /// </summary>
@@ -35,8 +41,9 @@ namespace LCore.LUnit.Markdown
         /// <summary>
         /// Create a new GitHumMarkdown document specifying a file title and location
         /// </summary>
-        public GitHubMarkdown([CanBeNull] string FilePath, [CanBeNull] string Title)
+        public GitHubMarkdown([CanBeNull]MarkdownGenerator Generator, [CanBeNull] string FilePath, [CanBeNull] string Title)
             {
+            this.Generator = Generator;
             this.FilePath = FilePath ?? "";
             this.Title = Title ?? "";
             }
@@ -252,18 +259,18 @@ namespace LCore.LUnit.Markdown
             if (Rows == null)
                 return;
 
-            int ColumnCount = Rows.GetLength(dimension: 0);
-            int RowCount = Rows.GetLength(dimension: 1);
+            var ColumnCount = Rows.GetLength(dimension: 0);
+            var RowCount = Rows.GetLength(dimension: 1);
 
             var Table = new List<string>();
             var Divider = new List<string>();
 
-            for (int i = 0; i < RowCount; i++)
+            for (var i = 0; i < RowCount; i++)
                 {
                 var Cells = new List<string>();
-                for (int j = 0; j < ColumnCount; j++)
+                for (var j = 0; j < ColumnCount; j++)
                     {
-                    string Cell = Rows[j, i];
+                    var Cell = Rows[j, i];
                     Cells.Add(Cell);
                     if (IncludeHeader && i == 0)
                         {
@@ -289,6 +296,7 @@ namespace LCore.LUnit.Markdown
             this.Line("");
             Table.Each(this.Line);
             this.Line("");
+            // TODO: Rows to multi-dimensional array extension then delete all this ^^
             }
 
         /// <summary>
@@ -489,7 +497,7 @@ namespace LCore.LUnit.Markdown
         public string Badge(string Left, string Right, string HexColor)
             {
             return this.Image(
-                    $"http://b.repl.ca/v1/" +
+                    "http://b.repl.ca/v1/" +
                     $"{Left.UriEncode()}-{Right.UriEncode()}-{HexColor}.png",
                     $"{Left} {Right}");
             }
@@ -510,6 +518,44 @@ namespace LCore.LUnit.Markdown
 #pragma warning disable 1591
             BrightGreen, Green, YellowGreen, Yellow, Orange, Red, Blue, LightGrey, Grey
 #pragma warning restore 1591
+            }
+
+
+        public string GetRelativePath(string FullPath)
+            {
+            if (string.IsNullOrEmpty(this.FilePath))
+                return FullPath;
+
+            var Uri1 = new Uri(FullPath);
+            var Uri2 = new Uri(this.FilePath);
+
+            var Out = Uri2.MakeRelativeUri(Uri1);
+
+            return Out.AbsoluteUri;
+            }
+
+        /// <summary>
+        /// Returns an image link to a Gravatar avatar based on the MD5 of the supplied <paramref name="ID"/>
+        /// </summary>
+        public string Gravatar(string ID, int Size = 64)
+            {
+            var URL = "https://www.gravatar.com/avatar/";
+
+            var MD5 = new MD5CryptoServiceProvider();
+
+
+            var b = MD5.ComputeHash(ID.ToByteArray());
+
+            foreach (var T in b)
+                {
+                URL = $"{URL}{T.ToString("X2").ToLower()}";
+                }
+
+            URL += $"?s={Size}";
+            URL += "&d;=identicon";
+            URL += "&r;=PG;";
+
+            return this.Image(URL, ID);
             }
         }
 
