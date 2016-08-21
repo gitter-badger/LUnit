@@ -247,7 +247,7 @@ namespace LCore.LUnit.Markdown
         /// Data | Data | Data
         /// 
         /// </summary>
-        public void Table([CanBeNull] string[,] Rows, bool IncludeHeader = true)
+        public void Table([CanBeNull] string[,] Rows, bool IncludeHeader = true, L.Align[] Alignment = null)
             {
             if (Rows == null)
                 return;
@@ -266,7 +266,19 @@ namespace LCore.LUnit.Markdown
                     string Cell = Rows[j, i];
                     Cells.Add(Cell);
                     if (IncludeHeader && i == 0)
-                        Divider.Add(" --- ");
+                        {
+
+                        L.Align? Align = Alignment.GetAt(j);
+
+                        if (Align == L.Align.Left)
+                            Divider.Add(":--- ");
+                        else if (Align == L.Align.Right)
+                            Divider.Add(" ---:");
+                        else if (Align == L.Align.Center)
+                            Divider.Add(":---:");
+                        else
+                            Divider.Add(" --- ");
+                        }
                     }
 
                 Table.Add(Cells.JoinLines(" | "));
@@ -295,7 +307,7 @@ namespace LCore.LUnit.Markdown
         /// Data | Data | Data
         /// 
         /// </summary>
-        public void Table([CanBeNull] IEnumerable<IEnumerable<string>> Rows, bool IncludeHeader = true)
+        public void Table([CanBeNull] IEnumerable<IEnumerable<string>> Rows, bool IncludeHeader = true, L.Align[] Alignment = null)
             {
             if (Rows == null)
                 return;
@@ -310,9 +322,22 @@ namespace LCore.LUnit.Markdown
                     Row.Each((j, Column) =>
                         {
                             Cells.Add(Column);
+
                             if (IncludeHeader && i == 0)
-                                Divider.Add(" --- ");
+                                {
+                                L.Align? Align = Alignment.GetAt(j);
+
+                                if (Align == L.Align.Left)
+                                    Divider.Add(":--- ");
+                                else if (Align == L.Align.Right)
+                                    Divider.Add(" ---:");
+                                else if (Align == L.Align.Center)
+                                    Divider.Add(":---:");
+                                else
+                                    Divider.Add(" --- ");
+                                }
                         });
+
                     Table.Add(Cells.JoinLines(" | "));
                     if (IncludeHeader && i == 0)
                         Table.Add(Divider.JoinLines(" | "));
