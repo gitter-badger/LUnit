@@ -619,6 +619,11 @@
             <summary>
             Contains values and test members for CommentExt
             </summary>
+            <feature>1</feature>
+            <feature>a</feature>
+            <classFeature>2</classFeature>
+            <projectFeature>3</projectFeature>
+            <testedFeature>4</testedFeature>
         </member>
         <member name="T:LCore.Extensions.L.Comment.Test">
             <summary>
@@ -641,6 +646,11 @@
             <permission cref="T:System.Security.CodeAccessPermission">permission 2</permission>
             <typeparam name="T">Type</typeparam>
             <value>value</value>
+            <feature>1</feature>
+            <feature>a</feature>
+            <classFeature>2</classFeature>
+            <projectFeature>3</projectFeature>
+            <testedFeature>4</testedFeature>
         </member>
         <member name="M:LCore.Extensions.L.Comment.Test.TestMethod2``1(System.Int32,System.String)">
             <!-- Failed to insert some or all of included XML --><include file="filepath" path="[@name=&quot;filename&quot;]" />
@@ -649,11 +659,21 @@
             <summary>
             TestProperty 
             </summary>
+            <feature>1</feature>
+            <feature>a</feature>
+            <classFeature>2</classFeature>
+            <projectFeature>3</projectFeature>
+            <testedFeature>4</testedFeature>
         </member>
         <member name="F:LCore.Extensions.L.Comment.Test.TestField">
             <summary>
             TestField
             </summary>
+            <feature>1</feature>
+            <feature>a</feature>
+            <classFeature>2</classFeature>
+            <projectFeature>3</projectFeature>
+            <testedFeature>4</testedFeature>
         </member>
         <member name="T:LCore.Extensions.L.Loop">
             <summary>
@@ -4770,6 +4790,11 @@
         <member name="M:LCore.Extensions.ReflectionExt.GetRootPath(System.Reflection.Assembly)">
             <summary>
             Returns the root folder for an assembly, if you have access to its codebase
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.ReflectionExt.FindClassFile(System.Type)">
+            <summary>
+            Finds a class's source file, if the file name matches the Type name
             </summary>
         </member>
         <member name="T:LCore.Extensions.NumberExt">
@@ -16531,6 +16556,36 @@
             Counts contained IEnumerable objects for their contents also.
             </summary>
         </member>
+        <member name="M:LCore.Extensions.EnumerableExt.ToNestedArrays``1(``0[0:,0:])">
+            <summary>
+            Converts a multidimensional array to nested arrays.
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.EnumerableExt.ToNestedArrays``1(``0[0:,0:,0:])">
+            <summary>
+            Converts a multidimensional array to nested arrays.
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.EnumerableExt.ToNestedArrays``1(``0[0:,0:,0:,0:])">
+            <summary>
+            Converts a multidimensional array to nested arrays.
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.EnumerableExt.ToNestedArrays``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Converts a nested IEnumerable into a nested T[][]
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.EnumerableExt.ToNestedArrays``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}}})">
+            <summary>
+            Converts a nested IEnumerable into a nested T[][][]
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.EnumerableExt.ToNestedArrays``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}}}})">
+            <summary>
+            Converts a nested IEnumerable into a nested T[][][][]
+            </summary>
+        </member>
         <member name="M:LCore.Extensions.EnumerableExt.While``1(System.Collections.IEnumerable,System.Func{``0,System.Boolean})">
             <summary>
             Iterates through a collection. A false return value from the Func stops the iteration.
@@ -16561,6 +16616,81 @@
             <summary>
             Executes Action <paramref name="In" /> while <paramref name="Condition" /> returns true. 
             <paramref name="In" /> is passed values from <paramref name="Obj" />.
+            </summary>
+        </member>
+        <member name="T:LCore.Interfaces.CodeComment">
+            <summary>
+            Stores XML comment metadata.
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Returns">
+            <summary>
+            Summary comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Value">
+            <summary>
+            Value comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Summary">
+            <summary>
+            Returns comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Remarks">
+            <summary>
+            Remarks comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Examples">
+            <summary>
+            Examples comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Parameters">
+            <summary>
+            Parameters comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Exceptions">
+            <summary>
+            Exceptions comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Permissions">
+            <summary>
+            Permissions comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.TypeParameters">
+            <summary>
+            Type Parameter comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Includes">
+            <summary>
+            Includes comment
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.Features">
+            <summary>
+            Feature comments
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.ClassFeatures">
+            <summary>
+            Class feature comments
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.ProjectFeatures">
+            <summary>
+            Project feature comments
+            </summary>
+        </member>
+        <member name="P:LCore.Interfaces.CodeComment.TestedFeatures">
+            <summary>
+            Tested feature comments
             </summary>
         </member>
         <member name="T:LCore.Interfaces.IExtensionProvider">
@@ -16639,59 +16769,24 @@
             Includes comment
             </summary>
         </member>
-        <member name="T:LCore.Interfaces.CodeComment">
+        <member name="P:LCore.Interfaces.ICodeComment.Features">
             <summary>
-            Stores XML comment metadata.
+            Feature comments
             </summary>
         </member>
-        <member name="P:LCore.Interfaces.CodeComment.Returns">
+        <member name="P:LCore.Interfaces.ICodeComment.ClassFeatures">
             <summary>
-            Summary comment
+            Class feature comments
             </summary>
         </member>
-        <member name="P:LCore.Interfaces.CodeComment.Value">
+        <member name="P:LCore.Interfaces.ICodeComment.ProjectFeatures">
             <summary>
-            Value comment
+            Project feature comments
             </summary>
         </member>
-        <member name="P:LCore.Interfaces.CodeComment.Summary">
+        <member name="P:LCore.Interfaces.ICodeComment.TestedFeatures">
             <summary>
-            Returns comment
-            </summary>
-        </member>
-        <member name="P:LCore.Interfaces.CodeComment.Remarks">
-            <summary>
-            Remarks comment
-            </summary>
-        </member>
-        <member name="P:LCore.Interfaces.CodeComment.Examples">
-            <summary>
-            Examples comment
-            </summary>
-        </member>
-        <member name="P:LCore.Interfaces.CodeComment.Parameters">
-            <summary>
-            Parameters comment
-            </summary>
-        </member>
-        <member name="P:LCore.Interfaces.CodeComment.Exceptions">
-            <summary>
-            Exceptions comment
-            </summary>
-        </member>
-        <member name="P:LCore.Interfaces.CodeComment.Permissions">
-            <summary>
-            Permissions comment
-            </summary>
-        </member>
-        <member name="P:LCore.Interfaces.CodeComment.TypeParameters">
-            <summary>
-            Type Parameter comment
-            </summary>
-        </member>
-        <member name="P:LCore.Interfaces.CodeComment.Includes">
-            <summary>
-            Includes comment
+            Tested feature comments
             </summary>
         </member>
         <member name="T:LCore.Interfaces.IReverseAttributeOrder">

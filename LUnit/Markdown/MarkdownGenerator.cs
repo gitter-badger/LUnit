@@ -9,21 +9,44 @@ using LCore.Extensions;
 
 namespace LCore.LUnit.Markdown
     {
+    /// <summary>
+    /// Implement this class to generate code for your assemblies and projects
+    /// </summary>
     public abstract class MarkdownGenerator
         {
+        /// <summary>
+        /// Default string to tag for language, (C#)
+        /// </summary>
         public const string CSharpLanguage = "cs";
 
+        /// <summary>
+        /// Override this member to specify the assemblies to generae documentation.
+        /// </summary>
         protected abstract Assembly[] DocumentAssemblies { get; }
 
         #region Variables + 
 
+        /// <summary>
+        /// Other titled markdown,
+        /// Root readme, table of contents, coverage summary, 
+        /// custom documents, etc.
+        /// </summary>
         protected Dictionary<string, GitHubMarkdown> Markdown_Other { get; } = new Dictionary<string, GitHubMarkdown>();
 
+        /// <summary>
+        /// Assembly-generated markdown documents.
+        /// </summary>
         protected Dictionary<Assembly, GitHubMarkdown> Markdown_Assembly { get; } =
             new Dictionary<Assembly, GitHubMarkdown>();
 
+        /// <summary>
+        /// Type-generated markdown documents.
+        /// </summary>
         protected Dictionary<Type, GitHubMarkdown> Markdown_Type { get; } = new Dictionary<Type, GitHubMarkdown>();
 
+        /// <summary>
+        /// Member-generated markdown documents.
+        /// </summary>
         protected Dictionary<MemberInfo[], GitHubMarkdown> Markdown_Member { get; } =
             new Dictionary<MemberInfo[], GitHubMarkdown>();
 
@@ -32,6 +55,9 @@ namespace LCore.LUnit.Markdown
 
         #region Generators + 
         // TODO Generate assembly markdown
+        /// <summary>
+        /// Generates markdown for an Assembly
+        /// </summary>
         protected virtual GitHubMarkdown GenerateMarkdown(Assembly Assembly)
             {
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Assembly(Assembly), Assembly.GetName().Name);
@@ -42,6 +68,9 @@ namespace LCore.LUnit.Markdown
             }
 
         // TODO Generate type markdown
+        /// <summary>
+        /// Generates markdown for a Type
+        /// </summary>
         protected virtual GitHubMarkdown GenerateMarkdown(Type Type)
             {
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Type(Type), Type.Name);
@@ -51,6 +80,9 @@ namespace LCore.LUnit.Markdown
             return MD;
             }
 
+        /// <summary>
+        /// Generates markdown for a group of Members
+        /// </summary>
         protected virtual GitHubMarkdown GenerateMarkdown(MemberInfo[] MemberGroup)
             {
             var Member = MemberGroup.First();
@@ -158,6 +190,9 @@ namespace LCore.LUnit.Markdown
             }
 
         // TODO Generate root markdown
+        /// <summary>
+        /// Generates root markdown document (front page)
+        /// </summary>
         protected virtual GitHubMarkdown GenerateRootMarkdown()
             {
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
@@ -166,6 +201,9 @@ namespace LCore.LUnit.Markdown
             }
 
         // TODO Generate table of contents markdown
+        /// <summary>
+        /// Generates table of contents document
+        /// </summary>
         protected virtual GitHubMarkdown GenerateTableOfContentsMarkdown()
             {
             var MD = new GitHubMarkdown(this, this.MarkdownPath_TableOfContents, this.MarkdownTitle_TableOfContents);
@@ -179,6 +217,9 @@ namespace LCore.LUnit.Markdown
             }
 
         // TODO Generate summary markdown
+        /// <summary>
+        /// Generates coverage summary document
+        /// </summary>
         protected virtual GitHubMarkdown GenerateCoverageSummaryMarkdown()
             {
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
@@ -186,11 +227,17 @@ namespace LCore.LUnit.Markdown
             return MD;
             }
 
+        /// <summary>
+        /// Override this method to generate custom documents for your project.
+        /// </summary>
         protected virtual Dictionary<string, GitHubMarkdown> GetOtherDocuments()
             {
             return new Dictionary<string, GitHubMarkdown>();
             }
 
+        /// <summary>
+        /// Override this method to customize badges included in member generated markdown documents.
+        /// </summary>
         protected virtual List<string> GetBadges([NotNull] GitHubMarkdown MD, [CanBeNull] MethodCoverage Coverage,
             [CanBeNull] Interfaces.ICodeComment Comments)
             {
@@ -207,6 +254,8 @@ namespace LCore.LUnit.Markdown
                         ? GitHubMarkdown.BadgeColor.BrightGreen
                         : GitHubMarkdown.BadgeColor.Grey)
                 // TODO: Count assertions by scanning test code '.should' 'assert'
+                // TODO: Add Test Status: Passing / Failing / Untested
+
                 };
             }
 
@@ -216,41 +265,79 @@ namespace LCore.LUnit.Markdown
         #region Options +
 
 
+        /// <summary>
+        /// Root path of the current running solution (development ONLY)
+        /// </summary>
         public virtual string GeneratedMarkdownRoot => L.Ref.GetSolutionRootPath();
 
+        /// <summary>
+        /// Readme file name, default is "README.md"
+        /// </summary>
         protected virtual string MarkdownPath_RootFile => "README.md";
+        /// <summary>
+        /// Root readme full path
+        /// </summary>
         public virtual string MarkdownPath_Root => $"{this.GeneratedMarkdownRoot}\\{this.MarkdownPath_RootFile}";
 
+        /// <summary>
+        /// Table of contents file name, default is "TableOfContents.md"
+        /// </summary>
         protected virtual string MarkdownPath_TableOfContentsFile => "TableOfContents.md";
 
+        /// <summary>
+        /// Table of contents readme full path
+        /// </summary>
         public virtual string MarkdownPath_TableOfContents
             => $"{this.GeneratedMarkdownRoot}\\{this.MarkdownPath_TableOfContentsFile}";
 
-
+        /// <summary>
+        /// Coverage summary file name, default is "CoverageSummary.md"
+        /// </summary>
         protected virtual string MarkdownPath_CoverageSummaryFile => "CoverageSummary.md";
 
+        /// <summary>
+        /// Coverage summary readme full path
+        /// </summary>
         public virtual string MarkdownPath_CoverageSummary
             => $"{this.GeneratedMarkdownRoot}\\{this.MarkdownPath_CoverageSummaryFile}";
 
-
+        /// <summary>
+        /// Documents folder, default is "docs"
+        /// </summary>
         protected virtual string MarkdownPath_Documentation => "docs";
 
+        /// <summary>
+        /// Generates the document title for an Assembly
+        /// </summary>
         public virtual string MarkdownPath_Assembly(Assembly Assembly) =>
             $"{Assembly.GetRootPath()}\\{Assembly.GetName().Name.CleanFileName()}.md";
 
+        /// <summary>
+        /// Generates the document title for a Type
+        /// </summary>
         public virtual string MarkdownPath_Type(Type Type) =>
             $"{Type.Assembly.GetRootPath()}\\{this.MarkdownPath_Documentation}\\" +
             $"{Type.Name.CleanFileName()}.md";
 
+        /// <summary>
+        /// Generates the document title for a Member
+        /// </summary>
         public virtual string MarkdownPath_Member(MemberInfo Member) =>
             $"{Member.GetAssembly().GetRootPath()}\\{this.MarkdownPath_Documentation}\\" +
             $"{Member.DeclaringType?.Name.CleanFileName()}_{Member.Name.CleanFileName()}.md";
 
-
+        // TODO: Add IExcludeFromDocumentation
+        /// <summary>
+        /// Determines if a Type should be included in documentation
+        /// </summary>
         protected virtual bool IncludeType(Type Type) =>
             !Type.HasAttribute<ExcludeFromCodeCoverageAttribute>(IncludeBaseClasses: true) &&
             !Type.HasAttribute<IExcludeFromMarkdownAttribute>();
 
+        // TODO: Add IExcludeFromDocumentation
+        /// <summary>
+        /// Determines if a Member should be included in documentation
+        /// </summary>
         protected virtual bool IncludeMember(MemberInfo Member) =>
             !Member.HasAttribute<ExcludeFromCodeCoverageAttribute>(IncludeBaseClasses: true) &&
             !Member.HasAttribute<IExcludeFromMarkdownAttribute>() &&
@@ -258,8 +345,19 @@ namespace LCore.LUnit.Markdown
             Member.IsDeclaredMember() &&
             !(Member is ConstructorInfo);
 
+        /// <summary>
+        /// Main readme title, default is "Home"
+        /// </summary>
         protected virtual string MarkdownTitle_MainReadme => "Home";
+
+        /// <summary>
+        /// Table of Contents readme title, default is "Table of Contents"
+        /// </summary>
         protected virtual string MarkdownTitle_TableOfContents => "Table of Contents";
+
+        /// <summary>
+        /// Coverage Summary readme title, default is "Coverage Summary"
+        /// </summary>
         protected virtual string MarkdownTitle_CoverageSummary => "Coverage Summary";
 
         #endregion
@@ -277,10 +375,9 @@ namespace LCore.LUnit.Markdown
             {
             this.Markdown_Type.Add(Type, this.GenerateMarkdown(Type));
 
-            Dictionary<string, List<MemberInfo>> MemberNames = Type.GetMembers().Select(Member =>
-            {
-                return this.IncludeMember(Member);
-            }).Group(Member => Member.Name);
+            Dictionary<string, List<MemberInfo>> MemberNames = Type.GetMembers()
+                .Select(this.IncludeMember)
+                .Group(Member => Member.Name);
 
             MemberNames.Values.Convert(EnumerableExt.Array).Each(this.Load);
             }
@@ -292,6 +389,9 @@ namespace LCore.LUnit.Markdown
 
         #endregion
 
+        /// <summary>
+        /// Generates all markdown documentation, optionally writing all files to disk using <paramref name="WriteToDisk"/>. 
+        /// </summary>
         public void Generate(bool WriteToDisk = false)
             {
             // Generates all assembly, type, and member Markdown
@@ -328,6 +428,9 @@ namespace LCore.LUnit.Markdown
                 }
             }
 
+        /// <summary>
+        /// Gets all markdown generated by the generator.
+        /// </summary>
         public List<GitHubMarkdown> GetAllMarkdown()
             {
             var AllMarkdown = new List<GitHubMarkdown>();

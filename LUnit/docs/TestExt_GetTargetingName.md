@@ -1,6 +1,9 @@
 ###TestExt
 #GetTargetingName
 ####Static Method
+
+![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) | ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-grey.png) | ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-grey.png)
+
 ######public static System.Tuple<String, String, String> GetTargetingName(MemberInfo Member, String TestNamespaceFormat, String TestClassFormat, String TestMethodFormat);
 ######Summary
 
@@ -10,19 +13,21 @@
             
 ######Parameters
 ==__Add parameter type link__==
+
 Parameter | Optional | Type | Description
- ---  |  ---  |  ---  |  --- 
+:---  | :---  | :---  | :--- 
 Member | No | MemberInfo | 
 TestNamespaceFormat | Yes | String | 
 TestClassFormat | Yes | String | 
 TestMethodFormat | Yes | String | 
+
 ####Returns
 ==__Add return type link__==
 ######Tuple<String, String, String>
 
-==__source link__==
-==__coverage link__==
-==__exception comments__==
-==__permission comments__==
-==__root link__==
-==__footer__==
+==source link==
+==coverage link==
+==exception comments==
+==permission comments==
+==root link==
+==footer==

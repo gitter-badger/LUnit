@@ -1300,12 +1300,17 @@
             The title of the markdown file
             </summary>
         </member>
+        <member name="P:LCore.LUnit.Markdown.GitHubMarkdown.Generator">
+            <summary>
+            The generator that created this Markdown, if applicable.
+            </summary>
+        </member>
         <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.#ctor">
             <summary>
             Create a new GitHumMarkdown document without specifying a file title or location
             </summary>
         </member>
-        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.#ctor(System.String,System.String)">
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.#ctor(LCore.LUnit.Markdown.MarkdownGenerator,System.String,System.String)">
             <summary>
             Create a new GitHumMarkdown document specifying a file title and location
             </summary>
@@ -1437,7 +1442,7 @@
             <param name="Lines"></param>
             <param name="Language"></param>
         </member>
-        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Table(System.String[0:,0:],System.Boolean)">
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Table(System.String[0:,0:],System.Boolean,LCore.Extensions.L.Align[])">
             <summary>
             Add a table of data.
             By default, the first row will be used as the header row, and separator will be added
@@ -1455,7 +1460,7 @@
             
             </summary>
         </member>
-        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Table(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}},System.Boolean)">
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Table(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}},System.Boolean,LCore.Extensions.L.Align[])">
             <summary>
             Add a table of data.
             By default, the first row will be used as the header row, and separator will be added
@@ -1565,9 +1570,196 @@
             Pre-defined Buckler badge colors (http://b.repl.ca/)
             </summary>
         </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.GetRelativePath(System.String)">
+            <summary>
+            Retrieves the relative path from this markdown file to <paramref name="FullPath"/>
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Gravatar(System.String,System.Int32)">
+            <summary>
+            Returns an image link to a Gravatar avatar based on the MD5 of the supplied <paramref name="ID"/>
+            </summary>
+        </member>
         <member name="T:LCore.LUnit.Markdown.IExcludeFromMarkdownAttribute">
             <summary>
             Excludes a class or member from being included in GitHub Markdown autogeneration.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Markdown.LUnitMarkdownGenerator">
+            <summary>
+            Generates markdown for the LUnit project
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.LUnitMarkdownGenerator.DocumentAssemblies">
+            <summary>
+            Override this member to specify the assemblies to generae documentation.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Markdown.MarkdownGenerator">
+            <summary>
+            Implement this class to generate code for your assemblies and projects
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.Markdown.MarkdownGenerator.CSharpLanguage">
+            <summary>
+            Default string to tag for language, (C#)
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.DocumentAssemblies">
+            <summary>
+            Override this member to specify the assemblies to generae documentation.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.Markdown_Other">
+            <summary>
+            Other titled markdown,
+            Root readme, table of contents, coverage summary, 
+            custom documents, etc.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.Markdown_Assembly">
+            <summary>
+            Assembly-generated markdown documents.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.Markdown_Type">
+            <summary>
+            Type-generated markdown documents.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.Markdown_Member">
+            <summary>
+            Member-generated markdown documents.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateMarkdown(System.Reflection.Assembly)">
+            <summary>
+            Generates markdown for an Assembly
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateMarkdown(System.Type)">
+            <summary>
+            Generates markdown for a Type
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateMarkdown(System.Reflection.MemberInfo[])">
+            <summary>
+            Generates markdown for a group of Members
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateRootMarkdown">
+            <summary>
+            Generates root markdown document (front page)
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateTableOfContentsMarkdown">
+            <summary>
+            Generates table of contents document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateCoverageSummaryMarkdown">
+            <summary>
+            Generates coverage summary document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetOtherDocuments">
+            <summary>
+            Override this method to generate custom documents for your project.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetBadges(LCore.LUnit.Markdown.GitHubMarkdown,LCore.LUnit.MethodCoverage,LCore.Interfaces.ICodeComment)">
+            <summary>
+            Override this method to customize badges included in member generated markdown documents.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.GeneratedMarkdownRoot">
+            <summary>
+            Root path of the current running solution (development ONLY)
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_RootFile">
+            <summary>
+            Readme file name, default is "README.md"
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_Root">
+            <summary>
+            Root readme full path
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_TableOfContentsFile">
+            <summary>
+            Table of contents file name, default is "TableOfContents.md"
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_TableOfContents">
+            <summary>
+            Table of contents readme full path
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_CoverageSummaryFile">
+            <summary>
+            Coverage summary file name, default is "CoverageSummary.md"
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_CoverageSummary">
+            <summary>
+            Coverage summary readme full path
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_Documentation">
+            <summary>
+            Documents folder, default is "docs"
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_Assembly(System.Reflection.Assembly)">
+            <summary>
+            Generates the document title for an Assembly
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_Type(System.Type)">
+            <summary>
+            Generates the document title for a Type
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownPath_Member(System.Reflection.MemberInfo)">
+            <summary>
+            Generates the document title for a Member
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.IncludeType(System.Type)">
+            <summary>
+            Determines if a Type should be included in documentation
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.IncludeMember(System.Reflection.MemberInfo)">
+            <summary>
+            Determines if a Member should be included in documentation
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownTitle_MainReadme">
+            <summary>
+            Main readme title, default is "Home"
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownTitle_TableOfContents">
+            <summary>
+            Table of Contents readme title, default is "Table of Contents"
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownTitle_CoverageSummary">
+            <summary>
+            Coverage Summary readme title, default is "Coverage Summary"
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.Generate(System.Boolean)">
+            <summary>
+            Generates all markdown documentation, optionally writing all files to disk using <paramref name="WriteToDisk"/>. 
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetAllMarkdown">
+            <summary>
+            Gets all markdown generated by the generator.
             </summary>
         </member>
         <member name="T:LCore.LUnit.TestExt">

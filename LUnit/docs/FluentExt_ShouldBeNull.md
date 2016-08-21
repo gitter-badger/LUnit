@@ -1,21 +1,26 @@
 ###FluentExt
 #ShouldBeNull
 ####Static Method
+
+![Documented No](http://b.repl.ca/v1/Documented-No-red.png) | ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-grey.png) | ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-grey.png)
+
 ######public static FluentAssertions.AndConstraint<ObjectAssertions> ShouldBeNull(T Value, String Because, Object[] BecauseArgs);
 ######Summary
 ######Parameters
 ==__Add parameter type link__==
+
 Parameter | Optional | Type | Description
- ---  |  ---  |  ---  |  --- 
+:---  | :---  | :---  | :--- 
 Value | No | T | 
 Because | Yes | String | 
 BecauseArgs | No | Object[] | 
+
 ####Returns
 ==__Add return type link__==
 ######AndConstraint<ObjectAssertions>
-==__source link__==
-==__coverage link__==
-==__exception comments__==
-==__permission comments__==
-==__root link__==
-==__footer__==
+==source link==
+==coverage link==
+==exception comments==
+==permission comments==
+==root link==
+==footer==

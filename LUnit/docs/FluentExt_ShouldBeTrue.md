@@ -1,6 +1,9 @@
 ###FluentExt
 #ShouldBeTrue
 ####Static Method
+
+![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) | ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-grey.png) | ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-grey.png)
+
 ######public static FluentAssertions.AndConstraint<BooleanAssertions> ShouldBeTrue(Boolean Boolean, String Because, Object[] BecauseArgs);
 ######Summary
 
@@ -8,20 +11,22 @@
             
 ######Parameters
 ==__Add parameter type link__==
+
 Parameter | Optional | Type | Description
- ---  |  ---  |  ---  |  --- 
+:---  | :---  | :---  | :--- 
 Boolean | No | Boolean | 
 Because | Yes | String | A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
                 explaining why the assertion is needed. If the phrase does not start with the
                 word because, it is prepended automatically.
 BecauseArgs | No | Object[] | Zero or more objects to format using the placeholders in because.
+
 ####Returns
 ==__Add return type link__==
 ######AndConstraint<BooleanAssertions>
 
-==__source link__==
-==__coverage link__==
-==__exception comments__==
-==__permission comments__==
-==__root link__==
-==__footer__==
+==source link==
+==coverage link==
+==exception comments==
+==permission comments==
+==root link==
+==footer==

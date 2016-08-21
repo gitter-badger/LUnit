@@ -3,9 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
-using System.Text;
 using JetBrains.Annotations;
-using LCore.Extensions.Optional;
 using LCore.Tools;
 
 // ReSharper disable UnusedMember.Global
@@ -30,8 +28,11 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public string Title { get; }
 
+        /// <summary>
+        /// The generator that created this Markdown, if applicable.
+        /// </summary>
         [CanBeNull]
-        public MarkdownGenerator Generator { get; }
+        protected MarkdownGenerator Generator { get; }
 
         /// <summary>
         /// Create a new GitHumMarkdown document without specifying a file title or location
@@ -256,47 +257,7 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public void Table([CanBeNull] string[,] Rows, bool IncludeHeader = true, L.Align[] Alignment = null)
             {
-            if (Rows == null)
-                return;
-
-            var ColumnCount = Rows.GetLength(dimension: 0);
-            var RowCount = Rows.GetLength(dimension: 1);
-
-            var Table = new List<string>();
-            var Divider = new List<string>();
-
-            for (var i = 0; i < RowCount; i++)
-                {
-                var Cells = new List<string>();
-                for (var j = 0; j < ColumnCount; j++)
-                    {
-                    var Cell = Rows[j, i];
-                    Cells.Add(Cell);
-                    if (IncludeHeader && i == 0)
-                        {
-
-                        L.Align? Align = Alignment.GetAt(j);
-
-                        if (Align == L.Align.Left)
-                            Divider.Add(":--- ");
-                        else if (Align == L.Align.Right)
-                            Divider.Add(" ---:");
-                        else if (Align == L.Align.Center)
-                            Divider.Add(":---:");
-                        else
-                            Divider.Add(" --- ");
-                        }
-                    }
-
-                Table.Add(Cells.JoinLines(" | "));
-                if (IncludeHeader && i == 0)
-                    Table.Add(Divider.JoinLines(" | "));
-                }
-
-            this.Line("");
-            Table.Each(this.Line);
-            this.Line("");
-            // TODO: Rows to multi-dimensional array extension then delete all this ^^
+            this.Table(Rows.ToNestedArrays(), IncludeHeader, Alignment);
             }
 
         /// <summary>
@@ -520,7 +481,9 @@ namespace LCore.LUnit.Markdown
 #pragma warning restore 1591
             }
 
-
+        /// <summary>
+        /// Retrieves the relative path from this markdown file to <paramref name="FullPath"/>
+        /// </summary>
         public string GetRelativePath(string FullPath)
             {
             if (string.IsNullOrEmpty(this.FilePath))
@@ -539,14 +502,15 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public string Gravatar(string ID, int Size = 64)
             {
-            var URL = "https://www.gravatar.com/avatar/";
+            string URL = "https://www.gravatar.com/avatar/";
 
             var MD5 = new MD5CryptoServiceProvider();
 
 
-            var b = MD5.ComputeHash(ID.ToByteArray());
+            byte[] b = MD5.ComputeHash(ID.ToByteArray());
 
-            foreach (var T in b)
+            // ReSharper disable once LoopCanBeConvertedToQuery
+            foreach (byte T in b)
                 {
                 URL = $"{URL}{T.ToString("X2").ToLower()}";
                 }
