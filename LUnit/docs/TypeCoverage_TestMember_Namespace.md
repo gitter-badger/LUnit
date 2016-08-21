@@ -1,0 +1,2 @@
+###TypeCoverage
+#TestMember_Namespace

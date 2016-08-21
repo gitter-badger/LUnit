@@ -553,6 +553,16 @@
             Retrieves a list of all public properties and fields for a Type <typeparamref name="T"/>.
             </summary>
         </member>
+        <member name="M:LCore.Extensions.L.Ref.GetProjectRootPath">
+            <summary>
+            Returns the root path of the current process.
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.L.Ref.GetSolutionRootPath">
+            <summary>
+            Returns the root path of the current solution.
+            </summary>
+        </member>
         <member name="T:LCore.Extensions.L.Num">
             <summary>
             Contains static methods and variables used for number extensions and wrappers.
@@ -4755,6 +4765,11 @@
             <summary>
             Determines if an Assembly is a test assembly, 
             by checking if the assembly has the word "test" or "tests" in the name.
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.ReflectionExt.GetRootPath(System.Reflection.Assembly)">
+            <summary>
+            Returns the root folder for an assembly, if you have access to its codebase
             </summary>
         </member>
         <member name="T:LCore.Extensions.NumberExt">
@@ -13929,6 +13944,16 @@
             <param name="In">Source string</param>
             <returns>A String with all HTML tags replaced with "&lt;" and "&gt;"</returns>
         </member>
+        <member name="M:LCore.Extensions.StringExt.UriEncode(System.String)">
+            <summary>
+            Encode a string, shorthand for Uri.EscapeUriString
+            </summary>
+        </member>
+        <member name="M:LCore.Extensions.StringExt.UriDecode(System.String)">
+            <summary>
+            Encode a string, shorthand for Uri.UnescapeDataString
+            </summary>
+        </member>
         <member name="T:LCore.Extensions.LogicExt">
             <summary>
             Provides extensions methods for logical methods: 
@@ -18581,271 +18606,6 @@
             <returns>Returns the number of Standard Deviations a line must be drawn so that the Ratio less then the line is equal to the passed Ratio.</returns>
             <exception cref="T:System.ArgumentException">Ratio was not not between 0 and 1.</exception>
         </member>
-        <member name="T:LCore.Tools.ExcludeFromMarkdownAttribute">
-            <summary>
-            Excludes a class or member from being included in GitHub Markdown autogeneration.
-            </summary>
-        </member>
-        <member name="T:LCore.Tools.GitHubMarkdown">
-            <summary>
-            Helper class for generating GitHub markdown documents.
-            </summary>
-        </member>
-        <member name="P:LCore.Tools.GitHubMarkdown.FilePath">
-            <summary>
-            The path relative to the root repository folder that this markdown file will be saved
-            </summary>
-        </member>
-        <member name="P:LCore.Tools.GitHubMarkdown.Title">
-            <summary>
-            The title of the markdown file
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.#ctor">
-            <summary>
-            Create a new GitHumMarkdown document without specifying a file title or location
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.#ctor(System.String,System.String)">
-            <summary>
-            Create a new GitHumMarkdown document specifying a file title and location
-            </summary>
-        </member>
-        <member name="P:LCore.Tools.GitHubMarkdown.MarkdownLines">
-            <summary>
-            List of all Markdown Lines added.
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.BlankLine">
-            <summary>
-            Add a blank line:
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.HorizontalRule">
-            <summary>
-            Add a horizontal rule:
-            
-            ---
-            
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Header(System.String,System.Int32)">
-            <summary>
-            Add a header line:
-            
-            # Header
-            ## Header
-            ### Header
-            #### Header
-            ##### Header
-            ###### Header
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.HeaderUnderline(System.String,System.Int32)">
-            <summary>
-            Add a header underlined:
-            
-            Line
-            ======
-            
-            Line 
-            ------
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.OrderedList(System.String[])">
-            <summary>
-            Add an ordered list
-            
-            1. Line
-            2. Line
-            3. Line
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.OrderedList(System.Tuple{System.UInt32,System.String}[])">
-            <summary>
-            Add an ordered list with indentation
-            
-            1. Item
-            2. Item
-                1. Subitem
-                2. Subitem
-                3. Subitem
-            3. Item
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.OrderedList(LCore.Tools.Set{System.UInt32,System.String}[])">
-            <summary>
-            Add an ordered list with indentation
-            
-            1. Item
-            2. Item
-                1. Subitem
-                2. Subitem
-                3. Subitem
-            3. Item
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.UnorderedList(System.String[])">
-            <summary>
-            Add an unordered list
-            
-            - Line
-            - Line
-            - Line
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.UnorderedList(System.Tuple{System.UInt32,System.String}[])">
-            <summary>
-            Add an unordered list with indentation
-            
-            - Item
-            - Item
-                - Subitem
-                - Subitem
-                - Subitem
-            - Item
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.UnorderedList(LCore.Tools.Set{System.UInt32,System.String}[])">
-            <summary>
-            Add an unordered list with indentation
-            
-            - Item
-            - Item
-                - Subitem
-                - Subitem
-                - Subitem
-            - Item
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Code(System.String[],System.String)">
-            <summary>
-            Add a number of lines of code, optionally include a Language for 
-            </summary>
-            <param name="Lines"></param>
-            <param name="Language"></param>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Table(System.String[0:,0:],System.Boolean)">
-            <summary>
-            Add a table of data.
-            By default, the first row will be used as the header row, and separator will be added
-            
-            Header |  Header | Header
-            -------------------------
-            Data | Data | Data
-            Data | Data | Data
-            
-            //////////////////////////////////////////
-            
-            Data | Data | Data
-            Data | Data | Data
-            Data | Data | Data
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Table(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}},System.Boolean)">
-            <summary>
-            Add a table of data.
-            By default, the first row will be used as the header row, and separator will be added
-            
-            Header |  Header | Header
-            -------------------------
-            Data | Data | Data
-            Data | Data | Data
-            
-            //////////////////////////////////////////
-            
-            Data | Data | Data
-            Data | Data | Data
-            Data | Data | Data
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.BlockQuote(System.String[])">
-            <summary>
-            Adds a blockquoted series of <paramref name="Lines"/>
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Lines(System.String[])">
-            <summary>
-            Add a number of <paramref name="Lines"/>
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Line(System.String)">
-            <summary>
-            Add a single <paramref name="Line"/>
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Strikethrough(System.String)">
-            <summary>
-            Returns strikethrough line
-            
-            ~Line~
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Highlight(System.String)">
-            <summary>
-            Returns highlighted test
-            
-            =Line=
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Link(System.String,System.String,System.String)">
-            <summary>
-            Returns a link, all arguments are optional
-            
-            (Url)
-            [Text]
-            [Text](Url)
-            [Text](Url)"Reference Text"
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Image(System.String,System.String)">
-            <summary>
-            Returns an image link, optionally with Reference Text
-            
-            !(Image Url)
-            ![Reference Text](Image Url)
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.InlineCode(System.String)">
-            <summary>
-            Returns a string formatted as inline code
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Italic(System.String)">
-            <summary>
-            Returns a string formatted in italics
-            
-            *Text*
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Bold(System.String)">
-            <summary>
-            Returns a string formatted as bold
-            
-            **Text**
-            
-            </summary>
-        </member>
-        <member name="M:LCore.Tools.GitHubMarkdown.Glyph(LCore.GlyphIcon)">
-            <summary>
-            Formats a glyphicon for display in a markdown document
-            </summary>
-        </member>
         <member name="T:LCore.Tools.CacheData">
             <summary>
             Stores function result and execution time data used from L caching methods.
@@ -18879,11 +18639,6 @@
         <member name="P:LCore.Tools.CacheData.PercentSaved">
             <summary>
             Estimates the percentage of time saved vs. used by this cache.
-            </summary>
-        </member>
-        <member name="T:LCore.Tools.IExcludeFromMarkdownAttribute">
-            <summary>
-            Excludes a class or member from being included in GitHub Markdown autogeneration.
             </summary>
         </member>
         <member name="T:LCore.Tools.MethodProfileData">

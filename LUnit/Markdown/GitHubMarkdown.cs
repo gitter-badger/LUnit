@@ -37,7 +37,7 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public GitHubMarkdown([CanBeNull] string FilePath, [CanBeNull] string Title)
             {
-            this.FilePath = (FilePath ?? "").Trim('/', '\\').ReplaceAll("\\", "/");
+            this.FilePath = (FilePath ?? "");
             this.Title = Title ?? "";
             }
 
@@ -45,6 +45,14 @@ namespace LCore.LUnit.Markdown
         /// List of all Markdown Lines added.
         /// </summary>
         protected List<string> MarkdownLines { get; } = new List<string>();
+
+        /// <summary>
+        /// Gets a list of all markdown lines.
+        /// </summary>
+        public List<string> GetMarkdownLines()
+            {
+            return this.MarkdownLines.List();
+            }
 
         /// <summary>
         /// Add a blank line:

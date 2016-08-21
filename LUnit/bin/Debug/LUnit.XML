@@ -1280,6 +1280,296 @@
             </summary>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
         </member>
+        <member name="T:LCore.LUnit.Markdown.ExcludeFromMarkdownAttribute">
+            <summary>
+            Excludes a class or member from being included in GitHub Markdown autogeneration.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Markdown.GitHubMarkdown">
+            <summary>
+            Helper class for generating GitHub markdown documents.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.GitHubMarkdown.FilePath">
+            <summary>
+            The path relative to the root repository folder that this markdown file will be saved
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.GitHubMarkdown.Title">
+            <summary>
+            The title of the markdown file
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.#ctor">
+            <summary>
+            Create a new GitHumMarkdown document without specifying a file title or location
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.#ctor(System.String,System.String)">
+            <summary>
+            Create a new GitHumMarkdown document specifying a file title and location
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.GitHubMarkdown.MarkdownLines">
+            <summary>
+            List of all Markdown Lines added.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.GetMarkdownLines">
+            <summary>
+            Gets a list of all markdown lines.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.BlankLine">
+            <summary>
+            Add a blank line:
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.HorizontalRule">
+            <summary>
+            Add a horizontal rule:
+            
+            ---
+            
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Header(System.String,System.Int32)">
+            <summary>
+            Add a header line:
+            
+            # Header
+            ## Header
+            ### Header
+            #### Header
+            ##### Header
+            ###### Header
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.HeaderUnderline(System.String,System.Int32)">
+            <summary>
+            Add a header underlined:
+            
+            Line
+            ======
+            
+            Line 
+            ------
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.OrderedList(System.String[])">
+            <summary>
+            Add an ordered list
+            
+            1. Line
+            2. Line
+            3. Line
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.OrderedList(System.Tuple{System.UInt32,System.String}[])">
+            <summary>
+            Add an ordered list with indentation
+            
+            1. Item
+            2. Item
+                1. Subitem
+                2. Subitem
+                3. Subitem
+            3. Item
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.OrderedList(LCore.Tools.Set{System.UInt32,System.String}[])">
+            <summary>
+            Add an ordered list with indentation
+            
+            1. Item
+            2. Item
+                1. Subitem
+                2. Subitem
+                3. Subitem
+            3. Item
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.UnorderedList(System.String[])">
+            <summary>
+            Add an unordered list
+            
+            - Line
+            - Line
+            - Line
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.UnorderedList(System.Tuple{System.UInt32,System.String}[])">
+            <summary>
+            Add an unordered list with indentation
+            
+            - Item
+            - Item
+                - Subitem
+                - Subitem
+                - Subitem
+            - Item
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.UnorderedList(LCore.Tools.Set{System.UInt32,System.String}[])">
+            <summary>
+            Add an unordered list with indentation
+            
+            - Item
+            - Item
+                - Subitem
+                - Subitem
+                - Subitem
+            - Item
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Code(System.String[],System.String)">
+            <summary>
+            Add a number of lines of code, optionally include a Language for 
+            </summary>
+            <param name="Lines"></param>
+            <param name="Language"></param>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Table(System.String[0:,0:],System.Boolean)">
+            <summary>
+            Add a table of data.
+            By default, the first row will be used as the header row, and separator will be added
+            
+            Header |  Header | Header
+            -------------------------
+            Data | Data | Data
+            Data | Data | Data
+            
+            //////////////////////////////////////////
+            
+            Data | Data | Data
+            Data | Data | Data
+            Data | Data | Data
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Table(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}},System.Boolean)">
+            <summary>
+            Add a table of data.
+            By default, the first row will be used as the header row, and separator will be added
+            
+            Header |  Header | Header
+            -------------------------
+            Data | Data | Data
+            Data | Data | Data
+            
+            //////////////////////////////////////////
+            
+            Data | Data | Data
+            Data | Data | Data
+            Data | Data | Data
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.BlockQuote(System.String[])">
+            <summary>
+            Adds a blockquoted series of <paramref name="Lines"/>
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Lines(System.String[])">
+            <summary>
+            Add a number of <paramref name="Lines"/>
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Line(System.String)">
+            <summary>
+            Add a single <paramref name="Line"/>
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Strikethrough(System.String)">
+            <summary>
+            Returns strikethrough line
+            
+            ~Line~
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Highlight(System.String)">
+            <summary>
+            Returns highlighted test
+            
+            =Line=
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Link(System.String,System.String,System.String)">
+            <summary>
+            Returns a link, all arguments are optional
+            
+            (Url)
+            [Text]
+            [Text](Url)
+            [Text](Url)"Reference Text"
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Image(System.String,System.String)">
+            <summary>
+            Returns an image link, optionally with Reference Text
+            
+            !(Image Url)
+            ![Reference Text](Image Url)
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.InlineCode(System.String)">
+            <summary>
+            Returns a string formatted as inline code
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Italic(System.String)">
+            <summary>
+            Returns a string formatted in italics
+            
+            *Text*
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Bold(System.String)">
+            <summary>
+            Returns a string formatted as bold
+            
+            **Text**
+            
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Glyph(LCore.GlyphIcon)">
+            <summary>
+            Formats a glyphicon for display in a markdown document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Badge(System.String,System.String,System.String)">
+            <summary>
+            Adds a Buckler badge, hosted on http://b.repl.ca/
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Badge(System.String,System.String,LCore.LUnit.Markdown.GitHubMarkdown.BadgeColor)">
+            <summary>
+            Adds a Buckler badge, hosted on http://b.repl.ca/
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Markdown.GitHubMarkdown.BadgeColor">
+            <summary>
+            Pre-defined Buckler badge colors (http://b.repl.ca/)
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Markdown.IExcludeFromMarkdownAttribute">
+            <summary>
+            Excludes a class or member from being included in GitHub Markdown autogeneration.
+            </summary>
+        </member>
         <member name="T:LCore.LUnit.TestExt">
             <summary>
             Provides extensions to allow for method unit testing.
