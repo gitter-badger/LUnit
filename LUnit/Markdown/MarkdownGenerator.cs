@@ -245,10 +245,10 @@ namespace LCore.LUnit.Markdown
 
             // Lastly, generate table of contents
             this.Markdown_Other.Add(this.MarkdownTitle_TableOfContents, this.GenerateTableOfContentsMarkdown());
-            List<GitHubMarkdown> AllMarkdown = GetAllMarkdown();
+            List<GitHubMarkdown> AllMarkdown = this.GetAllMarkdown();
 
             if (WriteToDisk)
-                {
+                {   
                 AllMarkdown.Each(MD =>
                 {
                     string Path = MD.FilePath;

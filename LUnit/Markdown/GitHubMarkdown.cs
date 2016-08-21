@@ -37,7 +37,7 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public GitHubMarkdown([CanBeNull] string FilePath, [CanBeNull] string Title)
             {
-            this.FilePath = (FilePath ?? "");
+            this.FilePath = FilePath ?? "";
             this.Title = Title ?? "";
             }
 
@@ -274,7 +274,9 @@ namespace LCore.LUnit.Markdown
                     Table.Add(Divider.JoinLines(" | "));
                 }
 
+            this.Line("");
             Table.Each(this.Line);
+            this.Line("");
             }
 
         /// <summary>
@@ -316,7 +318,9 @@ namespace LCore.LUnit.Markdown
                         Table.Add(Divider.JoinLines(" | "));
                 });
 
+            this.Line("");
             Table.Each(this.Line);
+            this.Line("");
             }
 
         /// <summary>
@@ -459,8 +463,10 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public string Badge(string Left, string Right, string HexColor)
             {
-            return $"![{Left} {Right}](http://b.repl.ca/v1/" +
-                   $"{Left.UriEncode()}-{Right.UriEncode()}-{HexColor}.png)";
+            return this.Image(
+                    $"http://b.repl.ca/v1/" +
+                    $"{Left.UriEncode()}-{Right.UriEncode()}-{HexColor}.png",
+                    $"{Left} {Right}");
             }
 
         /// <summary>
@@ -468,8 +474,7 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public string Badge(string Left, string Right, BadgeColor Color)
             {
-            return $"![{Left} {Right}](http://b.repl.ca/v1/" +
-                   $"{Left.UriEncode()}-{Right.UriEncode()}-{Color.ToString().ToLower()}.png)";
+            return this.Badge(Left, Right, Color.ToString().ToLower());
             }
 
         /// <summary>
