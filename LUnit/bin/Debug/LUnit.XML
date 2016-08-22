@@ -951,6 +951,21 @@
             The Method name will be inserted into argument {0}.
             </summary>
         </member>
+        <member name="T:LCore.LUnit.LUnit.Urls">
+            <summary>
+            Constant Urls
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Urls.GitHubRepository_LUnit">
+            <summary>
+            LUnit GitHub repo URL
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Urls.GitHubRepository_LCore">
+            <summary>
+            LCore GitHub repo URL
+            </summary>
+        </member>
         <member name="T:LCore.LUnit.Traits">
             <summary>
             Constants for LUnit Trait keys
@@ -1660,6 +1675,21 @@
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateMarkdown(System.Reflection.MemberInfo[])">
             <summary>
             Generates markdown for a group of Members
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.WriteFooter(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Writes the footer for your markdown document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.TableOfContentsLink(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Retrieves a formatted link to the table of contents
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.HomeLink(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Retrieves a formatted link to the home readme
             </summary>
         </member>
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetOtherDocuments">
