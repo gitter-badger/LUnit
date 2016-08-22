@@ -404,11 +404,7 @@ namespace LCore.LUnit.Markdown
             {
             if (Align == null)
                 {
-
-                if (!string.IsNullOrEmpty(ReferenceText))
-                    ReferenceText = $"[{ReferenceText}]";
-
-                return $"!{ReferenceText}({Url})";
+                return $"![{ReferenceText}]({Url} \"\")";
                 }
 
             if (Align == L.Align.Left || Align == L.Align.Right)

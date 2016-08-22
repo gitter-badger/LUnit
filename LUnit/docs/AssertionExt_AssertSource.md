@@ -1,9 +1,9 @@
-!(../Content/LCore-banner-small.png)
+![](../Content/LCore-banner-small.png "")
 [Up](AssertionExt.md)
 ###AssertionExt
 #AssertSource
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png) ![Documented No](http://b.repl.ca/v1/Documented-No-red.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) ![Source code Unavailable](http://b.repl.ca/v1/Source%20code-Unavailable-red.png)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") ![Source code Unavailable](http://b.repl.ca/v1/Source%20code-Unavailable-red.png "")
 
 ####Static Method
 ######public static void AssertSource(MethodInfo Method, Object Target, Object[] Params, Object ExpectedSource, Func<Object, Boolean>[] AdditionalSourceChecks);

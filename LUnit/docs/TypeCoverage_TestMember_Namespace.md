@@ -1,4 +1,4 @@
-!(../Content/LCore-banner-small.png)
+![](../Content/LCore-banner-small.png "")
 [Up](TypeCoverage.md)
 ###TypeCoverage
 #TestMember_Namespace

@@ -1,4 +1,4 @@
-!(LUnit/Content/LCore-banner-small.png)
+![](LUnit/Content/LCore-banner-small.png "")
 #Coverage Summary
 
 [Home](README.md) | [Table of Contents](TableOfContents.md) | 
