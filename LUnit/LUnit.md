@@ -1,5 +1,5 @@
 ![](Content/LUnit-banner-small.png "")
-[<img style="float: right;" src="Content/LUnit-logo-small.png">](../README.md)
+[<img align="right;" src="Content/LUnit-logo-small.png">](../README.md)
 [Home](../README.md)
 ###LUnit
  - [AssemblyTester](docs/AssemblyTester.md)

@@ -407,11 +407,7 @@ namespace LCore.LUnit.Markdown
                 return $"![{ReferenceText}]({Url} \"\")";
                 }
 
-            if (Align == L.Align.Left || Align == L.Align.Right)
-                return $"<img style=\"float: {Align.ToString().ToLower()};\" src=\"{Url}\">";
-
-            // Center
-            return $"<img style=\"margin: 0 auto;\" src=\"{Url}\">";
+            return $"<img align=\"{Align.ToString().ToLower()};\" src=\"{Url}\">";
             }
 
         /// <summary>

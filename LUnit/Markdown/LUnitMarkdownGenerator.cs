@@ -42,13 +42,13 @@ namespace LCore.LUnit.Markdown
         /// <summary>
         /// Override this value to display a large image in the upper right corner of the main document
         /// </summary>
-        /*protected override string LogoImage_Large(GitHubMarkdown MD) =>
-            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-logo-large.png");*/
+        protected override string LogoImage_Large(GitHubMarkdown MD) =>
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-logo-small.png");
 
         /// <summary>
         /// Override this value to display a small image in the upper right corner of sub-documents
         /// </summary>
-        /*protected override string LogoImage_Small(GitHubMarkdown MD) =>
-            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-logo-small.png");*/
+        protected override string LogoImage_Small(GitHubMarkdown MD) =>
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-logo-small.png");
         }
     }
