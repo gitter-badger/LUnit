@@ -196,8 +196,7 @@ namespace LCore.LUnit.Markdown
                 }
 
             this.GetTypeMemberMarkdown(Type).Each(Member =>
-                MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Member(Member.Key.First())),
-                    $" - {Member.Key.First()?.Name}")));
+                MD.Line($" - {MD.Link(MD.GetRelativePath(this.MarkdownPath_Member(Member.Key.First())), $"{Member.Key.First()?.Name}")}"));
 
             this.WriteFooter(MD);
 
@@ -578,6 +577,8 @@ namespace LCore.LUnit.Markdown
             {
             // TODO: Add custom copyright
             this.WriteCustomFooter(MD);
+
+            MD.HorizontalRule();
             MD.Table(new[]
                 {
                 new[]
