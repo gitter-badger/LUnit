@@ -7,6 +7,7 @@ using System.Reflection;
 using JetBrains.Annotations;
 using LCore.Extensions;
 using LCore.Interfaces;
+// ReSharper disable ExpressionIsAlwaysNull
 
 // ReSharper disable VirtualMemberNeverOverriden.Global
 
@@ -66,7 +67,7 @@ namespace LCore.LUnit.Markdown
             {
             var MD = this.GetMarkdown(this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
 
-            MD.Header(this.MarkdownTitle_MainReadme, 2);
+            MD.Header(this.MarkdownTitle_MainReadme, Size: 2);
 
             if (!string.IsNullOrEmpty(this.HowToInstall_Code(MD)))
                 {
@@ -76,6 +77,12 @@ namespace LCore.LUnit.Markdown
 
             this.Markdown_Assembly.Each(Document =>
             {
+                var Coverage = new AssemblyCoverage(Document.Key);
+                ICodeComment Comments = null; // No assembly comments Document.Key.GetComments();
+
+                MD.Header(Document.Value.Title, Size: 2);
+                MD.Line(this.GetBadges(MD, Coverage, Comments).JoinLines(" "));
+
                 MD.Line($" - {MD.Link(MD.GetRelativePath(Document.Value.FilePath), Document.Value.Title)}");
             });
 
@@ -114,6 +121,17 @@ namespace LCore.LUnit.Markdown
 
             // TODO Generate summary markdown
 
+            MD.Header("Assemblies");
+            this.Markdown_Assembly.Each(AssemblyMD =>
+                {
+                    var Coverage = new AssemblyCoverage(AssemblyMD.Key);
+                    ICodeComment Comments = null; // No assembly comments Document.Key.GetComments();
+
+                    MD.Header(AssemblyMD.Value.Title, Size: 2);
+                    MD.Line(this.GetBadges(MD, Coverage, Comments).JoinLines(" "));
+
+                });
+
             this.WriteFooter(MD);
 
             return MD;
@@ -125,10 +143,13 @@ namespace LCore.LUnit.Markdown
         protected virtual GitHubMarkdown GenerateMarkdown(Assembly Assembly)
             {
             var MD = this.GetMarkdown(this.MarkdownPath_Assembly(Assembly), Assembly.GetName().Name);
+            var Coverage = new AssemblyCoverage(Assembly);
+            ICodeComment Comments = null; // No assembly comments Document.Key.GetComments();
 
-            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Root), MD.Glyph(GlyphIcon.home)));
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Root), "Home"));
 
             MD.Header($"{Assembly.GetName().Name}", Size: 2);
+            MD.Line(this.GetBadges(MD, Coverage, Comments).JoinLines(" "));
 
             // TODO add Assembly comments
 
@@ -151,18 +172,19 @@ namespace LCore.LUnit.Markdown
         protected virtual GitHubMarkdown GenerateMarkdown(Type Type)
             {
             var MD = this.GetMarkdown(this.MarkdownPath_Type(Type), Type.Name);
-
+            var Coverage = new TypeCoverage(Type);
             var Comments = Type.GetComments();
 
-            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Assembly(Type.GetAssembly())), MD.Glyph(GlyphIcon.arrow_up)));
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Assembly(Type.GetAssembly())), "Up"));
 
             MD.Header($"{Type.Name}", Size: 3);
+            MD.Line(this.GetBadges(MD, Coverage, Comments).JoinLines(" "));
 
             string TypePath = Type.FindClassFile();
 
             if (!string.IsNullOrEmpty(TypePath))
                 {
-                MD.Line(MD.Link(MD.GetRelativePath(TypePath), $"View Source {MD.Glyph(GlyphIcon.zoom_in)}"));
+                MD.Line(MD.Link(MD.GetRelativePath(TypePath), "View Source"));
                 }
 
             // TODO view source
@@ -173,8 +195,8 @@ namespace LCore.LUnit.Markdown
                 MD.Line(Comments.Summary);
                 }
 
-            this.Markdown_Member.Select(Member => Member.Key.First()?.DeclaringType?.Name == Type.Name)
-                .Each(Member => MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Member(Member.Key.First())),
+            this.GetTypeMemberMarkdown(Type).Each(Member =>
+                MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Member(Member.Key.First())),
                     $" - {Member.Key.First()?.Name}")));
 
             this.WriteFooter(MD);
@@ -191,7 +213,7 @@ namespace LCore.LUnit.Markdown
 
             var MD = this.GetMarkdown(this.MarkdownPath_Member(Member), Member.Name);
 
-            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(Member.DeclaringType)), MD.Glyph(GlyphIcon.arrow_up)));
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(Member.DeclaringType)), "Up"));
 
             MD.Header($"{Member.DeclaringType?.Name}", Size: 3);
 
@@ -199,7 +221,7 @@ namespace LCore.LUnit.Markdown
 
             if (!string.IsNullOrEmpty(TypePath))
                 {
-                MD.Line(MD.Link(MD.GetRelativePath(TypePath), $"View Source {MD.Glyph(GlyphIcon.zoom_in)}"));
+                MD.Line(MD.Link(MD.GetRelativePath(TypePath), "View Source"));
                 }
 
             MD.Header(Member.Name);
@@ -372,6 +394,87 @@ namespace LCore.LUnit.Markdown
             }
 
         /// <summary>
+        /// Override this method to customize badges included in type generated markdown documents.
+        /// </summary>
+        protected virtual List<string> GetBadges([NotNull] GitHubMarkdown MD, [CanBeNull] AssemblyCoverage Coverage,
+            [CanBeNull] ICodeComment Comments)
+            {
+            var Assembly = Coverage?.CoveringAssembly;
+
+            var Out = new List<string>();
+
+            // TODO: add Assembly badges
+
+            return Out;
+            }
+
+        /// <summary>
+        /// Override this method to customize badges included in type generated markdown documents.
+        /// </summary>
+        protected virtual List<string> GetBadges([NotNull] GitHubMarkdown MD, [CanBeNull] TypeCoverage Coverage,
+            [CanBeNull] ICodeComment Comments)
+            {
+            var Type = Coverage?.CoveringType;
+
+            var Out = new List<string>();
+
+            string TypeDescription =
+                Type.IsStatic() ? "Static Class" :
+                Type.IsAbstract ? "Abstract Class" :
+                Type.IsInterface ? "Interface" :
+                "Object Class";
+
+            const GitHubMarkdown.BadgeColor TypeColor = GitHubMarkdown.BadgeColor.LightGrey;
+
+            List<KeyValuePair<MemberInfo[], GitHubMarkdown>> Members = this.GetTypeMemberMarkdown(Type);
+
+            uint TotalCoverable = 0;
+            uint Covered = 0;
+            uint TotalDocumentable = 0;
+            uint Documented = 0;
+
+            Members.Each(MemberGroup =>
+                {
+                    MemberGroup.Key.Each(Member =>
+                        {
+                            TotalDocumentable++;
+
+                            var MemberComments = Member.GetComments();
+
+                            if (MemberComments != null)
+                                Documented++;
+
+                            if (Member is MethodInfo)
+                                {
+                                TotalCoverable++;
+
+                                var MemberCoverage = new MethodCoverage((MethodInfo)Member);
+
+                                if (MemberCoverage.IsCovered)
+                                    Covered++;
+                                }
+                        });
+                });
+
+
+            Out.Add(MD.Badge("Type", TypeDescription, TypeColor));
+
+            if (TotalDocumentable > 0)
+                {
+                int DocumentedPercent = Documented.PercentageOf(TotalDocumentable);
+                Out.Add(MD.Badge("Documented", $"{DocumentedPercent}%", this.GetColorByPercentage(DocumentedPercent)));
+                }
+
+            if (TotalCoverable > 0)
+                {
+                int CoveredPercent = Covered.PercentageOf(TotalCoverable);
+                Out.Add(MD.Badge("Covered", $"{CoveredPercent}%", this.GetColorByPercentage(CoveredPercent)));
+                }
+
+            return Out;
+            }
+
+        /// <summary>
         /// Override this method to customize badges included in member generated markdown documents.
         /// </summary>
         protected virtual List<string> GetBadges([NotNull] GitHubMarkdown MD, [CanBeNull] MethodCoverage Coverage,
@@ -421,6 +524,7 @@ namespace LCore.LUnit.Markdown
             return Out;
             }
 
+
         /// <summary>
         /// Gets a new markdown document with header added.
         /// </summary>
@@ -436,7 +540,6 @@ namespace LCore.LUnit.Markdown
         #endregion
 
         #region Options +
-
 
         /// <summary>
         /// Override this value to display a large image on top ofthe main document
@@ -580,8 +683,26 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected virtual string MarkdownTitle_CoverageSummary => "Coverage Summary";
 
+        /// <summary>
+        /// Override this value with an array of EXACTLY 4 numbers to specify the levels of coloring
+        /// Default is: `{ 30, 50, 70, 100 }`
+        /// 
+        /// Percentage  | Color
+        /// ---         | ---
+        /// 30-         | GitHuBMarkdown.BadgeColor.Red
+        /// 31-50       | GitHuBMarkdown.BadgeColor.Yellow
+        /// 51-70       | GitHuBMarkdown.BadgeColor.YellowGreen
+        /// 71-100      | GitHuBMarkdown.BadgeColor.Green
+        /// 100         | GitHuBMarkdown.BadgeColor.BrightGreen
+        /// 101+        | GitHuBMarkdown.BadgeColor.Blue
+        /// </summary>
         protected virtual int[] ColorThresholds => new[] { 30, 50, 70, 100 };
 
+        /// <summary>
+        /// Gets a BadgeColor for a given <paramref name="Percentage"/>
+        /// 
+        /// Override this method to customize the deciding of BadgeColor by Percentage.
+        /// </summary>
         protected virtual GitHubMarkdown.BadgeColor GetColorByPercentage(int Percentage)
             {
             if (Percentage < this.ColorThresholds[0])
@@ -594,6 +715,9 @@ namespace LCore.LUnit.Markdown
                 return GitHubMarkdown.BadgeColor.Green;
             if (Percentage == this.ColorThresholds[3])
                 return GitHubMarkdown.BadgeColor.BrightGreen;
+            // ReSharper disable once ConvertIfStatementToReturnStatement
+            if (Percentage > this.ColorThresholds[3])
+                return GitHubMarkdown.BadgeColor.Blue;
 
             return GitHubMarkdown.BadgeColor.LightGrey;
             }
@@ -692,6 +816,13 @@ namespace LCore.LUnit.Markdown
             AllMarkdown.AddRange(this.Markdown_Member.Values);
 
             return AllMarkdown;
+            }
+
+
+
+        private List<KeyValuePair<MemberInfo[], GitHubMarkdown>> GetTypeMemberMarkdown(Type Type)
+            {
+            return this.Markdown_Member.Select(Member => Member.Key.First()?.DeclaringType?.Name == Type.Name);
             }
         }
     }

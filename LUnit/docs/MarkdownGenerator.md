@@ -1,7 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[<span class="glyphicon glyphicon-arrow-up"></span>](../LUnit.md)
+[Up](../LUnit.md)
 ###MarkdownGenerator
+![Type Abstract Class](http://b.repl.ca/v1/Type-Abstract%20Class-lightgrey.png "") ![Documented 80%](http://b.repl.ca/v1/Documented-80%25-green.png "") ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
 ######Summary
 
             Implement this class to generate code for your assemblies and projects

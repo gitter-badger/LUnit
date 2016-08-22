@@ -1,7 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[<span class="glyphicon glyphicon-arrow-up"></span>](../LUnit.md)
+[Up](../LUnit.md)
 ###LUnit
+![Type Static Class](http://b.repl.ca/v1/Type-Static%20Class-lightgrey.png "") ![Documented 77%](http://b.repl.ca/v1/Documented-77%25-green.png "") ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
 ######Summary
 
             Provides static methods used for unit testing.

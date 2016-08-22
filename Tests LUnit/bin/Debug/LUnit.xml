@@ -1565,11 +1565,6 @@
             
             </summary>
         </member>
-        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Glyph(LCore.GlyphIcon)">
-            <summary>
-            Formats a glyphicon for display in a markdown document
-            </summary>
-        </member>
         <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Badge(System.String,System.String,System.String)">
             <summary>
             Adds a Buckler badge, hosted on http://b.repl.ca/
@@ -1734,6 +1729,16 @@
             Override this method to generate custom documents for your project.
             </summary>
         </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetBadges(LCore.LUnit.Markdown.GitHubMarkdown,LCore.LUnit.AssemblyCoverage,LCore.Interfaces.ICodeComment)">
+            <summary>
+            Override this method to customize badges included in type generated markdown documents.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetBadges(LCore.LUnit.Markdown.GitHubMarkdown,LCore.LUnit.TypeCoverage,LCore.Interfaces.ICodeComment)">
+            <summary>
+            Override this method to customize badges included in type generated markdown documents.
+            </summary>
+        </member>
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetBadges(LCore.LUnit.Markdown.GitHubMarkdown,LCore.LUnit.MethodCoverage,LCore.Interfaces.ICodeComment)">
             <summary>
             Override this method to customize badges included in member generated markdown documents.
@@ -1853,6 +1858,28 @@
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownTitle_CoverageSummary">
             <summary>
             Coverage Summary readme title, default is "Coverage Summary"
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.ColorThresholds">
+            <summary>
+            Override this value with an array of EXACTLY 4 numbers to specify the levels of coloring
+            Default is: `{ 30, 50, 70, 100 }`
+            
+            Percentage  | Color
+            ---         | ---
+            30-         | GitHuBMarkdown.BadgeColor.Red
+            31-50       | GitHuBMarkdown.BadgeColor.Yellow
+            51-70       | GitHuBMarkdown.BadgeColor.YellowGreen
+            71-100      | GitHuBMarkdown.BadgeColor.Green
+            100         | GitHuBMarkdown.BadgeColor.BrightGreen
+            101+        | GitHuBMarkdown.BadgeColor.Blue
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetColorByPercentage(System.Int32)">
+            <summary>
+            Gets a BadgeColor for a given <paramref name="Percentage"/>
+            
+            Override this method to customize the deciding of BadgeColor by Percentage.
             </summary>
         </member>
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.DocumentUnitCoverage">

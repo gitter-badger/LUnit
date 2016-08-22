@@ -1,6 +1,6 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[<span class="glyphicon glyphicon-arrow-up"></span>](BadgeColor.md)
+[Up](BadgeColor.md)
 ###BadgeColor
 #LightGrey
 

@@ -1,7 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[<span class="glyphicon glyphicon-arrow-up"></span>](../LUnit.md)
+[Up](../LUnit.md)
 ###GitHubMarkdown
+![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Documented 64%](http://b.repl.ca/v1/Documented-64%25-yellowgreen.png "") ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
 ######Summary
 
             Helper class for generating GitHub markdown documents.
@@ -25,7 +26,6 @@
 [ - InlineCode](GitHubMarkdown_InlineCode.md)
 [ - Italic](GitHubMarkdown_Italic.md)
 [ - Bold](GitHubMarkdown_Bold.md)
-[ - Glyph](GitHubMarkdown_Glyph.md)
 [ - Badge](GitHubMarkdown_Badge.md)
 [ - GetRelativePath](GitHubMarkdown_GetRelativePath.md)
 [ - Gravatar](GitHubMarkdown_Gravatar.md)

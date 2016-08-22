@@ -1,7 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[<span class="glyphicon glyphicon-arrow-up"></span>](../LUnit.md)
+[Up](../LUnit.md)
 ###LUnitMarkdownGenerator
+![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "")
 ######Summary
 
             Generates markdown for the LUnit project

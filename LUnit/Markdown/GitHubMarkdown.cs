@@ -402,12 +402,9 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public string Image([CanBeNull] string Url, [CanBeNull] string ReferenceText = "", L.Align? Align = null)
             {
-            if (Align == null)
-                {
-                return $"![{ReferenceText}]({Url} \"\")";
-                }
-
-            return $"<img align=\"{Align.ToString().ToLower()}\" src=\"{Url}\">";
+            return Align == null
+                ? $"![{ReferenceText}]({Url} \"\")"
+                : $"<img align=\"{Align.ToString().ToLower()}\" src=\"{Url}\">";
             }
 
         /// <summary>
@@ -445,14 +442,16 @@ namespace LCore.LUnit.Markdown
                 ? ""
                 : $"**{Text}**";
             }
+        /*
 
-        /// <summary>
-        /// Formats a glyphicon for display in a markdown document
-        /// </summary>
-        public string Glyph(GlyphIcon Glyph)
-            {
-            return $"<span class=\"glyphicon glyphicon-{Glyph.ToString().ToLower().Trim('_').ReplaceAll("_", "-")}\"></span>";
-            }
+                /// <summary>
+                /// Formats a glyphicon for display in a markdown document
+                /// </summary>
+                public string Glyph(GlyphIcon Glyph)
+                    {
+                    return $"<span class=\"glyphicon glyphicon-{Glyph.ToString().ToLower().Trim('_').ReplaceAll("_", "-")}\"></span>";
+                    }
+        */
 
         /// <summary>
         /// Adds a Buckler badge, hosted on http://b.repl.ca/

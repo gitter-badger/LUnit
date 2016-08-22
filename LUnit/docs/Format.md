@@ -1,7 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[<span class="glyphicon glyphicon-arrow-up"></span>](../LUnit.md)
+[Up](../LUnit.md)
 ###Format
+![Type Static Class](http://b.repl.ca/v1/Type-Static%20Class-lightgrey.png "") ![Documented 0%](http://b.repl.ca/v1/Documented-0%25-red.png "")
 ######Summary
 
             Formatting for naming-convention-based coverage

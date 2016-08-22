@@ -111,7 +111,6 @@
  - [InlineCode](LUnit/docs/GitHubMarkdown_InlineCode.md)
  - [Italic](LUnit/docs/GitHubMarkdown_Italic.md)
  - [Bold](LUnit/docs/GitHubMarkdown_Bold.md)
- - [Glyph](LUnit/docs/GitHubMarkdown_Glyph.md)
  - [Badge](LUnit/docs/GitHubMarkdown_Badge.md)
  - [GetRelativePath](LUnit/docs/GitHubMarkdown_GetRelativePath.md)
  - [Gravatar](LUnit/docs/GitHubMarkdown_Gravatar.md)

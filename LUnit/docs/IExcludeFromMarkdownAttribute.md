@@ -1,7 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[<span class="glyphicon glyphicon-arrow-up"></span>](../LUnit.md)
+[Up](../LUnit.md)
 ###IExcludeFromMarkdownAttribute
+![Type Abstract Class](http://b.repl.ca/v1/Type-Abstract%20Class-lightgrey.png "")
 ######Summary
 
             Excludes a class or member from being included in GitHub Markdown autogeneration.
