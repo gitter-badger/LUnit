@@ -127,6 +127,12 @@ namespace LCore.LUnit.Markdown
 
             // TODO add Object classes
 
+            this.Markdown_Type.Select(Type => System.Reflection.Assembly.GetAssembly(Type.Key) == Assembly).Each(MD2 =>
+                {
+                    MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(MD2.Key)),
+                           $" - {MD2.Key.Name}");
+                });
+
             this.WriteFooter(MD);
 
             return MD;
@@ -154,7 +160,7 @@ namespace LCore.LUnit.Markdown
                 }
 
             this.Markdown_Member.Select(Member => Member.Key.First()?.DeclaringType == Type)
-                .Each(Member => MD.Link(this.MarkdownPath_Member(Member.Key.First()),
+                .Each(Member => MD.Link(MD.GetRelativePath(this.MarkdownPath_Member(Member.Key.First())),
                     $" - {Member.Key.First()?.Name}"));
 
             this.WriteFooter(MD);
