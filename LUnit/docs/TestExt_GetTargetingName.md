@@ -2,7 +2,7 @@
 #GetTargetingName
 ####Static Method
 
-![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png) ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-red.png)]
 
 ######public static System.Tuple<String, String, String> GetTargetingName(MemberInfo Member, String TestNamespaceFormat, String TestClassFormat, String TestMethodFormat);
 ######Summary
@@ -22,13 +22,8 @@ TestClassFormat | Yes | String |
 TestMethodFormat | Yes | String | 
 
 ####Returns
-==__Add return type link__==
 ######Tuple<String, String, String>
 
-==source link==
-==coverage link==
-==exception comments==
-==permission comments==
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

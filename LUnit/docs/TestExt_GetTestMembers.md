@@ -2,7 +2,7 @@
 #GetTestMembers
 ####Static Method
 
-![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png) ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-red.png)]
 
 ######public static System.Collections.Generic.Dictionary<MemberInfo, List<ILUnitAttribute>> GetTestMembers(Type Type);
 ######Summary
@@ -16,12 +16,7 @@ Parameter | Optional | Type | Description
 Type | No | Type | 
 
 ####Returns
-==__Add return type link__==
 ######Dictionary<MemberInfo, List<ILUnitAttribute>>
-==source link==
-==coverage link==
-==exception comments==
-==permission comments==
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

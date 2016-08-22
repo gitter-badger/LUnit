@@ -2,7 +2,7 @@
 #ShouldNotBeNull
 ####Static Method
 
-![Documented No](http://b.repl.ca/v1/Documented-No-red.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png) ![Documented No](http://b.repl.ca/v1/Documented-No-red.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-red.png)]
 
 ######public static FluentAssertions.AndConstraint<ObjectAssertions> ShouldNotBeNull(T Value, String Because, Object[] BecauseArgs);
 ######Summary
@@ -16,12 +16,7 @@ Because | Yes | String |
 BecauseArgs | No | Object[] | 
 
 ####Returns
-==__Add return type link__==
 ######AndConstraint<ObjectAssertions>
-==source link==
-==coverage link==
-==exception comments==
-==permission comments==
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

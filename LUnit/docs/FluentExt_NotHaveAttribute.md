@@ -2,7 +2,7 @@
 #NotHaveAttribute
 ####Static Method
 
-![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png) ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-red.png)]
 
 ######public static FluentAssertions.AndConstraint<TypeAssertions> NotHaveAttribute(TypeAssertions Type, String Because, Object[] BecauseArgs);
 ######Summary
@@ -22,13 +22,8 @@ Because | Yes | String | A formatted phrase as is supported by System.String.For
 BecauseArgs | No | Object[] | Zero or more objects to format using the placeholders in because.
 
 ####Returns
-==__Add return type link__==
 ######AndConstraint<TypeAssertions>
 An FluentAssertions.AndConstraint`1 which can be used to chain assertions.
-==source link==
-==coverage link==
-==exception comments==
-==permission comments==
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

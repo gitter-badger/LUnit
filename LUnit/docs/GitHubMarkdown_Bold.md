@@ -2,7 +2,7 @@
 #Bold
 ####InstanceMethod
 
-![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png)
+![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png) ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-red.png)]
 
 ######public System.String Bold(String Text);
 ######Summary
@@ -20,12 +20,7 @@ Parameter | Optional | Type | Description
 Text | Yes | String | 
 
 ####Returns
-==__Add return type link__==
 ######String
-==source link==
-==coverage link==
-==exception comments==
-==permission comments==
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

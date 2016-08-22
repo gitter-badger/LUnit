@@ -127,7 +127,8 @@ namespace LCore.LUnit.Markdown
 
             // TODO add Object classes
 
-            this.Markdown_Type.Select(Type => System.Reflection.Assembly.GetAssembly(Type.Key) == Assembly).Each(MD2 =>
+            // ReSharper disable once RedundantNameQualifier
+            this.Markdown_Type.Select(Type => System.Reflection.Assembly.GetAssembly(Type.Key).GetName().Name == Assembly.GetName().Name).Each(MD2 =>
                 {
                     MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(MD2.Key)),
                            $" - {MD2.Key.Name}");
@@ -150,6 +151,13 @@ namespace LCore.LUnit.Markdown
             // TODO up link
 
             MD.Header($"{Type.Name}", Size: 3);
+
+            string TypePath = Type.FindClassFile();
+
+            if (!string.IsNullOrEmpty(TypePath))
+                {
+                MD.Line(MD.Link(MD.GetRelativePath(TypePath), $"View Source {MD.Glyph(GlyphIcon.zoom_in)}"));
+                }
 
             // TODO view source
 
@@ -180,6 +188,13 @@ namespace LCore.LUnit.Markdown
             // TODO up link
             MD.Header($"{Member.DeclaringType?.Name}", Size: 3);
 
+            string TypePath = Member.DeclaringType.FindClassFile();
+
+            if (!string.IsNullOrEmpty(TypePath))
+                {
+                MD.Line(MD.Link(MD.GetRelativePath(TypePath), $"View Source {MD.Glyph(GlyphIcon.zoom_in)}"));
+                }
+
             MD.Header(Member.Name);
 
             if (Member is MethodInfo)
@@ -200,7 +215,6 @@ namespace LCore.LUnit.Markdown
                 string ReturnType = Method.ReturnType == typeof(void)
                     ? "void"
                     : Method.ReturnType.FullyQualifiedName();
-
 
                 // TODO: Add parameter type link
                 string Parameters = Method.GetParameters().Convert(Param =>
@@ -250,7 +264,6 @@ namespace LCore.LUnit.Markdown
                 MD.Header("Returns", Size: 4);
 
                 // TODO: Add return type link
-                MD.Line(MD.Highlight("__Add return type link__"));
 
                 MD.Header(Method.ReturnType == typeof(void)
                     ? "void"
@@ -264,18 +277,11 @@ namespace LCore.LUnit.Markdown
                     Comments.Examples.Each(Example => MD.Code(new[] { Example }));
                     }
 
-                // TODO: Add source link
-                MD.Line(MD.Highlight("source link"));
-
                 // TODO: Add test coverage link
-                MD.Line(MD.Highlight("coverage link"));
 
                 // TODO: Add exception details
-                MD.Line(MD.Highlight("exception comments"));
 
                 // TODO: Add permission details
-                MD.Line(MD.Highlight("permission comments"));
-
                 }
 
             this.WriteFooter(MD);
@@ -335,22 +341,47 @@ namespace LCore.LUnit.Markdown
         protected virtual List<string> GetBadges([NotNull] GitHubMarkdown MD, [CanBeNull] MethodCoverage Coverage,
             [CanBeNull] ICodeComment Comments)
             {
-            return new List<string>
-                {
-                MD.Badge("Documented", Comments != null ? "Yes" : "No",
-                    Comments != null ? GitHubMarkdown.BadgeColor.BrightGreen : GitHubMarkdown.BadgeColor.Red),
-                MD.Badge("Unit Tested", Coverage?.MemberTraitFound == true ? "Yes" : "No",
-                    Coverage?.MemberTraitFound == true
-                        ? GitHubMarkdown.BadgeColor.BrightGreen
-                        : GitHubMarkdown.BadgeColor.LightGrey),
-                MD.Badge("Attribute Tests", $"{Coverage?.AttributeCoverage ?? 0}",
-                    (Coverage?.AttributeCoverage ?? 0) > 0u
-                        ? GitHubMarkdown.BadgeColor.BrightGreen
-                        : GitHubMarkdown.BadgeColor.LightGrey)
-                // TODO: Count assertions by scanning test code '.should' 'assert'
-                // TODO: Add Test Status: Passing / Failing / Untested
+            var Member = Coverage?.CoveringMember;
 
-                };
+            var Out = new List<string>();
+
+            if (Member != null)
+                {
+                string SourcePath = Member.DeclaringType?.FindClassFile();
+
+                string MethodScope = Member.IsPublic ? "Public" : "Protected";
+
+                if (Member.IsAbstract)
+                    MethodScope = $"Abstract {MethodScope}";
+
+                string TypeDescription = Member.IsStatic ? "Static Method" : $"{MethodScope} Method";
+                var TypeColor = GitHubMarkdown.BadgeColor.LightGrey;
+
+
+                Out.Add(MD.Badge("Type", TypeDescription, TypeColor));
+                Out.Add(MD.Badge("Documented", Comments != null ? "Yes" : "No",
+                    Comments != null ? GitHubMarkdown.BadgeColor.BrightGreen : GitHubMarkdown.BadgeColor.Red));
+                if (this.DocumentUnitCoverage)
+                    Out.Add(MD.Badge("Unit Tested", Coverage?.MemberTraitFound == true ? "Yes" : "No",
+                        Coverage?.MemberTraitFound == true
+                            ? GitHubMarkdown.BadgeColor.BrightGreen
+                            : GitHubMarkdown.BadgeColor.LightGrey));
+                if (this.DocumentAttributeCoverage)
+                    Out.Add(MD.Badge("Attribute Tests", $"{Coverage?.AttributeCoverage ?? 0}",
+                        (Coverage?.AttributeCoverage ?? 0) > 0u
+                            ? GitHubMarkdown.BadgeColor.BrightGreen
+                            : GitHubMarkdown.BadgeColor.LightGrey));
+
+                Out.Add(MD.Link(SourcePath != null ? MD.GetRelativePath(SourcePath) : "",
+                    MD.Badge("Source code", string.IsNullOrEmpty(SourcePath) ? "Available" : "Unavailable",
+                        string.IsNullOrEmpty(SourcePath)
+                            ? GitHubMarkdown.BadgeColor.Red
+                            : GitHubMarkdown.BadgeColor.BrightGreen)));
+                // TODO: Count assertions by scanning test code '.should' 'assert'
+
+                // TODO: Add Test Status: Passing / Failing / Untested
+                }
+            return Out;
             }
 
         #endregion
@@ -468,6 +499,9 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected virtual string MarkdownTitle_CoverageSummary => "Coverage Summary";
 
+        protected virtual bool DocumentUnitCoverage => true;
+
+        protected virtual bool DocumentAttributeCoverage => true;
         #endregion
 
         #region Private Methods +
