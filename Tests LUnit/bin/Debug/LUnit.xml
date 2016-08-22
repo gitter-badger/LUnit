@@ -1677,7 +1677,7 @@
             Generates markdown for a group of Members
             </summary>
         </member>
-        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.WriteFooter(LCore.LUnit.Markdown.GitHubMarkdown)">
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.WriteCustomFooter(LCore.LUnit.Markdown.GitHubMarkdown)">
             <summary>
             Writes the footer for your markdown document
             </summary>

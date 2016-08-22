@@ -139,13 +139,23 @@ namespace LCore.LUnit.Markdown
             {
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Type(Type), Type.Name);
 
+            var Comments = Type.GetComments();
+
+            // TODO up link
+
             MD.Header($"{Type.Name}", Size: 3);
 
             // TODO view source
 
-            // TODO Type comments
+            if (!string.IsNullOrEmpty(Comments?.Summary))
+                {
+                MD.Header("Summary", Size: 6);
+                MD.Line(Comments.Summary);
+                }
 
-            // TODO Link to all method pages
+            this.Markdown_Member.Select(Member => Member.Key.First()?.DeclaringType == Type)
+                .Each(Member => MD.Link(this.MarkdownPath_Member(Member.Key.First()),
+                    $" - {Member.Key.First()?.Name}"));
 
             this.WriteFooter(MD);
 
@@ -160,7 +170,10 @@ namespace LCore.LUnit.Markdown
             var Member = MemberGroup.First();
 
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Member(Member), Member.Name);
+
+            // TODO up link
             MD.Header($"{Member.DeclaringType?.Name}", Size: 3);
+
             MD.Header(Member.Name);
 
             if (Member is MethodInfo)
