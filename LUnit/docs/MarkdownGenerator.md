@@ -8,6 +8,7 @@
 [ - MarkdownPath_Member](MarkdownGenerator_MarkdownPath_Member.md)
 [ - Generate](MarkdownGenerator_Generate.md)
 [ - GetAllMarkdown](MarkdownGenerator_GetAllMarkdown.md)
+[ - HowToInstall](MarkdownGenerator_HowToInstall.md)
 [ - GeneratedMarkdownRoot](MarkdownGenerator_GeneratedMarkdownRoot.md)
 [ - MarkdownPath_Root](MarkdownGenerator_MarkdownPath_Root.md)
 [ - MarkdownPath_TableOfContents](MarkdownGenerator_MarkdownPath_TableOfContents.md)

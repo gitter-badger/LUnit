@@ -14,5 +14,7 @@ namespace LCore.LUnit.Markdown
         /// Override this member to specify the assemblies to generae documentation.
         /// </summary>
         protected override Assembly[] DocumentAssemblies => new[] { Assembly.GetAssembly(typeof(LUnit)) };
+
+        public override string HowToInstall => $"nuget install-package {nameof(LUnit)}";
         }
     }

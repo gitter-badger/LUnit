@@ -1,9 +1,5 @@
 ###LUnitMarkdownGenerator
-######Summary
-
-            Generates markdown for the LUnit project
-            
-[ - HowToInstall](LUnitMarkdownGenerator_HowToInstall.md)
+#HowToInstall
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

@@ -27,6 +27,8 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected abstract Assembly[] DocumentAssemblies { get; }
 
+        public virtual string HowToInstall => "";
+
         #region Variables + 
 
         /// <summary>
@@ -67,6 +69,12 @@ namespace LCore.LUnit.Markdown
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
 
             MD.Line(this.MarkdownTitle_MainReadme);
+
+            if (!string.IsNullOrEmpty(this.HowToInstall))
+                {
+                MD.Header("Installation Instructions", 2);
+                MD.Code(this.HowToInstall.Split("\r\n"));
+                }
 
             this.Markdown_Assembly.Each(Document =>
             {
