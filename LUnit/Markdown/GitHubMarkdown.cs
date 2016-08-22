@@ -400,12 +400,22 @@ namespace LCore.LUnit.Markdown
         /// ![Reference Text](Image Url)
         /// 
         /// </summary>
-        public string Image([CanBeNull] string Url, [CanBeNull] string ReferenceText = "")
+        public string Image([CanBeNull] string Url, [CanBeNull] string ReferenceText = "", L.Align? Align = null)
             {
-            if (!string.IsNullOrEmpty(ReferenceText))
-                ReferenceText = $"[{ReferenceText}]";
+            if (Align == null)
+                {
 
-            return $"!{ReferenceText}({Url})";
+                if (!string.IsNullOrEmpty(ReferenceText))
+                    ReferenceText = $"[{ReferenceText}]";
+
+                return $"!{ReferenceText}({Url})";
+                }
+
+            if (Align == L.Align.Left || Align == L.Align.Right)
+                return $"<img style=\"float: {Align.ToString().ToLower()};\" src=\"{Url}\">";
+
+            // Center
+            return $"<img style=\"margin: 0 auto;\" src=\"{Url}\">";
             }
 
         /// <summary>

@@ -1535,7 +1535,7 @@
             
             </summary>
         </member>
-        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Image(System.String,System.String)">
+        <member name="M:LCore.LUnit.Markdown.GitHubMarkdown.Image(System.String,System.String,System.Nullable{LCore.Extensions.L.Align})">
             <summary>
             Returns an image link, optionally with Reference Text
             
@@ -1625,15 +1625,35 @@
             Override this member to specify the assemblies to generae documentation.
             </summary>
         </member>
-        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text">
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.BannerImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a large image on top ofthe main document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.BannerImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a small banner image on top of sub-documents
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.LogoImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a large image in the upper right corner of the main document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.LogoImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a small image in the upper right corner of sub-documents
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)">
             <summary>
             Override this value to indicate installation instructions.
             </summary>
         </member>
-        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Code">
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Code(LCore.LUnit.Markdown.GitHubMarkdown)">
             <summary>
             Override this value to indicate installation instructions.
-            This text will be formatted as C# code below <see cref="P:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text"/>
+            This text will be formatted as C# code below <see cref="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)"/>
             </summary>
         </member>
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.Markdown_Other">
@@ -1686,6 +1706,12 @@
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GenerateMarkdown(System.Reflection.MemberInfo[])">
             <summary>
             Generates markdown for a group of Members
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.WriteHeader(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Writes the default header, including the large or small
+            banner and logo
             </summary>
         </member>
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.WriteCustomFooter(LCore.LUnit.Markdown.GitHubMarkdown)">

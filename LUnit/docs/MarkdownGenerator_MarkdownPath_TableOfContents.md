@@ -1,3 +1,4 @@
+[Up](MarkdownGenerator.md)
 ###MarkdownGenerator
 #MarkdownPath_TableOfContents
 

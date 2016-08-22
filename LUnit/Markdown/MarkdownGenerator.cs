@@ -22,21 +22,44 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         public const string CSharpLanguage = "cs";
 
+
         /// <summary>
         /// Override this member to specify the assemblies to generae documentation.
         /// </summary>
         protected abstract Assembly[] DocumentAssemblies { get; }
 
+
+        /// <summary>
+        /// Override this value to display a large image on top ofthe main document
+        /// </summary>
+        protected virtual string BannerImage_Large(GitHubMarkdown MD) => "";
+
+        /// <summary>
+        /// Override this value to display a small banner image on top of sub-documents
+        /// </summary>
+        protected virtual string BannerImage_Small(GitHubMarkdown MD) => "";
+
+        /// <summary>
+        /// Override this value to display a large image in the upper right corner of the main document
+        /// </summary>
+        protected virtual string LogoImage_Large(GitHubMarkdown MD) => "";
+
+        /// <summary>
+        /// Override this value to display a small image in the upper right corner of sub-documents
+        /// </summary>
+        protected virtual string LogoImage_Small(GitHubMarkdown MD) => "";
+
+
         /// <summary>
         /// Override this value to indicate installation instructions.
         /// </summary>
-        protected virtual string HowToInstall_Text => "";
+        protected virtual string HowToInstall_Text(GitHubMarkdown MD) => "";
 
         /// <summary>
         /// Override this value to indicate installation instructions.
         /// This text will be formatted as C# code below <see cref="HowToInstall_Text"/>
         /// </summary>
-        protected virtual string HowToInstall_Code => "";
+        protected virtual string HowToInstall_Code(GitHubMarkdown MD) => "";
 
         #region Variables + 
 
@@ -69,20 +92,19 @@ namespace LCore.LUnit.Markdown
 
         #region Generators + 
 
-        // TODO Generate root markdown
         /// <summary>
         /// Generates root markdown document (front page)
         /// </summary>
         protected virtual GitHubMarkdown GenerateRootMarkdown()
             {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
+            var MD = this.GetMarkdown(this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
 
             MD.Line(this.MarkdownTitle_MainReadme);
 
-            if (!string.IsNullOrEmpty(this.HowToInstall_Code))
+            if (!string.IsNullOrEmpty(this.HowToInstall_Code(MD)))
                 {
                 MD.Header("Installation Instructions", Size: 2);
-                MD.Code(this.HowToInstall_Code.Split("\r\n"));
+                MD.Code(this.HowToInstall_Code(MD).Split("\r\n"));
                 }
 
             this.Markdown_Assembly.Each(Document =>
@@ -100,7 +122,7 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected virtual GitHubMarkdown GenerateTableOfContentsMarkdown()
             {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_TableOfContents, this.MarkdownTitle_TableOfContents);
+            var MD = this.GetMarkdown(this.MarkdownPath_TableOfContents, this.MarkdownTitle_TableOfContents);
 
             MD.Header(this.MarkdownTitle_TableOfContents, Size: 3);
 
@@ -114,15 +136,16 @@ namespace LCore.LUnit.Markdown
             return MD;
             }
 
-        // TODO Generate summary markdown
         /// <summary>
         /// Generates coverage summary document
         /// </summary>
         protected virtual GitHubMarkdown GenerateCoverageSummaryMarkdown()
             {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_CoverageSummary, this.MarkdownTitle_CoverageSummary);
+            var MD = this.GetMarkdown(this.MarkdownPath_CoverageSummary, this.MarkdownTitle_CoverageSummary);
 
             MD.Header(this.MarkdownTitle_CoverageSummary);
+
+            // TODO Generate summary markdown
 
             this.WriteFooter(MD);
 
@@ -134,17 +157,16 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected virtual GitHubMarkdown GenerateMarkdown(Assembly Assembly)
             {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_Assembly(Assembly), Assembly.GetName().Name);
+            var MD = this.GetMarkdown(this.MarkdownPath_Assembly(Assembly), Assembly.GetName().Name);
+
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Root), "Home"));
 
             MD.Header($"{Assembly.GetName().Name}", Size: 3);
 
             // TODO add Assembly comments
 
-            // TODO add Static classes
+            // TODO separate Static and Object classes
 
-            // TODO add Object classes
-
-            // ReSharper disable once RedundantNameQualifier
             this.Markdown_Type.Select(Type => Type.Key.GetAssembly()?.GetName().Name == Assembly.GetName().Name)
                 .Each(MD2 =>
                 {
@@ -161,11 +183,11 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected virtual GitHubMarkdown GenerateMarkdown(Type Type)
             {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_Type(Type), Type.Name);
+            var MD = this.GetMarkdown(this.MarkdownPath_Type(Type), Type.Name);
 
             var Comments = Type.GetComments();
 
-            // TODO up link
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Assembly(Type.GetAssembly())), "Up"));
 
             MD.Header($"{Type.Name}", Size: 3);
 
@@ -200,9 +222,10 @@ namespace LCore.LUnit.Markdown
             {
             var Member = MemberGroup.First();
 
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_Member(Member), Member.Name);
+            var MD = this.GetMarkdown(this.MarkdownPath_Member(Member), Member.Name);
 
-            // TODO up link
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(Member.DeclaringType)), "Up"));
+
             MD.Header($"{Member.DeclaringType?.Name}", Size: 3);
 
             string TypePath = Member.DeclaringType.FindClassFile();
@@ -310,6 +333,34 @@ namespace LCore.LUnit.Markdown
         #endregion
 
         #region Helpers +
+
+        /// <summary>
+        /// Writes the default header, including the large or small
+        /// banner and logo
+        /// </summary>
+        protected virtual void WriteHeader(GitHubMarkdown MD)
+            {
+            bool IsMain = MD.FilePath == this.MarkdownPath_Root;
+
+
+            if (IsMain && !string.IsNullOrEmpty(this.BannerImage_Large(MD)))
+                {
+                MD.Image(this.BannerImage_Large(MD));
+                }
+            else if (!string.IsNullOrEmpty(this.BannerImage_Small(MD)))
+                {
+                MD.Image(this.BannerImage_Small(MD));
+                }
+
+            if (IsMain && !string.IsNullOrEmpty(this.LogoImage_Large(MD)))
+                {
+                MD.Line(MD.Image(this.LogoImage_Large(MD), "Logo", L.Align.Right));
+                }
+            else if (!string.IsNullOrEmpty(this.LogoImage_Small(MD)))
+                {
+                MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Root), MD.Image(this.LogoImage_Small(MD), "Logo", L.Align.Right)));
+                }
+            }
 
         /// <summary>
         /// Writes the footer for your markdown document
@@ -532,6 +583,15 @@ namespace LCore.LUnit.Markdown
         #endregion
 
         #region Private Methods +
+
+        private GitHubMarkdown GetMarkdown(string Path, string Title)
+            {
+            var MD = new GitHubMarkdown(this, Path, Title);
+
+            this.WriteHeader(MD);
+
+            return MD;
+            }
 
         private void Load(Assembly Assembly)
             {

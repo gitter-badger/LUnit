@@ -1,18 +1,12 @@
+[Up](GitHubMarkdown.md)
 ###GitHubMarkdown
 #Image
 
-![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png) ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) ![Source code Unavailable](http://b.repl.ca/v1/Source%20code-Unavailable-red.png)
+![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png) ![Documented No](http://b.repl.ca/v1/Documented-No-red.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) ![Source code Unavailable](http://b.repl.ca/v1/Source%20code-Unavailable-red.png)
 
 ####InstanceMethod
-######public System.String Image(String Url, String ReferenceText);
+######public System.String Image(String Url, String ReferenceText, Nullable<Align> Align);
 ######Summary
-
-            Returns an image link, optionally with Reference Text
-            
-            !(Image Url)
-            ![Reference Text](Image Url)
-            
-            
 ######Parameters
 ==__Add parameter type link__==
 
@@ -20,6 +14,7 @@ Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Url | No | String | 
 ReferenceText | Yes | String | 
+Align | Yes | Nullable<Align> | 
 
 ####Returns
 ######String

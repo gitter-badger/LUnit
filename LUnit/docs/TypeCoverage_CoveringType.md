@@ -1,3 +1,4 @@
+[Up](TypeCoverage.md)
 ###TypeCoverage
 #CoveringType
 

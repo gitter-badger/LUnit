@@ -1,3 +1,4 @@
+[Up](MethodCoverage.md)
 ###MethodCoverage
 #MemberTraitValue
 

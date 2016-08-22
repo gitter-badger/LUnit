@@ -158,7 +158,7 @@ namespace LUnit_Tests.LCore.LUnit.Markdown
         }
 
         [Fact]
-        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(global::LCore.LUnit.Markdown)+ "." + nameof(GitHubMarkdown)+ "." + nameof(GitHubMarkdown.Image) + "(String, String) => String")]
+        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(global::LCore.LUnit.Markdown)+ "." + nameof(GitHubMarkdown)+ "." + nameof(GitHubMarkdown.Image) + "(String, String, Nullable<Align>) => String")]
         public void Image()
         {
             // TODO: Implement method test LCore.LUnit.Markdown.GitHubMarkdown.Image
