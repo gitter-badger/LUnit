@@ -128,10 +128,10 @@ namespace LCore.LUnit.Markdown
             // TODO add Object classes
 
             // ReSharper disable once RedundantNameQualifier
-            this.Markdown_Type.Select(Type => System.Reflection.Assembly.GetAssembly(Type.Key).GetName().Name == Assembly.GetName().Name).Each(MD2 =>
+            this.Markdown_Type.Select(Type => Type.Key.GetAssembly()?.GetName().Name == Assembly.GetName().Name)
+                .Each(MD2 =>
                 {
-                    MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(MD2.Key)),
-                           $" - {MD2.Key.Name}");
+                    MD.Line($" - {MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(MD2.Key)), MD2.Key.Name)}");
                 });
 
             this.WriteFooter(MD);
@@ -220,13 +220,14 @@ namespace LCore.LUnit.Markdown
                 string Parameters = Method.GetParameters().Convert(Param =>
                     $"{Param.ParameterType.GetGenericName()} {Param.Name}").Combine(", ");
 
-                MD.Header($"{Static}Method", Size: 4);
-
                 List<string> Badges = this.GetBadges(MD, Coverage, Comments);
 
                 MD.Line("");
                 MD.Line(Badges.JoinLines(" "));
                 MD.Line("");
+
+                MD.Header($"{Static}Method", Size: 4);
+
 
                 MD.Header($"public{StaticLower} {ReturnType} {Member.Name}({Parameters});", Size: 6);
 
@@ -509,20 +510,20 @@ namespace LCore.LUnit.Markdown
 
         private void Load(Assembly Assembly)
             {
-            this.Markdown_Assembly.Add(Assembly, this.GenerateMarkdown(Assembly));
-
             Assembly.GetExportedTypes().Select(this.IncludeType).Each(this.Load);
+
+            this.Markdown_Assembly.Add(Assembly, this.GenerateMarkdown(Assembly));
             }
 
         private void Load(Type Type)
             {
-            this.Markdown_Type.Add(Type, this.GenerateMarkdown(Type));
-
             Dictionary<string, List<MemberInfo>> MemberNames = Type.GetMembers()
                 .Select(this.IncludeMember)
                 .Group(Member => Member.Name);
 
             MemberNames.Values.Convert(EnumerableExt.Array).Each(this.Load);
+
+            this.Markdown_Type.Add(Type, this.GenerateMarkdown(Type));
             }
 
         private void Load(MemberInfo[] MemberGroup)
