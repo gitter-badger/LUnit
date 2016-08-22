@@ -1631,6 +1631,16 @@
             Override this value to display a small banner image on top of sub-documents
             </summary>
         </member>
+        <member name="M:LCore.LUnit.Markdown.LUnitMarkdownGenerator.LogoImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a large image in the upper right corner of the main document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.LUnitMarkdownGenerator.LogoImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a small image in the upper right corner of sub-documents
+            </summary>
+        </member>
         <member name="T:LCore.LUnit.Markdown.MarkdownGenerator">
             <summary>
             Implement this class to generate code for your assemblies and projects
@@ -1644,37 +1654,6 @@
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.DocumentAssemblies">
             <summary>
             Override this member to specify the assemblies to generae documentation.
-            </summary>
-        </member>
-        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.BannerImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
-            <summary>
-            Override this value to display a large image on top ofthe main document
-            </summary>
-        </member>
-        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.BannerImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
-            <summary>
-            Override this value to display a small banner image on top of sub-documents
-            </summary>
-        </member>
-        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.LogoImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
-            <summary>
-            Override this value to display a large image in the upper right corner of the main document
-            </summary>
-        </member>
-        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.LogoImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
-            <summary>
-            Override this value to display a small image in the upper right corner of sub-documents
-            </summary>
-        </member>
-        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)">
-            <summary>
-            Override this value to indicate installation instructions.
-            </summary>
-        </member>
-        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Code(LCore.LUnit.Markdown.GitHubMarkdown)">
-            <summary>
-            Override this value to indicate installation instructions.
-            This text will be formatted as C# code below <see cref="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)"/>
             </summary>
         </member>
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.Markdown_Other">
@@ -1763,6 +1742,37 @@
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetMarkdown(System.String,System.String)">
             <summary>
             Gets a new markdown document with header added.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.BannerImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a large image on top ofthe main document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.BannerImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a small banner image on top of sub-documents
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.LogoImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a large image in the upper right corner of the main document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.LogoImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a small image in the upper right corner of sub-documents
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to indicate installation instructions.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Code(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to indicate installation instructions.
+            This text will be formatted as C# code below <see cref="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)"/>
             </summary>
         </member>
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.GeneratedMarkdownRoot">

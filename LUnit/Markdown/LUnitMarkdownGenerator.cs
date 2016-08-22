@@ -31,12 +31,24 @@ namespace LCore.LUnit.Markdown
         /// Override this value to display a large image on top ofthe main document
         /// </summary>
         protected override string BannerImage_Large(GitHubMarkdown MD) =>
-            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-large.png");
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-banner-large.png");
 
         /// <summary>
         /// Override this value to display a small banner image on top of sub-documents
         /// </summary>
         protected override string BannerImage_Small(GitHubMarkdown MD) =>
-            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-small.png");
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-banner-small.png");
+
+        /// <summary>
+        /// Override this value to display a large image in the upper right corner of the main document
+        /// </summary>
+        protected override string LogoImage_Large(GitHubMarkdown MD) =>
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-logo-large.png");
+
+        /// <summary>
+        /// Override this value to display a small image in the upper right corner of sub-documents
+        /// </summary>
+        protected override string LogoImage_Small(GitHubMarkdown MD) =>
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LUnit)}-logo-small.png");
         }
     }

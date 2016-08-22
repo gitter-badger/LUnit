@@ -1,4 +1,5 @@
-![](LUnit/Content/LCore-banner-large.png "")
+![](LUnit/Content/LUnit-banner-large.png "")
+<img style="float: right;" src="LUnit/Content/LUnit-logo-large.png">
 Home
 ##Installation Instructions
 ```cs

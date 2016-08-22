@@ -28,39 +28,6 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected abstract Assembly[] DocumentAssemblies { get; }
 
-
-        /// <summary>
-        /// Override this value to display a large image on top ofthe main document
-        /// </summary>
-        protected virtual string BannerImage_Large(GitHubMarkdown MD) => "";
-
-        /// <summary>
-        /// Override this value to display a small banner image on top of sub-documents
-        /// </summary>
-        protected virtual string BannerImage_Small(GitHubMarkdown MD) => "";
-
-        /// <summary>
-        /// Override this value to display a large image in the upper right corner of the main document
-        /// </summary>
-        protected virtual string LogoImage_Large(GitHubMarkdown MD) => "";
-
-        /// <summary>
-        /// Override this value to display a small image in the upper right corner of sub-documents
-        /// </summary>
-        protected virtual string LogoImage_Small(GitHubMarkdown MD) => "";
-
-
-        /// <summary>
-        /// Override this value to indicate installation instructions.
-        /// </summary>
-        protected virtual string HowToInstall_Text(GitHubMarkdown MD) => "";
-
-        /// <summary>
-        /// Override this value to indicate installation instructions.
-        /// This text will be formatted as C# code below <see cref="HowToInstall_Text"/>
-        /// </summary>
-        protected virtual string HowToInstall_Code(GitHubMarkdown MD) => "";
-
         #region Variables + 
 
         /// <summary>
@@ -470,6 +437,40 @@ namespace LCore.LUnit.Markdown
 
         #region Options +
 
+
+        /// <summary>
+        /// Override this value to display a large image on top ofthe main document
+        /// </summary>
+        protected virtual string BannerImage_Large(GitHubMarkdown MD) => "";
+
+        /// <summary>
+        /// Override this value to display a small banner image on top of sub-documents
+        /// </summary>
+        protected virtual string BannerImage_Small(GitHubMarkdown MD) => "";
+
+        /// <summary>
+        /// Override this value to display a large image in the upper right corner of the main document
+        /// </summary>
+        protected virtual string LogoImage_Large(GitHubMarkdown MD) => "";
+
+        /// <summary>
+        /// Override this value to display a small image in the upper right corner of sub-documents
+        /// </summary>
+        protected virtual string LogoImage_Small(GitHubMarkdown MD) => "";
+
+
+        /// <summary>
+        /// Override this value to indicate installation instructions.
+        /// </summary>
+        protected virtual string HowToInstall_Text(GitHubMarkdown MD) => "";
+
+        /// <summary>
+        /// Override this value to indicate installation instructions.
+        /// This text will be formatted as C# code below <see cref="HowToInstall_Text"/>
+        /// </summary>
+        protected virtual string HowToInstall_Code(GitHubMarkdown MD) => "";
+
+
         private void WriteFooter(GitHubMarkdown MD)
             {
             // TODO: Add custom copyright
@@ -547,7 +548,6 @@ namespace LCore.LUnit.Markdown
             $"{Member.GetAssembly().GetRootPath()}\\{this.MarkdownPath_Documentation}\\" +
             $"{Member.DeclaringType?.Name.CleanFileName()}_{Member.Name.CleanFileName()}.md";
 
-        // TODO: Add IExcludeFromDocumentation
         /// <summary>
         /// Determines if a Type should be included in documentation
         /// </summary>
@@ -555,7 +555,6 @@ namespace LCore.LUnit.Markdown
             !Type.HasAttribute<ExcludeFromCodeCoverageAttribute>(IncludeBaseClasses: true) &&
             !Type.HasAttribute<IExcludeFromMarkdownAttribute>();
 
-        // TODO: Add IExcludeFromDocumentation
         /// <summary>
         /// Determines if a Member should be included in documentation
         /// </summary>
@@ -580,6 +579,25 @@ namespace LCore.LUnit.Markdown
         /// Coverage Summary readme title, default is "Coverage Summary"
         /// </summary>
         protected virtual string MarkdownTitle_CoverageSummary => "Coverage Summary";
+
+        protected virtual int[] ColorThresholds => new[] { 30, 50, 70, 100 };
+
+        protected virtual GitHubMarkdown.BadgeColor GetColorByPercentage(int Percentage)
+            {
+            if (Percentage < this.ColorThresholds[0])
+                return GitHubMarkdown.BadgeColor.Red;
+            if (Percentage < this.ColorThresholds[1])
+                return GitHubMarkdown.BadgeColor.Yellow;
+            if (Percentage < this.ColorThresholds[2])
+                return GitHubMarkdown.BadgeColor.YellowGreen;
+            if (Percentage < this.ColorThresholds[3])
+                return GitHubMarkdown.BadgeColor.Green;
+            if (Percentage == this.ColorThresholds[3])
+                return GitHubMarkdown.BadgeColor.BrightGreen;
+
+            return GitHubMarkdown.BadgeColor.LightGrey;
+            }
+
 
         /// <summary>
         /// Override this value to disable LUnit Unit test coverage tracking by Trait.

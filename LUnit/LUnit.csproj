@@ -111,6 +111,8 @@
     <Content Include="Content\LUnit-banner.pdn">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\LUnit-logo-large.png" />
+    <Content Include="Content\LUnit-logo-small.png" />
     <None Include="LUnit.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>

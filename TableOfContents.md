@@ -1,4 +1,5 @@
-![](LUnit/Content/LCore-banner-small.png "")
+![](LUnit/Content/LUnit-banner-small.png "")
+[<img style="float: right;" src="LUnit/Content/LUnit-logo-small.png">](README.md)
 ###Table of Contents
  - [Home](README.md)
  - [Coverage Summary](CoverageSummary.md)
