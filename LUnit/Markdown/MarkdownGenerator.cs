@@ -372,11 +372,12 @@ namespace LCore.LUnit.Markdown
                             ? GitHubMarkdown.BadgeColor.BrightGreen
                             : GitHubMarkdown.BadgeColor.LightGrey));
 
-                Out.Add(MD.Link(SourcePath != null ? MD.GetRelativePath(SourcePath) : "",
-                    MD.Badge("Source code", string.IsNullOrEmpty(SourcePath) ? "Available" : "Unavailable",
-                        string.IsNullOrEmpty(SourcePath)
-                            ? GitHubMarkdown.BadgeColor.Red
-                            : GitHubMarkdown.BadgeColor.BrightGreen)));
+                if (SourcePath == null)
+                    Out.Add(MD.Badge("Source code", "Unavailable", GitHubMarkdown.BadgeColor.Red));
+                else
+                    Out.Add(MD.Link(MD.GetRelativePath(SourcePath),
+                        MD.Badge("Source code", "Available", GitHubMarkdown.BadgeColor.BrightGreen)));
+
                 // TODO: Count assertions by scanning test code '.should' 'assert'
 
                 // TODO: Add Test Status: Passing / Failing / Untested

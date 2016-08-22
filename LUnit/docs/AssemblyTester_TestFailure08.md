@@ -2,7 +2,7 @@
 #TestFailure08
 ####InstanceMethod
 
-![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png) ![Documented No](http://b.repl.ca/v1/Documented-No-red.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-red.png)]
+![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png) ![Documented No](http://b.repl.ca/v1/Documented-No-red.png) ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png) ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png) ![Source code Unavailable](http://b.repl.ca/v1/Source%20code-Unavailable-red.png)
 
 ######public void TestFailure08();
 ######Summary
