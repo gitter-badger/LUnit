@@ -407,7 +407,7 @@ namespace LCore.LUnit.Markdown
                 return $"![{ReferenceText}]({Url} \"\")";
                 }
 
-            return $"<img align=\"{Align.ToString().ToLower()};\" src=\"{Url}\">";
+            return $"<img align=\"{Align.ToString().ToLower()}\" src=\"{Url}\">";
             }
 
         /// <summary>

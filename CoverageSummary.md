@@ -1,5 +1,5 @@
 ![](LUnit/Content/LUnit-banner-small.png "")
-[<img align="right;" src="LUnit/Content/LUnit-logo-small.png">](README.md)
+[<img align="right" src="LUnit/Content/LUnit-logo-small.png">](README.md)
 #Coverage Summary
 
 [Home](README.md) | [Table of Contents](TableOfContents.md) | 

@@ -1,5 +1,5 @@
 ![](../Content/LUnit-banner-small.png "")
-[<img align="right;" src="../Content/LUnit-logo-small.png">](../../README.md)
+[<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](Traits.md)
 ###Traits
 #TargetMember
