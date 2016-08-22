@@ -16,12 +16,26 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected override Assembly[] DocumentAssemblies => new[] { Assembly.GetAssembly(typeof(LUnit)) };
 
+        /// <summary>
+        /// Override this value to indicate installation instructions.
+        /// </summary>
         protected override string HowToInstall_Text(GitHubMarkdown MD) => $"Add {nameof(LUnit)} as a nuget package:";
+
+        /// <summary>
+        /// Override this value to indicate installation instructions.
+        /// This text will be formatted as C# code below <see cref="MarkdownGenerator.HowToInstall_Text"/>
+        /// </summary>
         protected override string HowToInstall_Code(GitHubMarkdown MD) => $"nuget install-package {nameof(LUnit)}";
 
+        /// <summary>
+        /// Override this value to display a large image on top ofthe main document
+        /// </summary>
         protected override string BannerImage_Large(GitHubMarkdown MD) =>
             MD.Image(MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-large.png"));
 
+        /// <summary>
+        /// Override this value to display a small banner image on top of sub-documents
+        /// </summary>
         protected override string BannerImage_Small(GitHubMarkdown MD) =>
             MD.Image(MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-small.png"));
         }

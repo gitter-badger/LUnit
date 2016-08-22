@@ -454,6 +454,18 @@ namespace LCore.LUnit.Markdown
             return Out;
             }
 
+        /// <summary>
+        /// Gets a new markdown document with header added.
+        /// </summary>
+        protected GitHubMarkdown GetMarkdown(string Path, string Title)
+            {
+            var MD = new GitHubMarkdown(this, Path, Title);
+
+            this.WriteHeader(MD);
+
+            return MD;
+            }
+
         #endregion
 
         #region Options +
@@ -584,14 +596,6 @@ namespace LCore.LUnit.Markdown
 
         #region Private Methods +
 
-        private GitHubMarkdown GetMarkdown(string Path, string Title)
-            {
-            var MD = new GitHubMarkdown(this, Path, Title);
-
-            this.WriteHeader(MD);
-
-            return MD;
-            }
 
         private void Load(Assembly Assembly)
             {

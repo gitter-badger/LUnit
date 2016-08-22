@@ -1610,6 +1610,27 @@
             Override this member to specify the assemblies to generae documentation.
             </summary>
         </member>
+        <member name="M:LCore.LUnit.Markdown.LUnitMarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to indicate installation instructions.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.LUnitMarkdownGenerator.HowToInstall_Code(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to indicate installation instructions.
+            This text will be formatted as C# code below <see cref="M:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text(LCore.LUnit.Markdown.GitHubMarkdown)"/>
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.LUnitMarkdownGenerator.BannerImage_Large(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a large image on top ofthe main document
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.LUnitMarkdownGenerator.BannerImage_Small(LCore.LUnit.Markdown.GitHubMarkdown)">
+            <summary>
+            Override this value to display a small banner image on top of sub-documents
+            </summary>
+        </member>
         <member name="T:LCore.LUnit.Markdown.MarkdownGenerator">
             <summary>
             Implement this class to generate code for your assemblies and projects
@@ -1737,6 +1758,11 @@
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetBadges(LCore.LUnit.Markdown.GitHubMarkdown,LCore.LUnit.MethodCoverage,LCore.Interfaces.ICodeComment)">
             <summary>
             Override this method to customize badges included in member generated markdown documents.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.GetMarkdown(System.String,System.String)">
+            <summary>
+            Gets a new markdown document with header added.
             </summary>
         </member>
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.GeneratedMarkdownRoot">
