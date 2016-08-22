@@ -1,6 +1,6 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[Up](AssertionExt.md)
+[<span class="glyphicon glyphicon-arrow-up"></span>](AssertionExt.md)
 ###AssertionExt
 #AssertFails
 

@@ -1,7 +1,7 @@
 ![](LUnit/Content/LUnit-banner-large.png "")
 <img align="right" src="LUnit/Content/LUnit-logo-small.png">
-Home
-##Installation Instructions
+##Home
+###Installation Instructions
 ```cs
 nuget install-package LUnit
 ```

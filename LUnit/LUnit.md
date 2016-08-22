@@ -1,7 +1,7 @@
 ![](Content/LUnit-banner-small.png "")
 [<img align="right" src="Content/LUnit-logo-small.png">](../README.md)
-[Home](../README.md)
-###LUnit
+[<span class="glyphicon glyphicon-home"></span>](../README.md)
+##LUnit
  - [AssemblyTester](docs/AssemblyTester.md)
  - [MultiTestReporter](docs/MultiTestReporter.md)
  - [XUnitOutputTester](docs/XUnitOutputTester.md)

@@ -66,11 +66,11 @@ namespace LCore.LUnit.Markdown
             {
             var MD = this.GetMarkdown(this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
 
-            MD.Line(this.MarkdownTitle_MainReadme);
+            MD.Header(this.MarkdownTitle_MainReadme, 2);
 
             if (!string.IsNullOrEmpty(this.HowToInstall_Code(MD)))
                 {
-                MD.Header("Installation Instructions", Size: 2);
+                MD.Header("Installation Instructions", Size: 3);
                 MD.Code(this.HowToInstall_Code(MD).Split("\r\n"));
                 }
 
@@ -91,7 +91,7 @@ namespace LCore.LUnit.Markdown
             {
             var MD = this.GetMarkdown(this.MarkdownPath_TableOfContents, this.MarkdownTitle_TableOfContents);
 
-            MD.Header(this.MarkdownTitle_TableOfContents, Size: 3);
+            MD.Header(this.MarkdownTitle_TableOfContents, Size: 2);
 
             this.GetAllMarkdown().Each(Document =>
                 {
@@ -126,9 +126,9 @@ namespace LCore.LUnit.Markdown
             {
             var MD = this.GetMarkdown(this.MarkdownPath_Assembly(Assembly), Assembly.GetName().Name);
 
-            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Root), "Home"));
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Root), MD.Glyph(GlyphIcon.home)));
 
-            MD.Header($"{Assembly.GetName().Name}", Size: 3);
+            MD.Header($"{Assembly.GetName().Name}", Size: 2);
 
             // TODO add Assembly comments
 
@@ -154,7 +154,7 @@ namespace LCore.LUnit.Markdown
 
             var Comments = Type.GetComments();
 
-            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Assembly(Type.GetAssembly())), "Up"));
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Assembly(Type.GetAssembly())), MD.Glyph(GlyphIcon.arrow_up)));
 
             MD.Header($"{Type.Name}", Size: 3);
 
@@ -191,7 +191,7 @@ namespace LCore.LUnit.Markdown
 
             var MD = this.GetMarkdown(this.MarkdownPath_Member(Member), Member.Name);
 
-            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(Member.DeclaringType)), "Up"));
+            MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Type(Member.DeclaringType)), MD.Glyph(GlyphIcon.arrow_up)));
 
             MD.Header($"{Member.DeclaringType?.Name}", Size: 3);
 
