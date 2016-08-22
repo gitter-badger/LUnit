@@ -220,7 +220,7 @@ namespace LCore.LUnit
         /// Use the code provided here to automatically target missing methods.
         /// </summary>
         [Fact]
-        public void AssemblyMissingCoverage()
+        public void GenerateAssemblyTestStubs()
             {
             if (this.EnableCodeAutoGeneration)
                 {

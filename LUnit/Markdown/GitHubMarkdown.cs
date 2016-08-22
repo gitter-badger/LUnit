@@ -494,7 +494,7 @@ namespace LCore.LUnit.Markdown
 
             var Out = Uri2.MakeRelativeUri(Uri1);
 
-            return Out.AbsoluteUri;
+            return Out.ToString();
             }
 
         /// <summary>

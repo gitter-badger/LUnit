@@ -24,10 +24,10 @@ namespace LUnit_Tests.LCore.LUnit
         }
 
         [Fact]
-        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(AssemblyTester)+ "." + nameof(AssemblyTester.AssemblyMissingCoverage) + "()")]
-        public void AssemblyMissingCoverage()
+        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(AssemblyTester)+ "." + nameof(AssemblyTester.GenerateAssemblyTestStubs) + "()")]
+        public void GenerateAssemblyTestStubs()
         {
-            // TODO: Implement method test LCore.LUnit.AssemblyTester.AssemblyMissingCoverage
+            // TODO: Implement method test LCore.LUnit.AssemblyTester.GenerateAssemblyTestStubs
         }
 
         [Fact]

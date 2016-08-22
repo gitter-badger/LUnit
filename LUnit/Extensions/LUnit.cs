@@ -31,12 +31,12 @@ namespace LCore.LUnit
             {
             Method.GetParameters().Each((i, Parameter) =>
                 {
-                if (Parameters.HasIndex(i))
-                    {
-                    var Param = Parameters[i];
-                    FixObject(Method, Parameter.ParameterType, ref Param);
-                    Parameters[i] = Param;
-                    }
+                    if (Parameters.HasIndex(i))
+                        {
+                        var Param = Parameters[i];
+                        FixObject(Method, Parameter.ParameterType, ref Param);
+                        Parameters[i] = Param;
+                        }
                 });
             }
 
@@ -55,12 +55,12 @@ namespace LCore.LUnit
                     var Array = Obj as Array;
                     if (Array != null)
                         {
-                        Type[] Args = {Array.GetType().GetElementType()};
+                        Type[] Args = { Array.GetType().GetElementType() };
                         if (ObjectType == typeof(List<>).MakeGenericType(Args))
                             {
                             var ListType = typeof(List<>).MakeGenericType(Args);
 
-                            var NewList = (IList) ListType.New();
+                            var NewList = (IList)ListType.New();
                             Array.Each(Item => { NewList?.Add(Item); });
 
                             Obj = NewList;
@@ -68,29 +68,29 @@ namespace LCore.LUnit
                         }
                     else if (Obj is string && ObjectType.IsSubclassOf(typeof(Delegate)))
                         {
-                        Obj = GetMethodDelegate(SourceMethod, ObjectType, (string) Obj);
+                        Obj = GetMethodDelegate(SourceMethod, ObjectType, (string)Obj);
                         }
                     // ReSharper disable once ConditionIsAlwaysTrueOrFalse
                     else if (Obj is object[] && !ObjectType.IsType(typeof(object[])))
-                        // ReSharper disable HeuristicUnreachableCode
+                    // ReSharper disable HeuristicUnreachableCode
                         {
-                        Type[] Types = ((object[]) Obj).GetTypes();
+                        Type[] Types = ((object[])Obj).GetTypes();
                         ConstructorInfo[] ObjectConstructors = ObjectType.GetConstructors();
                         var Const = ObjectConstructors.First(Constructor =>
                             {
-                            ParameterInfo[] Params = Constructor.GetParameters();
-                            return Params.Length == Types.Length && Params.All((i2, Param) => Types[i2].IsType(Param.ParameterType));
+                                ParameterInfo[] Params = Constructor.GetParameters();
+                                return Params.Length == Types.Length && Params.All((i2, Param) => Types[i2].IsType(Param.ParameterType));
                             });
 
                         if (Const != null)
                             {
-                            Obj = Const.Invoke((object[]) Obj);
+                            Obj = Const.Invoke((object[])Obj);
                             }
                         }
                     // ReSharper restore HeuristicUnreachableCode
                     else if (Obj is IConvertible && ObjectType == typeof(decimal))
                         {
-                        Obj = ((IConvertible) Obj).ConvertTo<decimal>();
+                        Obj = ((IConvertible)Obj).ConvertTo<decimal>();
                         }
                     }
                 }
@@ -172,20 +172,20 @@ namespace LCore.LUnit
             var Info = ValueLambda as PropertyInfo;
             if (Info != null)
                 {
-                Out = Info.GetGetMethod().Invoke(obj: null, parameters: new object[] {});
+                Out = Info.GetGetMethod().Invoke(obj: null, parameters: new object[] { });
                 }
             else if (ValueLambda is FieldInfo)
                 {
-                Out = ((FieldInfo) ValueLambda).GetValue(obj: null);
+                Out = ((FieldInfo)ValueLambda).GetValue(obj: null);
                 }
             else if (ValueLambda is MethodInfo)
                 {
-                ParameterInfo[] Params = ((MethodInfo) ValueLambda).GetParameters();
+                ParameterInfo[] Params = ((MethodInfo)ValueLambda).GetParameters();
                 if (Params.Length > 0)
                     {
                     throw new Exception($"Unknown member with arguments: {ValueLambda.GetType().FullName}");
                     }
-                Out = ((MethodInfo) ValueLambda).Invoke(obj: null, parameters: new object[] {});
+                Out = ((MethodInfo)ValueLambda).Invoke(obj: null, parameters: new object[] { });
                 }
             else
                 {
@@ -199,13 +199,13 @@ namespace LCore.LUnit
         /// </summary>
         public static Func<bool> GetCheckMethod(MethodInfo SourceMethod, string MethodName)
             {
-            var Result = GetMethodDelegate(SourceMethod, ObjectType: null, MethodName: MethodName) ;
+            var Result = GetMethodDelegate(SourceMethod, ObjectType: null, MethodName: MethodName);
             if (Result == null)
                 throw new Exception($"Could not find Method: {MethodName}");
 
             if (Result.GetType().IsType(typeof(Func<bool>)))
                 {
-                return (Func<bool>) Result;
+                return (Func<bool>)Result;
                 }
             throw new Exception($"Unknown type: {Result.GetType()}");
             }
@@ -223,12 +223,12 @@ namespace LCore.LUnit
             if (Result.GetType().IsType(typeof(Func<,>)))
                 {
                 Type[] Args = Result.GetType().GetGenericArguments();
-                Type[] CastArgs = {typeof(object), typeof(bool)};
+                Type[] CastArgs = { typeof(object), typeof(bool) };
 
                 var CastMethod = typeof(LogicExt).GetMethod("Cast", Args.Append(CastArgs));
-                var Out = CastMethod.Invoke(obj: null, parameters: new[] {Result});
+                var Out = CastMethod.Invoke(obj: null, parameters: new[] { Result });
 
-                return (Func<object, bool>) Out;
+                return (Func<object, bool>)Out;
                 }
             throw new Exception($"Unknown type: {Result.GetType()}");
             }
@@ -306,6 +306,12 @@ namespace LCore.LUnit
             /// The Method name will be inserted into argument {0}.
             /// </summary>
             public const string Member = "{0}";
+            }
+
+        public static class Urls
+            {
+            public const string GitHubRepository = "https://github.com/CodeSingularity/LUnit";
+            public const string GitHubRepository_LCore = "https://github.com/CodeSingularity/LCore";
             }
         }
 

@@ -6,6 +6,9 @@ using System.IO;
 using System.Reflection;
 using JetBrains.Annotations;
 using LCore.Extensions;
+using LCore.Interfaces;
+
+// ReSharper disable VirtualMemberNeverOverriden.Global
 
 namespace LCore.LUnit.Markdown
     {
@@ -54,7 +57,52 @@ namespace LCore.LUnit.Markdown
         #endregion
 
         #region Generators + 
-        // TODO Generate assembly markdown
+
+        // TODO Generate root markdown
+        /// <summary>
+        /// Generates root markdown document (front page)
+        /// </summary>
+        protected virtual GitHubMarkdown GenerateRootMarkdown()
+            {
+            var MD = new GitHubMarkdown(this, this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
+
+            return MD;
+            }
+
+        /// <summary>
+        /// Generates table of contents document
+        /// </summary>
+        protected virtual GitHubMarkdown GenerateTableOfContentsMarkdown()
+            {
+            var MD = new GitHubMarkdown(this, this.MarkdownPath_TableOfContents, this.MarkdownTitle_TableOfContents);
+
+            MD.Header(this.MarkdownTitle_TableOfContents, 3);
+
+            this.GetAllMarkdown().Each(Document =>
+                {
+                    MD.Line(MD.Link(MD.GetRelativePath(Document.FilePath), Document.Title));
+                });
+
+            this.WriteFooter(MD);
+
+            return MD;
+            }
+
+        // TODO Generate summary markdown
+        /// <summary>
+        /// Generates coverage summary document
+        /// </summary>
+        protected virtual GitHubMarkdown GenerateCoverageSummaryMarkdown()
+            {
+            var MD = new GitHubMarkdown(this, this.MarkdownPath_CoverageSummary, this.MarkdownTitle_CoverageSummary);
+
+            MD.Header(this.MarkdownTitle_CoverageSummary);
+
+            this.WriteFooter(MD);
+
+            return MD;
+            }
+
         /// <summary>
         /// Generates markdown for an Assembly
         /// </summary>
@@ -64,10 +112,17 @@ namespace LCore.LUnit.Markdown
 
             MD.Header($"{Assembly.GetName().Name}", Size: 3);
 
+            // TODO add Assembly comments
+
+            // TODO add Static classes
+
+            // TODO add Object classes
+
+            this.WriteFooter(MD);
+
             return MD;
             }
 
-        // TODO Generate type markdown
         /// <summary>
         /// Generates markdown for a Type
         /// </summary>
@@ -76,6 +131,14 @@ namespace LCore.LUnit.Markdown
             var MD = new GitHubMarkdown(this, this.MarkdownPath_Type(Type), Type.Name);
 
             MD.Header($"{Type.Name}", Size: 3);
+
+            // TODO view source
+
+            // TODO Type comments
+
+            // TODO Link to all method pages
+
+            this.WriteFooter(MD);
 
             return MD;
             }
@@ -120,7 +183,7 @@ namespace LCore.LUnit.Markdown
                 List<string> Badges = this.GetBadges(MD, Coverage, Comments);
 
                 MD.Line("");
-                MD.Line(Badges.JoinLines(" | "));
+                MD.Line(Badges.JoinLines(" "));
                 MD.Line("");
 
                 MD.Header($"public{StaticLower} {ReturnType} {Member.Name}({Parameters});", Size: 6);
@@ -141,9 +204,9 @@ namespace LCore.LUnit.Markdown
                     MD.Line(MD.Highlight("__Add parameter type link__"));
 
                     Method.GetParameters().Each((ParamIndex, Param) =>
-                        {
-                            Table.Add(new[]
-                                {
+                    {
+                        Table.Add(new[]
+                            {
                             Param.Name,
                             Param.IsOptional
                                 ? "Yes"
@@ -151,7 +214,7 @@ namespace LCore.LUnit.Markdown
                             Param.ParameterType.GetGenericName(),
                             Comments?.Parameters.GetAt(ParamIndex)?.Obj2
                             });
-                        });
+                    });
 
                     MD.Table(Table);
                     }
@@ -160,6 +223,7 @@ namespace LCore.LUnit.Markdown
 
                 // TODO: Add return type link
                 MD.Line(MD.Highlight("__Add return type link__"));
+
                 MD.Header(Method.ReturnType == typeof(void)
                     ? "void"
                     : Method.ReturnType.GetGenericName(), Size: 6);
@@ -174,57 +238,49 @@ namespace LCore.LUnit.Markdown
 
                 // TODO: Add source link
                 MD.Line(MD.Highlight("source link"));
+
                 // TODO: Add test coverage link
                 MD.Line(MD.Highlight("coverage link"));
+
                 // TODO: Add exception details
                 MD.Line(MD.Highlight("exception comments"));
+
                 // TODO: Add permission details
                 MD.Line(MD.Highlight("permission comments"));
-                // TODO: Add root link
-                MD.Line(MD.Highlight("root link"));
-                // TODO: Add footer [this markdown was auto-generated by LCore]
-                MD.Line(MD.Highlight("footer"));
+
                 }
 
-            return MD;
-            }
-
-        // TODO Generate root markdown
-        /// <summary>
-        /// Generates root markdown document (front page)
-        /// </summary>
-        protected virtual GitHubMarkdown GenerateRootMarkdown()
-            {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
+            this.WriteFooter(MD);
 
             return MD;
             }
 
-        // TODO Generate table of contents markdown
-        /// <summary>
-        /// Generates table of contents document
-        /// </summary>
-        protected virtual GitHubMarkdown GenerateTableOfContentsMarkdown()
+
+        #endregion
+
+        #region Helpers +
+
+
+        protected virtual void WriteFooter(GitHubMarkdown MD)
             {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_TableOfContents, this.MarkdownTitle_TableOfContents);
+            MD.Line(new string[]
+                {
+                this.HomeLink(MD),
+                this.TableOfContentsLink(MD)
+                }.JoinLines(" "));
 
-            this.Markdown_Other.Each(OtherMarkdown => { });
-            this.Markdown_Assembly.Each(AssemblyMarkdown => { });
-            this.Markdown_Type.Each(TypeMarkdown => { });
-            this.Markdown_Member.Each(MemberMarkdown => { });
-
-            return MD;
+            MD.Line($"This markdown was generated by {MD.Link(LUnit.Urls.GitHubRepository, nameof(LUnit))}, " +
+                    $"powered by {MD.Link(LUnit.Urls.GitHubRepository_LCore, nameof(LCore))}");
             }
 
-        // TODO Generate summary markdown
-        /// <summary>
-        /// Generates coverage summary document
-        /// </summary>
-        protected virtual GitHubMarkdown GenerateCoverageSummaryMarkdown()
+        protected virtual string TableOfContentsLink(GitHubMarkdown MD)
             {
-            var MD = new GitHubMarkdown(this, this.MarkdownPath_Root, this.MarkdownTitle_MainReadme);
+            return MD.Link(MD.GetRelativePath(this.MarkdownPath_TableOfContents), this.MarkdownTitle_TableOfContents);
+            }
 
-            return MD;
+        protected virtual string HomeLink(GitHubMarkdown MD)
+            {
+            return MD.Link(MD.GetRelativePath(this.MarkdownPath_Root), this.MarkdownTitle_MainReadme);
             }
 
         /// <summary>
@@ -239,7 +295,7 @@ namespace LCore.LUnit.Markdown
         /// Override this method to customize badges included in member generated markdown documents.
         /// </summary>
         protected virtual List<string> GetBadges([NotNull] GitHubMarkdown MD, [CanBeNull] MethodCoverage Coverage,
-            [CanBeNull] Interfaces.ICodeComment Comments)
+            [CanBeNull] ICodeComment Comments)
             {
             return new List<string>
                 {
@@ -248,17 +304,16 @@ namespace LCore.LUnit.Markdown
                 MD.Badge("Unit Tested", Coverage?.MemberTraitFound == true ? "Yes" : "No",
                     Coverage?.MemberTraitFound == true
                         ? GitHubMarkdown.BadgeColor.BrightGreen
-                        : GitHubMarkdown.BadgeColor.Grey),
+                        : GitHubMarkdown.BadgeColor.LightGrey),
                 MD.Badge("Attribute Tests", $"{Coverage?.AttributeCoverage ?? 0}",
                     (Coverage?.AttributeCoverage ?? 0) > 0u
                         ? GitHubMarkdown.BadgeColor.BrightGreen
-                        : GitHubMarkdown.BadgeColor.Grey)
+                        : GitHubMarkdown.BadgeColor.LightGrey)
                 // TODO: Count assertions by scanning test code '.should' 'assert'
                 // TODO: Add Test Status: Passing / Failing / Untested
 
                 };
             }
-
 
         #endregion
 
