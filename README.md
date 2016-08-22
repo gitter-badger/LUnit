@@ -1,3 +1,4 @@
+!(LUnit/Content/LCore-banner-large.png)
 Home
 ##Installation Instructions
 ```cs

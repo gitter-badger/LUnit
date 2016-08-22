@@ -1,3 +1,4 @@
+!(LUnit/Content/LCore-banner-small.png)
 ###Table of Contents
  - [Home](README.md)
  - [Coverage Summary](CoverageSummary.md)

@@ -1,3 +1,4 @@
+!(../Content/LCore-banner-small.png)
 [Up](MethodCoverage.md)
 ###MethodCoverage
 #TestMember_Member

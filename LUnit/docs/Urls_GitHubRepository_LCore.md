@@ -1,3 +1,4 @@
+!(../Content/LCore-banner-small.png)
 [Up](Urls.md)
 ###Urls
 #GitHubRepository_LCore

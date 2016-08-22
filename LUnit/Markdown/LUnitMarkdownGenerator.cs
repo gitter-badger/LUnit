@@ -31,12 +31,12 @@ namespace LCore.LUnit.Markdown
         /// Override this value to display a large image on top ofthe main document
         /// </summary>
         protected override string BannerImage_Large(GitHubMarkdown MD) =>
-            MD.Image(MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-large.png"));
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-large.png");
 
         /// <summary>
         /// Override this value to display a small banner image on top of sub-documents
         /// </summary>
         protected override string BannerImage_Small(GitHubMarkdown MD) =>
-            MD.Image(MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-small.png"));
+            MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\LCore-banner-small.png");
         }
     }

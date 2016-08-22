@@ -1,3 +1,4 @@
+!(../Content/LCore-banner-small.png)
 [Up](MultiTestReporter.md)
 ###MultiTestReporter
 #TestFailure06

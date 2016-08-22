@@ -1,3 +1,4 @@
+!(../Content/LCore-banner-small.png)
 [Up](LUnit.md)
 ###LUnit
 #GetCheckMethod

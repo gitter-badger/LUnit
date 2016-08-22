@@ -345,11 +345,11 @@ namespace LCore.LUnit.Markdown
 
             if (IsMain && !string.IsNullOrEmpty(this.BannerImage_Large(MD)))
                 {
-                MD.Image(this.BannerImage_Large(MD));
+                MD.Line(MD.Image(this.BannerImage_Large(MD)));
                 }
             else if (!string.IsNullOrEmpty(this.BannerImage_Small(MD)))
                 {
-                MD.Image(this.BannerImage_Small(MD));
+                MD.Line(MD.Image(this.BannerImage_Small(MD)));
                 }
 
             if (IsMain && !string.IsNullOrEmpty(this.LogoImage_Large(MD)))

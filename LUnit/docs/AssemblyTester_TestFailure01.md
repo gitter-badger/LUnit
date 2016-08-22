@@ -1,3 +1,4 @@
+!(../Content/LCore-banner-small.png)
 [Up](AssemblyTester.md)
 ###AssemblyTester
 #TestFailure01
