@@ -19263,6 +19263,11 @@
             </summary>
             <returns>The duration in milliseconds</returns>
         </member>
+        <member name="T:LCore.Octicon">
+            <summary>
+            Enum of all Octicons supported by GitHub
+            </summary>
+        </member>
         <member name="M:LCore.Tasks.Task.RunTask">
             <exception cref="T:System.Threading.ThreadStateException">The thread has already been started. </exception>
             <exception cref="T:System.OutOfMemoryException">There is not enough memory available to start this thread. </exception>

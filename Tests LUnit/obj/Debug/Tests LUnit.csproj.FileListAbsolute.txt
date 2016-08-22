@@ -142,3 +142,4 @@ D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LCore-banner-small.png
 D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LUnit banner original.png
 D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LUnit-banner-large.png
 D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LUnit-banner-small.png
+D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\LDoc.dll
