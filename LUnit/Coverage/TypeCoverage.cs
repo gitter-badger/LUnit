@@ -63,7 +63,7 @@ namespace LCore.LUnit
 
             if (!Stub.IsEmpty())
                 {
-                string GeneratedCodeFolderPath = Path.GetDirectoryName(GeneratedCodeFullPath);
+                string GeneratedCodeFolderPath = Path.GetFullPath(GeneratedCodeFullPath);
 
                 GeneratedCodeFolderPath.EnsurePathExists();
 
