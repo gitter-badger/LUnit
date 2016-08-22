@@ -308,9 +308,19 @@ namespace LCore.LUnit
             public const string Member = "{0}";
             }
 
+        /// <summary>
+        /// Constant Urls
+        /// </summary>
         public static class Urls
             {
-            public const string GitHubRepository = "https://github.com/CodeSingularity/LUnit";
+            /// <summary>
+            /// LUnit GitHub repo URL
+            /// </summary>
+            public const string GitHubRepository_LUnit = "https://github.com/CodeSingularity/LUnit";
+
+            /// <summary>
+            /// LCore GitHub repo URL
+            /// </summary>
             public const string GitHubRepository_LCore = "https://github.com/CodeSingularity/LCore";
             }
         }
