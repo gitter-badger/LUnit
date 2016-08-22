@@ -3,6 +3,10 @@
 
             Provides assertions in the 'Assert___' style.
             
+[ - AssertSucceedes](AssertionExt_AssertSucceedes.md)
+[ - AssertFails](AssertionExt_AssertFails.md)
+[ - AssertResult](AssertionExt_AssertResult.md)
+[ - AssertSource](AssertionExt_AssertSource.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

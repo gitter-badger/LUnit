@@ -3,6 +3,32 @@
 
             Helper class for generating GitHub markdown documents.
             
+[ - GetMarkdownLines](GitHubMarkdown_GetMarkdownLines.md)
+[ - BlankLine](GitHubMarkdown_BlankLine.md)
+[ - HorizontalRule](GitHubMarkdown_HorizontalRule.md)
+[ - Header](GitHubMarkdown_Header.md)
+[ - HeaderUnderline](GitHubMarkdown_HeaderUnderline.md)
+[ - OrderedList](GitHubMarkdown_OrderedList.md)
+[ - UnorderedList](GitHubMarkdown_UnorderedList.md)
+[ - Code](GitHubMarkdown_Code.md)
+[ - Table](GitHubMarkdown_Table.md)
+[ - BlockQuote](GitHubMarkdown_BlockQuote.md)
+[ - Lines](GitHubMarkdown_Lines.md)
+[ - Line](GitHubMarkdown_Line.md)
+[ - Strikethrough](GitHubMarkdown_Strikethrough.md)
+[ - Highlight](GitHubMarkdown_Highlight.md)
+[ - Link](GitHubMarkdown_Link.md)
+[ - Image](GitHubMarkdown_Image.md)
+[ - InlineCode](GitHubMarkdown_InlineCode.md)
+[ - Italic](GitHubMarkdown_Italic.md)
+[ - Bold](GitHubMarkdown_Bold.md)
+[ - Glyph](GitHubMarkdown_Glyph.md)
+[ - Badge](GitHubMarkdown_Badge.md)
+[ - GetRelativePath](GitHubMarkdown_GetRelativePath.md)
+[ - Gravatar](GitHubMarkdown_Gravatar.md)
+[ - FilePath](GitHubMarkdown_FilePath.md)
+[ - Title](GitHubMarkdown_Title.md)
+[ - BadgeColor](GitHubMarkdown_BadgeColor.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

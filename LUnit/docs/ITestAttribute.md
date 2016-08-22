@@ -4,6 +4,8 @@
             Interface denotes a test attribute. 
             Used to determine which methods are tested and untested.
             
+[ - RunTest](ITestAttribute_RunTest.md)
+[ - GenericTypes](ITestAttribute_GenericTypes.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

@@ -167,9 +167,9 @@ namespace LCore.LUnit.Markdown
                 MD.Line(Comments.Summary);
                 }
 
-            this.Markdown_Member.Select(Member => Member.Key.First()?.DeclaringType == Type)
-                .Each(Member => MD.Link(MD.GetRelativePath(this.MarkdownPath_Member(Member.Key.First())),
-                    $" - {Member.Key.First()?.Name}"));
+            this.Markdown_Member.Select(Member => Member.Key.First()?.DeclaringType?.Name == Type.Name)
+                .Each(Member => MD.Line(MD.Link(MD.GetRelativePath(this.MarkdownPath_Member(Member.Key.First())),
+                    $" - {Member.Key.First()?.Name}")));
 
             this.WriteFooter(MD);
 

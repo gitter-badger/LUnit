@@ -3,6 +3,15 @@
 
             Provides assertions in the fluent 'Should____' style.
             
+[ - ShouldSucceed](FluentExt_ShouldSucceed.md)
+[ - ShouldFail](FluentExt_ShouldFail.md)
+[ - ShouldBe](FluentExt_ShouldBe.md)
+[ - HaveAttribute](FluentExt_HaveAttribute.md)
+[ - NotHaveAttribute](FluentExt_NotHaveAttribute.md)
+[ - ShouldBeTrue](FluentExt_ShouldBeTrue.md)
+[ - ShouldBeFalse](FluentExt_ShouldBeFalse.md)
+[ - ShouldBeNull](FluentExt_ShouldBeNull.md)
+[ - ShouldNotBeNull](FluentExt_ShouldNotBeNull.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

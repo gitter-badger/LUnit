@@ -3,6 +3,16 @@
 
             Pre-defined Buckler badge colors (http://b.repl.ca/)
             
+[ - value__](BadgeColor_value__.md)
+[ - BrightGreen](BadgeColor_BrightGreen.md)
+[ - Green](BadgeColor_Green.md)
+[ - YellowGreen](BadgeColor_YellowGreen.md)
+[ - Yellow](BadgeColor_Yellow.md)
+[ - Orange](BadgeColor_Orange.md)
+[ - Red](BadgeColor_Red.md)
+[ - Blue](BadgeColor_Blue.md)
+[ - LightGrey](BadgeColor_LightGrey.md)
+[ - Grey](BadgeColor_Grey.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

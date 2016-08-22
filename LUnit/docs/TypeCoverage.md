@@ -4,6 +4,13 @@
             Represents Type coverage information, given a Type
             to be tested, along with any Test Assemblies covering it.
             
+[ - GenerateTestStubs](TypeCoverage_GenerateTestStubs.md)
+[ - GetTestStub](TypeCoverage_GetTestStub.md)
+[ - CoveringType](TypeCoverage_CoveringType.md)
+[ - CoveragePercent](TypeCoverage_CoveragePercent.md)
+[ - MemberCoverage](TypeCoverage_MemberCoverage.md)
+[ - TestMember_Namespace](TypeCoverage_TestMember_Namespace.md)
+[ - TestMember_Class](TypeCoverage_TestMember_Class.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 

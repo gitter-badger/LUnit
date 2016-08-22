@@ -3,6 +3,18 @@
 
             Extend this class to perform Assembly-wide automatic tests and assertions.
             
+[ - AssemblyStatus](AssemblyTester_AssemblyStatus.md)
+[ - GenerateAssemblyTestStubs](AssemblyTester_GenerateAssemblyTestStubs.md)
+[ - TestFailure01](AssemblyTester_TestFailure01.md)
+[ - TestFailure02](AssemblyTester_TestFailure02.md)
+[ - TestFailure03](AssemblyTester_TestFailure03.md)
+[ - TestFailure04](AssemblyTester_TestFailure04.md)
+[ - TestFailure05](AssemblyTester_TestFailure05.md)
+[ - TestFailure06](AssemblyTester_TestFailure06.md)
+[ - TestFailure07](AssemblyTester_TestFailure07.md)
+[ - TestFailure08](AssemblyTester_TestFailure08.md)
+[ - TestFailure09](AssemblyTester_TestFailure09.md)
+[ - TestFailure10](AssemblyTester_TestFailure10.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 
