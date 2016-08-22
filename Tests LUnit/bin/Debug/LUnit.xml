@@ -1625,6 +1625,17 @@
             Override this member to specify the assemblies to generae documentation.
             </summary>
         </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text">
+            <summary>
+            Override this value to indicate installation instructions.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Code">
+            <summary>
+            Override this value to indicate installation instructions.
+            This text will be formatted as C# code below <see cref="P:LCore.LUnit.Markdown.MarkdownGenerator.HowToInstall_Text"/>
+            </summary>
+        </member>
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.Markdown_Other">
             <summary>
             Other titled markdown,
@@ -1780,6 +1791,18 @@
         <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.MarkdownTitle_CoverageSummary">
             <summary>
             Coverage Summary readme title, default is "Coverage Summary"
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.DocumentUnitCoverage">
+            <summary>
+            Override this value to disable LUnit Unit test coverage tracking by Trait.
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.Markdown.MarkdownGenerator.DocumentAttributeCoverage">
+            <summary>
+            Override this value to disable LUnit Attribute test coverage tracking.
+            Default is true.
             </summary>
         </member>
         <member name="M:LCore.LUnit.Markdown.MarkdownGenerator.Generate(System.Boolean)">

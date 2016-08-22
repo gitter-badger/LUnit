@@ -27,7 +27,16 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected abstract Assembly[] DocumentAssemblies { get; }
 
-        public virtual string HowToInstall => "";
+        /// <summary>
+        /// Override this value to indicate installation instructions.
+        /// </summary>
+        protected virtual string HowToInstall_Text => "";
+
+        /// <summary>
+        /// Override this value to indicate installation instructions.
+        /// This text will be formatted as C# code below <see cref="HowToInstall_Text"/>
+        /// </summary>
+        protected virtual string HowToInstall_Code => "";
 
         #region Variables + 
 
@@ -70,10 +79,10 @@ namespace LCore.LUnit.Markdown
 
             MD.Line(this.MarkdownTitle_MainReadme);
 
-            if (!string.IsNullOrEmpty(this.HowToInstall))
+            if (!string.IsNullOrEmpty(this.HowToInstall_Code))
                 {
-                MD.Header("Installation Instructions", 2);
-                MD.Code(this.HowToInstall.Split("\r\n"));
+                MD.Header("Installation Instructions", Size: 2);
+                MD.Code(this.HowToInstall_Code.Split("\r\n"));
                 }
 
             this.Markdown_Assembly.Each(Document =>
@@ -364,20 +373,20 @@ namespace LCore.LUnit.Markdown
                     MethodScope = $"Abstract {MethodScope}";
 
                 string TypeDescription = Member.IsStatic ? "Static Method" : $"{MethodScope} Method";
-                var TypeColor = GitHubMarkdown.BadgeColor.LightGrey;
+                const GitHubMarkdown.BadgeColor TypeColor = GitHubMarkdown.BadgeColor.LightGrey;
 
 
                 Out.Add(MD.Badge("Type", TypeDescription, TypeColor));
                 Out.Add(MD.Badge("Documented", Comments != null ? "Yes" : "No",
                     Comments != null ? GitHubMarkdown.BadgeColor.BrightGreen : GitHubMarkdown.BadgeColor.Red));
                 if (this.DocumentUnitCoverage)
-                    Out.Add(MD.Badge("Unit Tested", Coverage?.MemberTraitFound == true ? "Yes" : "No",
-                        Coverage?.MemberTraitFound == true
+                    Out.Add(MD.Badge("Unit Tested", Coverage.MemberTraitFound ? "Yes" : "No",
+                        Coverage.MemberTraitFound
                             ? GitHubMarkdown.BadgeColor.BrightGreen
                             : GitHubMarkdown.BadgeColor.LightGrey));
                 if (this.DocumentAttributeCoverage)
-                    Out.Add(MD.Badge("Attribute Tests", $"{Coverage?.AttributeCoverage ?? 0}",
-                        (Coverage?.AttributeCoverage ?? 0) > 0u
+                    Out.Add(MD.Badge("Attribute Tests", $"{Coverage.AttributeCoverage}",
+                        Coverage.AttributeCoverage > 0u
                             ? GitHubMarkdown.BadgeColor.BrightGreen
                             : GitHubMarkdown.BadgeColor.LightGrey));
 
@@ -509,8 +518,16 @@ namespace LCore.LUnit.Markdown
         /// </summary>
         protected virtual string MarkdownTitle_CoverageSummary => "Coverage Summary";
 
+        /// <summary>
+        /// Override this value to disable LUnit Unit test coverage tracking by Trait.
+        /// Default is true.
+        /// </summary>
         protected virtual bool DocumentUnitCoverage => true;
 
+        /// <summary>
+        /// Override this value to disable LUnit Attribute test coverage tracking.
+        /// Default is true.
+        /// </summary>
         protected virtual bool DocumentAttributeCoverage => true;
         #endregion
 

@@ -3,7 +3,6 @@
 
             Generates markdown for the LUnit project
             
-[ - HowToInstall](LUnitMarkdownGenerator_HowToInstall.md)
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
 
