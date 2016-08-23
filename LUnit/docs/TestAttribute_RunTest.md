@@ -5,7 +5,7 @@
 [View Source](../Attributes/TestAttribute.cs)
 #RunTest
 
-![Type Abstract Public Method](http://b.repl.ca/v1/Type-Abstract%20Public%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](../Attributes/TestAttribute.cs)
+![Type Abstract Public Method](http://b.repl.ca/v1/Type-Abstract%20Public%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](../Attributes/TestAttribute.cs) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Attributes/TestAttribute.cs)
 
 ####InstanceMethod
 ######public [void] RunTest([MethodInfo] Method);

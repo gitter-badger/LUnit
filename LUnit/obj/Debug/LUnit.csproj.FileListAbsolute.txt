@@ -126,7 +126,3 @@ D:\Dev\LUnit GitHub\LUnit\LUnit\bin\Debug\xunit.execution.desktop.xml
 D:\Dev\LUnit GitHub\LUnit\LUnit\obj\Debug\LUnit.csprojResolveAssemblyReference.cache
 D:\Dev\LUnit GitHub\LUnit\LUnit\obj\Debug\LUnit.dll
 D:\Dev\LUnit GitHub\LUnit\LUnit\obj\Debug\LUnit.pdb
-D:\Dev\LUnit GitHub\LUnit\LUnit\bin\Debug\Content\LUnit-banner.pdn
-D:\Dev\LUnit GitHub\LUnit\LUnit\bin\Debug\Content\LUnit banner original.png
-D:\Dev\LUnit GitHub\LUnit\LUnit\bin\Debug\Content\LUnit-banner-large.png
-D:\Dev\LUnit GitHub\LUnit\LUnit\bin\Debug\Content\LUnit-banner-small.png

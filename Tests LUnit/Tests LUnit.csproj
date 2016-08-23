@@ -60,7 +60,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="LDoc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LDoc.2016.8.23.1\lib\net451\LDoc.dll</HintPath>
+      <HintPath>..\packages\LDoc.2016.8.23.5\lib\net451\LDoc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -115,6 +115,9 @@
     <Content Include="Content\L Logo.png" />
     <Content Include="Content\LCore-banner-large.png" />
     <Content Include="Content\LCore-banner-small.png" />
+    <Content Include="Content\LDoc Banner Original.png" />
+    <Content Include="Content\LDoc-banner-large.png" />
+    <Content Include="Content\LDoc-banner-small.png" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

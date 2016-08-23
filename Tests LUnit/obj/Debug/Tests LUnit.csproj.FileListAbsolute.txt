@@ -134,8 +134,4 @@ D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\xunit.execution.desktop.xml
 D:\Dev\LUnit GitHub\LUnit\Tests LUnit\obj\Debug\Tests LUnit.csprojResolveAssemblyReference.cache
 D:\Dev\LUnit GitHub\LUnit\Tests LUnit\obj\Debug\Tests LUnit.dll
 D:\Dev\LUnit GitHub\LUnit\Tests LUnit\obj\Debug\Tests LUnit.pdb
-D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LUnit-banner.pdn
-D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LUnit banner original.png
-D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LUnit-banner-large.png
-D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\Content\LUnit-banner-small.png
 D:\Dev\LUnit GitHub\LUnit\Tests LUnit\bin\Debug\LDoc.dll

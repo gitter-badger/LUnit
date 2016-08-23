@@ -17,6 +17,10 @@ namespace LCore.LUnit.Tests
         /// </summary>
         protected override Assembly[] DocumentAssemblies => new[] { Assembly.GetAssembly(typeof(LUnit)) };
 
+        protected override void WriteIntro(GitHubMarkdown MD)
+            {
+            }
+
         /// <summary>
         /// Override this value to indicate installation instructions.
         /// </summary>
@@ -27,6 +31,7 @@ namespace LCore.LUnit.Tests
         /// This text will be formatted as C# code below <see cref="MarkdownGenerator.HowToInstall_Text"/>
         /// </summary>
         protected override string HowToInstall_Code(GitHubMarkdown MD) => $"Install-Package {nameof(LCore.LUnit)}";
+
 
         /// <summary>
         /// Override this value to display a large image on top ofthe main document
