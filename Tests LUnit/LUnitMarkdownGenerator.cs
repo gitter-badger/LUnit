@@ -26,7 +26,7 @@ namespace LCore.LUnit.Tests
         /// Override this value to indicate installation instructions.
         /// This text will be formatted as C# code below <see cref="MarkdownGenerator.HowToInstall_Text"/>
         /// </summary>
-        protected override string HowToInstall_Code(GitHubMarkdown MD) => $"nuget install-package {nameof(LCore.LUnit)}";
+        protected override string HowToInstall_Code(GitHubMarkdown MD) => $"Install-Package {nameof(LCore.LUnit)}";
 
         /// <summary>
         /// Override this value to display a large image on top ofthe main document
