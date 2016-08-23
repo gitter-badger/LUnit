@@ -35,58 +35,58 @@ namespace LCore.LUnit.Tests.Extensions
 
             //////
 
-            Attr = new TestBoundAttribute((short) 1, (short) 2);
+            Attr = new TestBoundAttribute((short)1, (short)2);
 
-            Attr.Minimum.ShouldBe((short) 1);
-            Attr.Maximum.ShouldBe((short) 2);
+            Attr.Minimum.ShouldBe((short)1);
+            Attr.Maximum.ShouldBe((short)2);
             Attr.ValueType.ShouldBe(typeof(short));
             //////
 
-            Attr = new TestBoundAttribute((ushort) 1, (ushort) 2);
+            Attr = new TestBoundAttribute((ushort)1, (ushort)2);
 
-            Attr.Minimum.ShouldBe((ushort) 1);
-            Attr.Maximum.ShouldBe((ushort) 2);
+            Attr.Minimum.ShouldBe((ushort)1);
+            Attr.Maximum.ShouldBe((ushort)2);
             Attr.ValueType.ShouldBe(typeof(ushort));
 
 
             //////
 
-            Attr = new TestBoundAttribute((byte) 1, (byte) 2);
+            Attr = new TestBoundAttribute((byte)1, (byte)2);
 
-            Attr.Minimum.ShouldBe((byte) 1);
-            Attr.Maximum.ShouldBe((byte) 2);
+            Attr.Minimum.ShouldBe((byte)1);
+            Attr.Maximum.ShouldBe((byte)2);
             Attr.ValueType.ShouldBe(typeof(byte));
 
             //////
 
-            Attr = new TestBoundAttribute((sbyte) 1, (sbyte) 2);
+            Attr = new TestBoundAttribute((sbyte)1, (sbyte)2);
 
-            Attr.Minimum.ShouldBe((sbyte) 1);
-            Attr.Maximum.ShouldBe((sbyte) 2);
+            Attr.Minimum.ShouldBe((sbyte)1);
+            Attr.Maximum.ShouldBe((sbyte)2);
             Attr.ValueType.ShouldBe(typeof(sbyte));
 
             //////
 
-            Attr = new TestBoundAttribute((decimal) 1, (decimal) 2);
+            Attr = new TestBoundAttribute((decimal)1, (decimal)2);
 
-            Attr.Minimum.ShouldBe((decimal) 1);
-            Attr.Maximum.ShouldBe((decimal) 2);
+            Attr.Minimum.ShouldBe((decimal)1);
+            Attr.Maximum.ShouldBe((decimal)2);
             Attr.ValueType.ShouldBe(typeof(decimal));
 
             //////
 
-            Attr = new TestBoundAttribute((double) 1, (double) 2);
+            Attr = new TestBoundAttribute((double)1, (double)2);
 
-            Attr.Minimum.ShouldBe((double) 1);
-            Attr.Maximum.ShouldBe((double) 2);
+            Attr.Minimum.ShouldBe((double)1);
+            Attr.Maximum.ShouldBe((double)2);
             Attr.ValueType.ShouldBe(typeof(double));
 
             //////
 
-            Attr = new TestBoundAttribute((float) 1, (float) 2);
+            Attr = new TestBoundAttribute((float)1, (float)2);
 
-            Attr.Minimum.ShouldBe((float) 1);
-            Attr.Maximum.ShouldBe((float) 2);
+            Attr.Minimum.ShouldBe((float)1);
+            Attr.Maximum.ShouldBe((float)2);
             Attr.ValueType.ShouldBe(typeof(float));
 
 

@@ -198,15 +198,12 @@ namespace LCore.LUnit
                 (uint)this.TestSucceedsAttributes.Count +
                 (uint)this.TestFailsAttributes.Count;
 
-            // Count assertions
             string SourceCode = this.CoveringMember.FindSourceCode();
             if (SourceCode != null)
                 {
                 SourceCode = SourceCode.ToLower();
                 this.AssertionsMade = SourceCode.Count(".assert") + SourceCode.Count(".should");
                 }
-
-            // TODO: add FindSourceCode
             }
         }
     }
