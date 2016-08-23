@@ -1,0 +1,1521 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LUnit</name>
+    </assembly>
+    <members>
+        <member name="T:LCore.LUnit.AssemblyTester">
+            <summary>
+            Extend this class to perform Assembly-wide automatic tests and assertions.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.AssemblyType">
+            <summary>
+            Return a type in order to target assembly you're testing.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.EnforceNullabilityAttributes">
+            <summary>
+            Set this property to true to enable
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCode_UseXunitOutputBase">
+            <summary>
+            Enables tracking of class / method coverage using test naming convention.
+            See the output of AssemblyMissingCoverage.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCode_IncludeTraitTargetAttributes">
+            <summary>
+            Enables tracking of Xunit Trait attributes directly targeting tested members.
+            This is useful for tying tests directly to tested members, as well as 
+            being able to jump directly to the tested member from the test.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCode_IncludeInstanceProperties">
+            <summary>
+            Enables inclusion of Test members for Class instance properties.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCode_UsePartialClasses">
+            <summary>
+            Enables generation of partial classes.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCode_UseNullabilityAttribute">
+            <summary>
+            Enables the use of [CanBeNull], [NotNull] in code generation.
+            Defaults to the value of EnforceNullabilityAttributes.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.NamingConvention_Format_Namespace">
+            <summary>
+            Override the namespace format.
+            </summary>
+            <see cref="F:LCore.LUnit.LUnit.Format.Namespace"/>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.NamingConvention_Format_Class">
+            <summary>
+            Override the class format.
+            </summary>
+            <see cref="F:LCore.LUnit.LUnit.Format.Class"/>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.NamingConvention_Format_Member">
+            <summary>
+            Override the member format.
+            </summary>
+            <see cref="F:LCore.LUnit.LUnit.Format.Member"/>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.TestAssemblies">
+            <summary>
+            Override TestAssemblies to specify additional Assemblies to search for code coverage. 
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.AssemblyTypes">
+            <summary>
+            All included types in covered Assemblies
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.Assembly">
+            <summary>
+            Reference to the assembly being tested.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.TestAssemblyCodePath">
+            <summary>
+            Returns the root directory of the Test Assembly project.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCodeFolder">
+            <summary>
+            Override this property to set the directory generated code will be placed.
+            The default is "Generated".
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCodeFile">
+            <summary>
+            Override this property to set the file name generated code will be placed.
+            The default is "LUnitGenerated.cs".
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCodeFolderPath">
+            <summary>
+            Retrieves the folder path to place generated code.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.GeneratedCodeFullPath">
+            <summary>
+            Retrieves the full file path to place generated code
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyTester.EnableCodeAutoGeneration">
+            <summary>
+            Enables automatic code generation into the Test Assembly.
+            Default is false.
+            
+            Override other GeneratedCode properties to customize where generated code is placed.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.#ctor(Xunit.Abstractions.ITestOutputHelper)">
+            <summary>
+            Create a new AssemblyTester
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.AssemblyStatus">
+            <summary>
+            Returns a status of test coverage over the targeted assembly.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.GenerateAssemblyTestStubs">
+            <summary>
+            Includes details about uncovered methods. 
+            Use the code provided here to automatically target missing methods.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TypeAssertions(System.Type)">
+            <summary>
+            Override this method to make assertions on every exposed Type in the assembly. 
+            This method will get called many times and all Exceptions and failed 
+            assertions will be added to the list.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.AllMemberAssertions(System.Reflection.MemberInfo)">
+            <summary>
+            Override this method to make assertions on every exposed MemberInfo in the assembly. 
+            This method will get called many times and all Exceptions and failed 
+            assertions will be added to the list.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.MethodAssertions(System.Reflection.MethodInfo)">
+            <summary>
+            Override this method to make assertions on every exposed MethodInfo in the assembly. 
+            This method will get called many times and all Exceptions and failed 
+            assertions will be added to the list.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.ParameterAssertions(System.Reflection.ParameterInfo)">
+            <summary>
+            Override this method to make assertions on every exposed ParameterInfo in the assembly. 
+            This method will get called many times and all Exceptions and failed 
+            assertions will be added to the list.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.PropertyAssertions(System.Reflection.PropertyInfo)">
+            <summary>
+            Override this method to make assertions on every exposed PropertyInfo in the assembly. 
+            This method will get called many times and all Exceptions and failed 
+            assertions will be added to the list.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.EventAssertions(System.Reflection.EventInfo)">
+            <summary>
+            Override this method to make assertions on every exposed EventInfo in the assembly. 
+            This method will get called many times and all Exceptions and failed 
+            assertions will be added to the list.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.FieldAssertions(System.Reflection.FieldInfo)">
+            <summary>
+            Override this method to make assertions on every exposed FieldInfo in the assembly. 
+            This method will get called many times and all Exceptions and failed 
+            assertions will be added to the list.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure01">
+            <summary>
+            Reports Exception #1, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure02">
+            <summary>
+            Reports Exception #2, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure03">
+            <summary>
+            Reports Exception #3, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure04">
+            <summary>
+            Reports Exception #4, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure05">
+            <summary>
+            Reports Exception #5, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure06">
+            <summary>
+            Reports Exception #6, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure07">
+            <summary>
+            Reports Exception #7, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure08">
+            <summary>
+            Reports Exception #8, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure09">
+            <summary>
+            Reports Exception #9, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.TestFailure10">
+            <summary>
+            Reports Exception #10, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyTester.AddException(System.Exception)">
+            <summary>
+            Add an exception to the list, only the first 10 will be reported in the test runner.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.ExtensionTester">
+            <summary>
+            Extend this type to test static class members using Attributes
+            
+            This class is probably being removed in favor of AssemblyTester.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.ExtensionTester.RequireCoveragePercent">
+            <summary>
+            Less than this amount of method coverage will result in a test failure.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.ExtensionTester.TestType">
+            <summary>
+            The Type to test.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.ExtensionTester.TestAttributeAssertions">
+            <summary>
+            Run all Attribute tests on the Type.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.ExtensionTester.#ctor(Xunit.Abstractions.ITestOutputHelper)">
+            <summary>
+            ExtensionTester constructor
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.MultiTestReporter">
+            <summary>
+            Tracks and reports up to 10 testing errors from a single RunTests method.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.RunTests">
+            <summary>
+            Implement RunTests to perform all testing
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure01">
+            <summary>
+            Reports Exception #1, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure02">
+            <summary>
+            Reports Exception #2, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure03">
+            <summary>
+            Reports Exception #3, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure04">
+            <summary>
+            Reports Exception #4, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure05">
+            <summary>
+            Reports Exception #5, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure06">
+            <summary>
+            Reports Exception #6, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure07">
+            <summary>
+            Reports Exception #7, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure08">
+            <summary>
+            Reports Exception #8, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure09">
+            <summary>
+            Reports Exception #9, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.TestFailure10">
+            <summary>
+            Reports Exception #10, if it exists.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.AddException(System.Exception)">
+            <summary>
+            Add an exception to the list so it can be reported correctly.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MultiTestReporter.#ctor(Xunit.Abstractions.ITestOutputHelper)">
+            <summary>
+            MultiTestReporter constructor
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.XUnitOutputTester">
+            <summary>
+            Extend this class to be given access to Xunit's ITestOutputHelper to send text to the Output window.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.XUnitOutputTester._Output">
+            <summary>
+            Write text to the Test Output window.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.XUnitOutputTester.#ctor(Xunit.Abstractions.ITestOutputHelper)">
+            <summary>
+            Output will be injected by Xunit
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.AssemblyCoverage">
+            <summary>
+            Represents Assembly coverage information, given an Assembly 
+            to be tested, along with any Test Assemblies covering it.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyCoverage.CoveringAssembly">
+            <summary>
+            The Assembly being tested
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyCoverage.TotalCoverage">
+            <summary>
+            The total coverage percent, a uint value from 0 to 100.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyCoverage.AssertionsMade">
+            <summary>
+            Count of assertions made against the covered Type.
+            This is determined by counting the number of occurrences of ".Should" and "Assert."
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.AssemblyCoverage.TypeCoverage">
+            <summary>
+            Information about the Type Coverage within the assembly.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.AssemblyCoverage.#ctor(System.Reflection.Assembly,System.Reflection.Assembly[])">
+            <summary>
+            Creates an AssemblyCoverage from an Assembly  to be tested, 
+            along with any Test Assemblies covering it.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.ITestAttribute">
+            <summary>
+            Interface denotes a test attribute. 
+            Used to determine which methods are tested and untested.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.ITestAttribute.RunTest(System.Reflection.MethodInfo)">
+            <summary>
+            Implement this method to execute the test.
+            Make assertions here.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.ITestAttribute.GenericTypes">
+            <summary>
+            Generic types defined on the current method
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.TestAttribute">
+            <summary>
+            Override this attribute to define a test case for a particular
+            method.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestAttribute.RunTest(System.Reflection.MethodInfo)">
+            <summary>
+            Implement this method to execute the test.
+            Make assertions here.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TestAttribute.GenericTypes">
+            <summary>
+            Generic types defined on the current method
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Fluent.FluentExt">
+            <summary>
+            Provides assertions in the fluent 'Should____' style.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed(System.Reflection.MethodInfo,System.Object,System.Object[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed(System.Reflection.MethodInfo,System.Object,System.Object[],System.Func{System.Boolean}[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed(System.Reflection.MethodInfo,System.Object,System.Object[],System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``1(System.Reflection.MethodInfo,System.Object,System.Object[],System.Func{``0,System.Boolean}[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed(System.Action)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``1(System.Action{``0},``0)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``1(System.Func{``0})">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``2(System.Func{``0,``1},``0)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``3(System.Func{``0,``1,``2},``0,``1)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``4(System.Func{``0,``1,``2,``3},``0,``1,``2)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldSucceed``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``1(System.Reflection.MethodInfo,System.Object[],System.Object,System.Func{System.Boolean}[])">
+            <summary>
+            Assert that a metod fails with a particular type of exception <typeparamref name="E" />.
+            Optionally, pass in additional checks to test additional parameters.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail(System.Reflection.MethodInfo,System.Object[],System.Object,System.Type,System.Func{System.Boolean}[])">
+            <summary>
+            Assert that a metod fails with a particular type of exception <paramref name="EType" />.
+            Optionally, pass in additional checks to test additional parameters.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail(System.Action)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``1(System.Action{``0},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``1(System.Action)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``2(System.Action{``0},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``3(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``4(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``5(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``1(System.Func{``0})">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``2(System.Func{``0,``1},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``3(System.Func{``0,``1,``2},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``4(System.Func{``0,``1,``2,``3},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``2(System.Func{``0})">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``3(System.Func{``0,``1},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``4(System.Func{``0,``1,``2},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``5(System.Func{``0,``1,``2,``3},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldFail``6(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe(System.Reflection.MethodInfo,System.Object,System.Object[],System.Object,System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            Optionally, pass in <paramref name="AdditionalResultChecks" /> to check the result further.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``1(System.Reflection.MethodInfo,System.Object,System.Object[],``0,System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            Optionally, pass in <paramref name="AdditionalResultChecks" /> to check the result further.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``1(System.Func{``0},``0)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``2(System.Func{``0,``1},``0,``1)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``3(System.Func{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``4(System.Func{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3,``4)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.HaveAttribute``1(FluentAssertions.Types.TypeAssertions,System.String,System.Object[])">
+            <summary>
+            Asserts that the current System.Type has an attribute of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Type"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.
+            </param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns>An FluentAssertions.AndConstraint`1 which can be used to chain assertions.</returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.HaveAttribute``1(FluentAssertions.Types.TypeAssertions,System.Boolean,System.String,System.Object[])">
+            <summary>
+            Asserts that the current System.Type has an attribute of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Type"></param>
+            <param name="IncludeBaseTypes"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.
+            </param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns>An FluentAssertions.AndConstraint`1 which can be used to chain assertions.</returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.NotHaveAttribute``1(FluentAssertions.Types.TypeAssertions,System.String,System.Object[])">
+            <summary>
+            Asserts that the current System.Type does not have an attribute of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Type"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.
+            </param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns>An FluentAssertions.AndConstraint`1 which can be used to chain assertions.</returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.NotHaveAttribute``1(FluentAssertions.Types.TypeAssertions,System.Boolean,System.String,System.Object[])">
+            <summary>
+            Asserts that the current System.Type does not have an attribute of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Type"></param>
+            <param name="IncludeBaseTypes"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.
+            </param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns>An FluentAssertions.AndConstraint`1 which can be used to chain assertions.</returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``1(``0,``0,System.String,System.Object[])">
+            <summary>
+            Asserts that the value is null.
+            </summary>
+            <param name="Value"></param>
+            <param name="Expected"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.</param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBeTrue(System.Boolean,System.String,System.Object[])">
+            <summary>
+            Asserts that the value is true.
+            </summary>
+            <param name="Boolean"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.</param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBeFalse(System.Boolean,System.String,System.Object[])">
+            <summary>
+            Asserts that the value is false.
+            </summary>
+            <param name="Boolean"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.</param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBeNull``1(``0,System.String,System.Object[])">
+            <summary>
+            Asserts that the value is null.
+            </summary>
+            <param name="Value"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.</param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBeNull``1(System.Nullable{``0},System.String,System.Object[])">
+            <summary>
+            Asserts that the value is null.
+            </summary>
+            <param name="Value"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.</param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldNotBeNull``1(``0,System.String,System.Object[])">
+            <summary>
+            Asserts that the value is null.
+            </summary>
+            <param name="Value"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.</param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldNotBeNull``1(System.Nullable{``0},System.String,System.Object[])">
+            <summary>
+            Asserts that the value is null.
+            </summary>
+            <param name="Value"></param>
+            <param name="Because">A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+                explaining why the assertion is needed. If the phrase does not start with the
+                word because, it is prepended automatically.</param>
+            <param name="BecauseArgs">Zero or more objects to format using the placeholders in because.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LCore.LUnit.LUnit">
+            <summary>
+            Provides static methods used for unit testing.
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.GeneratedCodeWarning">
+            <summary>
+            Warning message included at the top of LUnit generated files.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.LUnit.FixParameterTypes(System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            Attempts to resolve parameter types for a method test.
+            This corrects parameter types, converts arrays to lists if needed.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.LUnit.FixObject(System.Reflection.MethodInfo,System.Type,System.Object@)">
+            <summary>
+            Attempts to resolve a single parameter object.
+            This corrects parameter types, converts arrays to lists if needed.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.LUnit.GetMethodDelegate(System.Reflection.MethodInfo,System.Type,System.String)">
+            <summary>
+            Retrieves an instance of a method delegate from a fully qualified string.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.LUnit.GetCheckMethod(System.Reflection.MethodInfo,System.String)">
+            <summary>
+            Locates the method to be tested
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.LUnit.GetCheckMethodArg(System.Reflection.MethodInfo,System.String)">
+            <summary>
+            Locates the method to be tested.
+            Its argument input is set to object.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.LUnit.Categories">
+            <summary>
+            Unit test categories
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.Category">
+            <summary>
+            Category value name
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.StaticMethods">
+            <summary>
+            Category value name
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.AttributeTests">
+            <summary>
+            Attribute test category name
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.Tools">
+            <summary>
+            Tools test category name
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.UnitTests">
+            <summary>
+            Unit Tests category name
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.Internal">
+            <summary>
+            Internal category name
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.NullabilityTests">
+            <summary>
+            NullabilityTests category name
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Categories.AssemblyTests">
+            <summary>
+            AssemblyTest category name
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.LUnit.Format">
+            <summary>
+            Formatting for naming-convention-based coverage
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Format.Namespace">
+            <summary>
+            Namespace format. 
+            The Assembly name will be inserted into argument {0}.
+            The Namespace will be inserted into argument {1}.
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Format.Class">
+            <summary>
+            Class name format. 
+            The Class name will be inserted into argument {0}.
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Format.Member">
+            <summary>
+            Method name format. 
+            The Method name will be inserted into argument {0}.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.LUnit.Urls">
+            <summary>
+            Constant Urls
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Urls.GitHubRepository_LUnit">
+            <summary>
+            LUnit GitHub repo URL
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.LUnit.Urls.GitHubRepository_LCore">
+            <summary>
+            LCore GitHub repo URL
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Traits">
+            <summary>
+            Constants for LUnit Trait keys
+            </summary>
+        </member>
+        <member name="F:LCore.LUnit.Traits.TargetMember">
+            <summary>
+            TargetMember trait key
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.Assert.AssertionExt">
+            <summary>
+            Provides assertions in the 'Assert___' style.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes(System.Reflection.MethodInfo,System.Object,System.Object[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes(System.Reflection.MethodInfo,System.Object,System.Object[],System.Func{System.Boolean}[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes(System.Reflection.MethodInfo,System.Object,System.Object[],System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``1(System.Reflection.MethodInfo,System.Object,System.Object[],System.Func{``0,System.Boolean}[])">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes(System.Action)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``1(System.Action{``0},``0)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``1(System.Func{``0})">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``2(System.Func{``0,``1},``0)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``3(System.Func{``0,``1,``2},``0,``1)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``4(System.Func{``0,``1,``2,``3},``0,``1,``2)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSucceedes``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod succeeds (does not throw an exception)
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``1(System.Reflection.MethodInfo,System.Object[],System.Object,System.Func{System.Boolean}[])">
+            <summary>
+            Assert that a metod fails with a particular type of exception <typeparamref name="E" />.
+            Optionally, pass in additional checks to test additional parameters.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails(System.Reflection.MethodInfo,System.Object[],System.Object,System.Type,System.Func{System.Boolean}[])">
+            <summary>
+            Assert that a metod fails with a particular type of exception <paramref name="EType" />.
+            Optionally, pass in additional checks to test additional parameters.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails(System.Action)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``1(System.Action{``0},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``2(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``3(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``4(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``1(System.Action)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``2(System.Action{``0},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``3(System.Action{``0,``1},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``4(System.Action{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``5(System.Action{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``1(System.Func{``0})">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``2(System.Func{``0,``1},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``3(System.Func{``0,``1,``2},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``4(System.Func{``0,``1,``2,``3},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``2(System.Func{``0})">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``3(System.Func{``0,``1},``0)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``4(System.Func{``0,``1,``2},``0,``1)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``5(System.Func{``0,``1,``2,``3},``0,``1,``2)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertFails``6(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3)">
+            <summary>
+            Assert that a metod fails with any type of exception.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertResult(System.Reflection.MethodInfo,System.Object,System.Object[],System.Object,System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            Optionally, pass in <paramref name="AdditionalResultChecks" /> to check the result further.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertResult``1(System.Reflection.MethodInfo,System.Object,System.Object[],``0,System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            Optionally, pass in <paramref name="AdditionalResultChecks" /> to check the result further.
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertResult``1(System.Func{``0},``0)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertResult``2(System.Func{``0,``1},``0,``1)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertResult``3(System.Func{``0,``1,``2},``0,``1,``2)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertResult``4(System.Func{``0,``1,``2,``3},``0,``1,``2,``3)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertResult``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3,``4)">
+            <summary>
+            Asserts that a method's result will match <paramref name="ExpectedResult" />.
+            </summary>
+            <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSource(System.Reflection.MethodInfo,System.Object,System.Object[],System.Object,System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Asserts that a method's source will match <paramref name="ExpectedSource" />.
+            Optionally, pass in <paramref name="AdditionalSourceChecks" /> to check the result further.
+            
+            This is used for methods that manipulate the object they were called on, not the result (if any).
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="M:LCore.LUnit.Assert.AssertionExt.AssertSource``1(System.Reflection.MethodInfo,System.Object,System.Object[],``0,System.Func{System.Object,System.Boolean}[])">
+            <summary>
+            Asserts that a method's source will match <paramref name="ExpectedSource" />.
+            Optionally, pass in <paramref name="AdditionalSourceChecks" /> to check the result further.
+            This is used for methods that manipulate the object they were called on, not the result (if any).
+            </summary>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
+        </member>
+        <member name="T:LCore.LUnit.TestExt">
+            <summary>
+            Provides extensions to allow for method unit testing.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.GetTestMembers(System.Type)">
+            <summary>
+            Retrieves TestAttributes for type <paramref name="Type" />
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.RunTest(LCore.LUnit.ITestResultAttribute,System.Reflection.MethodInfo)">
+            <summary>
+            Execute an ITestResultAttribute and compare ActualResult with ExpectedResult.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.RunTest(LCore.LUnit.ITestFailsAttribute,System.Reflection.MethodInfo)">
+            <summary>
+            Execute an ITestFailsAttribute test and ensure failure matches the conditions defined.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.RunTest(LCore.LUnit.ITestSucceedsAttribute,System.Reflection.MethodInfo)">
+            <summary>
+            Execute an ITestFailsAttribute test and ensures the method succeeds.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.RunTest(LCore.LUnit.ITestSourceAttribute,System.Reflection.MethodInfo)">
+            <summary>
+            Execute an ITestSourceAttribute test and perform tests on the calling object (for extension methods).
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.RunTest(LCore.LUnit.IValidateAttribute,System.Reflection.MemberInfo)">
+            <summary>
+            Validates an IValidateAttribute, throwing a testing error if validation has any errors.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.GetTargetingName(System.Reflection.MemberInfo,System.String,System.String,System.String)">
+            <summary>
+            Returns a Tuple of strings representing the:
+            Namespace, Class Name, Member Name to target the specified MemberInfo.
+            Use this to directly target members for testing.
+            </summary>
+            <param name="Member"></param>
+            <param name="TestNamespaceFormat"></param>
+            <param name="TestClassFormat"></param>
+            <param name="TestMethodFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LCore.LUnit.TestExt.GetAssemblyMemberTraits(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Retrieves a list of Trait Values targeting members being tested.
+            <see cref="F:LCore.LUnit.Traits.TargetMember"/>
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.TypeCoverage">
+            <summary>
+            Represents Type coverage information, given a Type
+            to be tested, along with any Test Assemblies covering it.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TypeCoverage.CoveringType">
+            <summary>
+            The Type being tested.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TypeCoverage.CoveragePercent">
+            <summary>
+            The total coverage percent, a uint value from 0 to 100.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TypeCoverage.AssertionsMade">
+            <summary>
+            Count of assertions made against the covered Type.
+            This is determined by counting the number of occurrences of ".Should" and "Assert."
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TypeCoverage.MemberCoverage">
+            <summary>
+            Information about the Member Coverage for all methods on the Type.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TypeCoverage.TestClassLocation">
+            <summary>
+            A Tuple representing the generated test member Namespace, Class, Method
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TypeCoverage.TestMember_Namespace">
+            <summary>
+            The suggested namespace for the generated test class
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.TypeCoverage.TestMember_Class">
+            <summary>
+            The suggested class name for the generated test class
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TypeCoverage.GenerateTestStubs(System.String)">
+            <summary>
+            Generate test stubs for all types in the assembly.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TypeCoverage.GetTestStub(System.Boolean)">
+            <summary>
+            Retrieves the empty test stub for this class. 
+            If all members are covered then an empty string[] will be returned.
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.TypeCoverage.#ctor(System.Type,System.Reflection.Assembly[])">
+            <summary>
+            Creates a TypeCoverage object, given a Type  to be tested, 
+            along with any Test Assemblies covering it.
+            </summary>
+        </member>
+        <member name="T:LCore.LUnit.MethodCoverage">
+            <summary>
+            Represents method coverage information, given a method
+            to be tested, along with any Test Assemblies covering it.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.CoveringMember">
+            <summary>
+            The Member being tested.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.CoveringMemberDeclaringType">
+            <summary>
+            The class that declares the CoveringMember
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestResultAttributes">
+            <summary>
+            All ITestResultAttributes declared on the member.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestSourceAttributes">
+            <summary>
+            All ITestSourceAttributes declared on the member.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestSucceedsAttributes">
+            <summary>
+            All ITestSucceedsAttributes declared on the member.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestFailsAttributes">
+            <summary>
+            All ITestFailsAttributes declared on the member.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestBoundAttributes">
+            <summary>
+            All ITestBoundAttributes declared on the member.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.AttributeCoverage">
+            <summary>
+            The number of test attributes covering the member.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestedFlag">
+            <summary>
+            True if the member has an ITestedAttribute defined.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.IsCovered">
+            <summary>
+            Returns true if the member is covered in a Trait-targeted test,
+            an attribute test, or a manual ITestedAttribute.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.MemberTraitValue">
+            <summary>
+            The member trait value used for direct targeting.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestMemberLocation">
+            <summary>
+            A Tuple representing the generated test member Namespace, Class, Method
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestMember_Namespace">
+            <summary>
+            The suggested namespace for the generated test class
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestMember_Class">
+            <summary>
+            The suggested class name for the generated test class
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.TestMember_Member">
+            <summary>
+            The suggested member name for the generated test method
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.MemberTraitFound">
+            <summary>
+            True if MemberTraitValue is found in the testing assemblies.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.AssertionsMade">
+            <summary>
+            Count of assertions made in the source code block.
+            This is determined by counting the number of occurrences of ".Should" and "Assert."
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MethodCoverage.GetTestStub(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Retrieves the empty test stub for this member, if it is uncovered
+            </summary>
+        </member>
+        <member name="M:LCore.LUnit.MethodCoverage.#ctor(System.Reflection.MethodInfo,System.Reflection.Assembly[])">
+            <summary>
+            Creates a new MemberCoverage object, given a Member to be tested, 
+            along with any Test Assemblies covering it.
+            </summary>
+        </member>
+    </members>
+</doc>

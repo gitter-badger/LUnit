@@ -365,6 +365,12 @@
             The total coverage percent, a uint value from 0 to 100.
             </summary>
         </member>
+        <member name="P:LCore.LUnit.AssemblyCoverage.AssertionsMade">
+            <summary>
+            Count of assertions made against the covered Type.
+            This is determined by counting the number of occurrences of ".Should" and "Assert."
+            </summary>
+        </member>
         <member name="P:LCore.LUnit.AssemblyCoverage.TypeCoverage">
             <summary>
             Information about the Type Coverage within the assembly.
@@ -1364,6 +1370,12 @@
             The total coverage percent, a uint value from 0 to 100.
             </summary>
         </member>
+        <member name="P:LCore.LUnit.TypeCoverage.AssertionsMade">
+            <summary>
+            Count of assertions made against the covered Type.
+            This is determined by counting the number of occurrences of ".Should" and "Assert."
+            </summary>
+        </member>
         <member name="P:LCore.LUnit.TypeCoverage.MemberCoverage">
             <summary>
             Information about the Member Coverage for all methods on the Type.
@@ -1486,6 +1498,12 @@
         <member name="P:LCore.LUnit.MethodCoverage.MemberTraitFound">
             <summary>
             True if MemberTraitValue is found in the testing assemblies.
+            </summary>
+        </member>
+        <member name="P:LCore.LUnit.MethodCoverage.AssertionsMade">
+            <summary>
+            Count of assertions made in the source code block.
+            This is determined by counting the number of occurrences of ".Should" and "Assert."
             </summary>
         </member>
         <member name="M:LCore.LUnit.MethodCoverage.GetTestStub(System.Collections.Generic.List{System.String}@)">

@@ -4439,12 +4439,6 @@
             </summary>
             <exception cref="T:System.ArgumentException">Unsupported / unknown attribute provider is passed.</exception>
         </member>
-        <member name="M:LCore.Extensions.ReflectionExt.GetClassHierarchy(System.Type)">
-            <summary>
-            Returns the full hierarchy of classes if <paramref name="In" /> is a nested class.
-            Ex. "L.Comment.Test"
-            </summary>
-        </member>
         <member name="M:LCore.Extensions.ReflectionExt.GetComparer(System.Reflection.MemberInfo)">
             <summary>
             Returns a ComparableComparer to compare comparable types.
@@ -4756,8 +4750,8 @@
         <member name="M:LCore.Extensions.ReflectionExt.GetGenericName(System.Type)">
             <summary>
             Gets a Type's name formatted properly with generic parameters.
-            Ex: List`1&lt;String&gt;
-                Func`2&lt;Action`1&lt;Int32&gt;, IEnumerable`1&lt;Object&gt;&gt;
+            Ex: List&lt;String&gt;
+                Func&lt;Action&lt;Int32&gt;, IEnumerable&lt;Object&gt;&gt;
             </summary>
         </member>
         <member name="M:LCore.Extensions.ReflectionExt.IsPropertyGetterOrSetter(System.Reflection.MethodInfo)">
@@ -19262,6 +19256,11 @@
             Stops the timer and returns the duration in milliseconds.
             </summary>
             <returns>The duration in milliseconds</returns>
+        </member>
+        <member name="T:LCore.Octicon">
+            <summary>
+            Enum of all Octicons supported by GitHub
+            </summary>
         </member>
         <member name="M:LCore.Tasks.Task.RunTask">
             <exception cref="T:System.Threading.ThreadStateException">The thread has already been started. </exception>
