@@ -27,9 +27,15 @@ namespace LCore.LUnit
         /// The total coverage percent, a uint value from 0 to 100.
         /// </summary>
         public uint CoveragePercent =>
-            (uint) (this.MemberCoverage.Convert(Member => Member.IsCovered
-                ? 1
-                : 0).Average()*100).Round();
+            (uint)(this.MemberCoverage.Convert(Member => Member.IsCovered
+               ? 1
+               : 0).Average() * 100).Round();
+
+        /// <summary>
+        /// Count of assertions made against the covered Type.
+        /// This is determined by counting the number of occurrences of ".Should" and "Assert."
+        /// </summary>
+        public uint AssertionsMade => this.MemberCoverage.Sum(Member => Member.AssertionsMade);
 
         /// <summary>
         /// Information about the Member Coverage for all methods on the Type.
@@ -102,14 +108,14 @@ namespace LCore.LUnit
 
             this.MemberCoverage.Each(Member =>
                 {
-                string[] Stub = Member.GetTestStub(ref Usings);
+                    string[] Stub = Member.GetTestStub(ref Usings);
 
-                if (Stub.Length > 0)
-                    {
-                    MembersAdded++;
-                    Members.AddRange(Stub);
-                    Members.Add("");
-                    }
+                    if (Stub.Length > 0)
+                        {
+                        MembersAdded++;
+                        Members.AddRange(Stub);
+                        Members.Add("");
+                        }
                 });
 
 
@@ -176,6 +182,7 @@ namespace LCore.LUnit
 
             return Out.Array();
             }
+
 
         /// <summary>
         /// Creates a TypeCoverage object, given a Type  to be tested, 

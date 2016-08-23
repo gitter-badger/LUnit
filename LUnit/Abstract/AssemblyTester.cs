@@ -32,6 +32,7 @@ namespace LCore.LUnit
         /// Set this property to true to enable
         /// </summary>
         protected virtual bool EnforceNullabilityAttributes => false;
+        // TODO: Require abstract members to have explicit nullability if EnforceNullabilityAttributes is on
 
         /// <summary>
         /// Enables tracking of class / method coverage using test naming convention.

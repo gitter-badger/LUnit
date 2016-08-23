@@ -27,6 +27,12 @@ namespace LCore.LUnit
             (uint)this.TypeCoverage.Convert(Member => Member.CoveragePercent).Average().Round();
 
         /// <summary>
+        /// Count of assertions made against the covered Type.
+        /// This is determined by counting the number of occurrences of ".Should" and "Assert."
+        /// </summary>
+        public uint AssertionsMade => this.TypeCoverage.Sum(Type => Type.AssertionsMade);
+
+        /// <summary>
         /// Information about the Type Coverage within the assembly.
         /// </summary>
         public ReadOnlyCollection<TypeCoverage> TypeCoverage { get; }

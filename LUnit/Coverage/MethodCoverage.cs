@@ -100,6 +100,12 @@ namespace LCore.LUnit
         /// </summary>
         public bool MemberTraitFound { get; }
 
+        /// <summary>
+        /// Count of assertions made in the source code block.
+        /// This is determined by counting the number of occurrences of ".Should" and "Assert."
+        /// </summary>
+        public uint AssertionsMade { get; }
+
         private ReadOnlyCollection<Assembly> _TestAssemblies { get; }
 
         /// <summary>
@@ -191,6 +197,13 @@ namespace LCore.LUnit
                 (uint)this.TestSourceAttributes.Count +
                 (uint)this.TestSucceedsAttributes.Count +
                 (uint)this.TestFailsAttributes.Count;
+
+            // Count assertions
+            string SourceCode = ""; //this.CoveringMember.FindSourceCode();
+            SourceCode = SourceCode.ToLower();
+            this.AssertionsMade = SourceCode.Count(".assert") + SourceCode.Count(".should");
+
+            // TODO: add FindSourceCode
             }
         }
     }
