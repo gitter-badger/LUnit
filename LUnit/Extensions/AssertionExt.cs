@@ -223,9 +223,9 @@ namespace LCore.LUnit.Assert
                 }
             catch (TargetInvocationException Ex)
                 {
-                if (!Ex.InnerException.GetType().IsType(EType))
+                if (Ex.InnerException == null || !Ex.InnerException.GetType().IsType(EType))
                     throw new InternalTestFailureException(
-                        $"Exception type {EType.FullName} did not throw.\n{Ex.InnerException.GetType().FullName} was thrown instead.", Ex);
+                        $"Exception type {EType.FullName} did not throw.\n{Ex.InnerException?.GetType().FullName} was thrown instead.", Ex);
                 return;
                 }
             catch (Exception Ex)
