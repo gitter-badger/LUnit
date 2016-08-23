@@ -1,13 +1,9 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
-[Up](../LUnit.md)
-###XUnitOutputTester
-![Type Abstract Class](http://b.repl.ca/v1/Type-Abstract%20Class-lightgrey.png "")
-[View Source](../Abstract/XUnitOutputTester.cs)
-######Summary
-
-            Extend this class to be given access to Xunit's ITestOutputHelper to send text to the Output window.
-            
+[Up](TypeCoverage.md)
+###TypeCoverage
+[View Source](../Coverage/TypeCoverage.cs)
+#AssertionsMade
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
