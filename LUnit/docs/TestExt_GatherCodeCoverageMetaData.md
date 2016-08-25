@@ -5,7 +5,7 @@
 [View Source](../Extensions/TestExt.cs)
 # GatherCodeCoverageMetaData
 #### Static Method
-###### public static [CodeCoverageMetaData] GatherCodeCoverageMetaData([MemberInfo] Member);
+###### public static [CodeCoverageMetaData] GatherCodeCoverageMetaData([MemberInfo] Member, [String[]] CustomCommentTags);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs)
 
@@ -16,6 +16,7 @@
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Member | No | [MemberInfo] | 
+CustomCommentTags | No | [String[]] | 
 
 #### Returns
 ###### [CodeCoverageMetaData]

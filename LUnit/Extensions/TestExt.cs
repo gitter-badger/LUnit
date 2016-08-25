@@ -283,11 +283,11 @@ namespace LCore.LUnit
 
 
         [CanBeNull]
-        public static CodeCoverageMetaData GatherCodeCoverageMetaData([CanBeNullAttribute]this MemberInfo Member)
+        public static CodeCoverageMetaData GatherCodeCoverageMetaData([CanBeNullAttribute]this MemberInfo Member, string[] CustomCommentTags)
             {
             return Member == null
                 ? null
-                : new CodeCoverageMetaData(Member);
+                : new CodeCoverageMetaData(Member, CustomCommentTags);
             }
         }
     }

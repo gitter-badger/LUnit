@@ -73,7 +73,7 @@ namespace LUnit_Tests.LCore.LUnit
         }
 
         [Fact]
-        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(TestExt)+ "." + nameof(TestExt.GatherCodeCoverageMetaData) + "(MemberInfo) => CodeCoverageMetaData")]
+        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(TestExt)+ "." + nameof(TestExt.GatherCodeCoverageMetaData) + "(MemberInfo, String[]) => CodeCoverageMetaData")]
         public void GatherCodeCoverageMetaData()
         {
             // TODO: Implement method test LCore.LUnit.TestExt.GatherCodeCoverageMetaData
