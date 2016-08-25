@@ -121,8 +121,8 @@ namespace LCore.LUnit
 
             //    Method.AssertSource(Parameters, ExpectedSource);
 
-            var OutMethod = typeof(TestExt).GetMethods().First((Func<MethodInfo, bool>)(MethodInfo =>
-               MethodInfo.Name == nameof(AssertionExt.AssertSource) && MethodInfo.ContainsGenericParameters));
+            var OutMethod = typeof(TestExt).GetMethods().First(MethodInfo =>
+                    MethodInfo.Name == nameof(AssertionExt.AssertSource) && MethodInfo.ContainsGenericParameters);
 
             if (Attr.ExpectedSource != null)
                 {

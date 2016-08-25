@@ -683,35 +683,35 @@
             </summary>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
         </member>
-        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``1(System.Func{``0},``0)">
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``1(System.Func{``0},``0,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
             <summary>
             Asserts that a method's result will match <paramref name="ExpectedResult" />.
             </summary>
             <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
         </member>
-        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``2(System.Func{``0,``1},``0,``1)">
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``2(System.Func{``0,``1},``0,``1,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
             <summary>
             Asserts that a method's result will match <paramref name="ExpectedResult" />.
             </summary>
             <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
         </member>
-        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``3(System.Func{``0,``1,``2},``0,``1,``2)">
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``3(System.Func{``0,``1,``2},``0,``1,``2,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
             <summary>
             Asserts that a method's result will match <paramref name="ExpectedResult" />.
             </summary>
             <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
         </member>
-        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``4(System.Func{``0,``1,``2,``3},``0,``1,``2,``3)">
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``4(System.Func{``0,``1,``2,``3},``0,``1,``2,``3,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
             <summary>
             Asserts that a method's result will match <paramref name="ExpectedResult" />.
             </summary>
             <exception cref="T:System.MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException">The test fails</exception>
         </member>
-        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3,``4)">
+        <member name="M:LCore.LUnit.Fluent.FluentExt.ShouldBe``5(System.Func{``0,``1,``2,``3,``4},``0,``1,``2,``3,``4,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
             <summary>
             Asserts that a method's result will match <paramref name="ExpectedResult" />.
             </summary>
