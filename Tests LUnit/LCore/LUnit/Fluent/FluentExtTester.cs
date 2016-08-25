@@ -1,5 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading;
+using System.Threading.Tasks;
 using FluentAssertions;
 using LCore.Extensions;
 using LCore.LUnit;
@@ -138,9 +140,13 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
 
         #endregion
 
-        public FluentExtTester(ITestOutputHelper Output) : base(Output) {}
+        public FluentExtTester(ITestOutputHelper Output) : base(Output)
+            {
+            }
 
-        public void Dispose() {}
+        public void Dispose()
+            {
+            }
 
         [Fact]
         [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldSucceed) + "(MethodInfo, Object, Object[])")]
@@ -295,11 +301,11 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
             }
 
         [Fact]
-        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<U>, U)")]
-        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, U>, T1, U)")]
-        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, T2, U>, T1, T2, U)")]
-        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, T2, T3, U>, T1, T2, T3, U)")]
-        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, T2, T3, T4, U>, T1, T2, T3, T4, U)")]
+        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<U>, U, Nullable<TimeSpan>, Nullable<TimeSpan>)")]
+        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, U>, T1, U, Nullable<TimeSpan>, Nullable<TimeSpan>)")]
+        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, T2, U>, T1, T2, U, Nullable<TimeSpan>, Nullable<TimeSpan>)")]
+        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, T2, T3, U>, T1, T2, T3, U, Nullable<TimeSpan>, Nullable<TimeSpan>)")]
+        [Trait(Traits.TargetMember, nameof(LCore) + "." + nameof(global::LCore.LUnit) + "." + nameof(global::LCore.LUnit.Fluent) + "." + nameof(FluentExt) + "." + nameof(FluentExt.ShouldBe) + "(Func<T1, T2, T3, T4, U>, T1, T2, T3, T4, U, Nullable<TimeSpan>, Nullable<TimeSpan>)")]
         public void ShouldBe_Func_1_U_U()
             {
             this._TestFunc.ShouldBe("abc");
@@ -313,6 +319,76 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
             L.A(() => this._TestFunc3.ShouldBe("abc", "abc", "abcd")).ShouldFail();
             L.A(() => this._TestFunc4.ShouldBe("abc", "abc", "abc", "abcd")).ShouldFail();
             L.A(() => this._TestFunc5.ShouldBe("abc", "abc", "abc", "abc", "abcd")).ShouldFail();
+
+            var ResultToTest = 0;
+            var TestAction = new Action(async () =>
+                {
+                await Task.Delay(1000);
+                ResultToTest = 5;
+                });
+
+            var TestWithinTimespan = new Func<string, string, string, string, int>((o1, o2, o3, o4) => { return ResultToTest; });
+
+
+            CancellationTokenSource TokenSource = null;
+            CancellationToken Token;
+
+            Task StartAction = null;
+
+            var Reset = new Action(() =>
+                {
+                TokenSource?.Cancel();
+                TokenSource = new CancellationTokenSource();
+                Token = TokenSource.Token;
+
+                ResultToTest = 0;
+                StartAction = Task.Factory.StartNew(() =>
+                    {
+                    Thread.Sleep(300);
+                    ResultToTest = 5;
+                    }, TokenSource.Token);
+                });
+
+            Reset();
+            TestWithinTimespan
+                .ShouldBe("1", "2", "3", "4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 2000));
+
+            Reset();
+            TestWithinTimespan.Supply("1")
+                .ShouldBe("2", "3", "4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 2000));
+
+            Reset();
+            TestWithinTimespan.Supply("1").Supply("2")
+                .ShouldBe("3", "4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 2000));
+
+            Reset();
+            TestWithinTimespan.Supply("1").Supply("2").Supply("3")
+                .ShouldBe("4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 2000));
+
+            Reset();
+            TestWithinTimespan.Supply("1").Supply("2").Supply("3").Supply("4")
+                .ShouldBe(ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 2000));
+
+
+            Reset();
+            L.A(() => TestWithinTimespan
+                .ShouldBe("1", "2", "3", "4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 600))).ShouldFail();
+
+            Reset();
+            L.A(() => TestWithinTimespan.Supply("1")
+                .ShouldBe("2", "3", "4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 600))).ShouldFail();
+
+            Reset();
+            L.A(() => TestWithinTimespan.Supply("1").Supply("2")
+                .ShouldBe("3", "4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 600))).ShouldFail();
+
+            Reset();
+            L.A(() => TestWithinTimespan.Supply("1").Supply("2").Supply("3")
+                .ShouldBe("4", ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 600))).ShouldFail();
+
+            Reset();
+            L.A(() => TestWithinTimespan.Supply("1").Supply("2").Supply("3").Supply("4")
+                .ShouldBe(ExpectedResult: 5, WithinTimeSpan: TimeSpan.FromMilliseconds(value: 600))).ShouldFail();
             }
 
 
@@ -362,7 +438,7 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
             var Test = new Helper();
 
             Method.ShouldBe(Test, new object[] {}, ExpectedResult: 5);
-            L.A(() => Method.ShouldBe(Test, new object[] { }, ExpectedResult: 6)).ShouldFail();
+            L.A(() => Method.ShouldBe(Test, new object[] {}, ExpectedResult: 6)).ShouldFail();
             }
 
         [Fact]
@@ -450,7 +526,9 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
 
         #region Helpers
 
-        public class Helper2 : Helper {}
+        public class Helper2 : Helper
+            {
+            }
 
         [FriendlyName("")]
         [ExcludeFromCodeCoverage]

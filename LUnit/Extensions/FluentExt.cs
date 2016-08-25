@@ -5,6 +5,8 @@ using System.Collections;
 // ReSharper disable once RedundantUsingDirective
 using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using FluentAssertions;
 using FluentAssertions.Primitives;
 using FluentAssertions.Types;
@@ -13,8 +15,6 @@ using LCore.LUnit.Assert;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // ReSharper disable UnusedMethodReturnValue.Global
-
-// ReSharper disable UnusedMember.Global
 
 namespace LCore.LUnit.Fluent
     {
@@ -425,9 +425,42 @@ namespace LCore.LUnit.Fluent
         /// </summary>
         /// <exception cref="MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
         /// <exception cref="InternalTestFailureException">The test fails</exception>
-        public static void ShouldBe<U>(this Func<U> Func, U ExpectedResult)
+        public static async void ShouldBe<U>(this Func<U> Func, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
             {
-            Func().Should().Be(ExpectedResult);
+            Period = Period ?? new TimeSpan(days: 0, hours: 0, minutes: 0, seconds: 0, milliseconds: 100);
+
+            if (WithinTimeSpan == null || WithinTimeSpan <= TimeSpan.Zero)
+                Func().Should().Be(ExpectedResult);
+            else
+                {
+                bool Success = false;
+                U Result;
+
+
+                int TotalWaited = 0;
+                var Watcher = new Task(async () =>
+                    {
+                    while (TotalWaited < ((TimeSpan) WithinTimeSpan).TotalMilliseconds)
+                        {
+                        Result = Func();
+
+                        if (Result.Equals(ExpectedResult))
+                            {
+                            Success = true;
+                            break;
+                            }
+
+                        await Task.Delay((TimeSpan) Period);
+
+                        TotalWaited += (int) ((TimeSpan) Period).TotalMilliseconds;
+                        }
+                    });
+
+                await Watcher;
+
+                    Success.ShouldBeTrue("the expected result was not found within the time limit");
+
+            }
             }
 
         /// <summary>
@@ -435,9 +468,12 @@ namespace LCore.LUnit.Fluent
         /// </summary>
         /// <exception cref="MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
         /// <exception cref="InternalTestFailureException">The test fails</exception>
-        public static void ShouldBe<T1, U>(this Func<T1, U> Func, T1 o1, U ExpectedResult)
+        public static void ShouldBe<T1, U>(this Func<T1, U> Func, T1 o1, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
             {
-            Func(o1).Should().Be(ExpectedResult);
+            if (WithinTimeSpan == null)
+                Func(o1).Should().Be(ExpectedResult);
+            else
+                Func.Supply(o1).ShouldBe(ExpectedResult, WithinTimeSpan, Period);
             }
 
         /// <summary>
@@ -445,9 +481,12 @@ namespace LCore.LUnit.Fluent
         /// </summary>
         /// <exception cref="MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
         /// <exception cref="InternalTestFailureException">The test fails</exception>
-        public static void ShouldBe<T1, T2, U>(this Func<T1, T2, U> Func, T1 o1, T2 o2, U ExpectedResult)
+        public static void ShouldBe<T1, T2, U>(this Func<T1, T2, U> Func, T1 o1, T2 o2, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
             {
-            Func(o1, o2).Should().Be(ExpectedResult);
+            if (WithinTimeSpan == null)
+                Func(o1, o2).Should().Be(ExpectedResult);
+            else
+                Func.Supply2(o2).ShouldBe(o1, ExpectedResult, WithinTimeSpan, Period);
             }
 
         /// <summary>
@@ -455,9 +494,12 @@ namespace LCore.LUnit.Fluent
         /// </summary>
         /// <exception cref="MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
         /// <exception cref="InternalTestFailureException">The test fails</exception>
-        public static void ShouldBe<T1, T2, T3, U>(this Func<T1, T2, T3, U> Func, T1 o1, T2 o2, T3 o3, U ExpectedResult)
+        public static void ShouldBe<T1, T2, T3, U>(this Func<T1, T2, T3, U> Func, T1 o1, T2 o2, T3 o3, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
             {
-            Func(o1, o2, o3).Should().Be(ExpectedResult);
+            if (WithinTimeSpan == null)
+                Func(o1, o2, o3).Should().Be(ExpectedResult);
+            else
+                Func.Supply3(o3).ShouldBe(o1, o2, ExpectedResult, WithinTimeSpan, Period);
             }
 
         /// <summary>
@@ -465,9 +507,12 @@ namespace LCore.LUnit.Fluent
         /// </summary>
         /// <exception cref="MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
         /// <exception cref="InternalTestFailureException">The test fails</exception>
-        public static void ShouldBe<T1, T2, T3, T4, U>(this Func<T1, T2, T3, T4, U> Func, T1 o1, T2 o2, T3 o3, T4 o4, U ExpectedResult)
+        public static void ShouldBe<T1, T2, T3, T4, U>(this Func<T1, T2, T3, T4, U> Func, T1 o1, T2 o2, T3 o3, T4 o4, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
             {
-            Func(o1, o2, o3, o4).Should().Be(ExpectedResult);
+            if (WithinTimeSpan == null)
+                Func(o1, o2, o3, o4).Should().Be(ExpectedResult);
+            else
+                Func.Supply4(o4).ShouldBe(o1, o2, o3, ExpectedResult, WithinTimeSpan, Period);
             }
 
         #endregion
