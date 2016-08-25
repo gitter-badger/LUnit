@@ -5,6 +5,7 @@ using System.Collections;
 // ReSharper disable once RedundantUsingDirective
 using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using FluentAssertions.Primitives;
@@ -424,7 +425,7 @@ namespace LCore.LUnit.Fluent
         /// </summary>
         /// <exception cref="MemberAccessException">The caller does not have access to the method represented by the delegate (for example, if the method is private). </exception>
         /// <exception cref="InternalTestFailureException">The test fails</exception>
-        public static async void ShouldBe<U>(this Func<U> Func, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
+        public static void ShouldBe<U>(this Func<U> Func, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
             {
             if (WithinTimeSpan == null || WithinTimeSpan <= TimeSpan.Zero)
                 Func().Should().Be(ExpectedResult);
@@ -437,28 +438,23 @@ namespace LCore.LUnit.Fluent
 
 
                 int TotalWaited = 0;
-                var Watcher = new Task(async () =>
+
+                while (TotalWaited < ((TimeSpan)WithinTimeSpan).TotalMilliseconds)
                     {
-                        while (TotalWaited < ((TimeSpan)WithinTimeSpan).TotalMilliseconds)
-                            {
-                            Result = Func();
+                    Result = Func();
 
-                            if (Result.Equals(ExpectedResult))
-                                {
-                                Success = true;
-                                break;
-                                }
+                    if (Result.Equals(ExpectedResult))
+                        {
+                        Success = true;
+                        break;
+                        }
 
-                            await Task.Delay((TimeSpan)Period);
+                    Thread.Sleep((TimeSpan)Period);
 
-                            TotalWaited += (int)((TimeSpan)Period).TotalMilliseconds;
-                            }
-                    });
-
-                await Watcher;
+                    TotalWaited += (int)((TimeSpan)Period).TotalMilliseconds;
+                    }
 
                 Success.ShouldBeTrue("the expected result was not found within the time limit");
-
                 }
             }
 
