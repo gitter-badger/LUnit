@@ -30,7 +30,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldSucceed(this MethodInfo Method, object Target = null, object[] Params = null)
             {
-            Method.ShouldSucceed<object>(Target, Params, (Func<object, bool>[]) null);
+            Method.ShouldSucceed<object>(Target, Params, (Func<object, bool>[])null);
             }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail(this Action Act)
             {
-            Act.Method.ShouldFail(new object[] {}, Act.Target);
+            Act.Method.ShouldFail(new object[] { }, Act.Target);
             }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1>(this Action<T1> Act, T1 o1)
             {
-            Act.Method.ShouldFail(new object[] {o1}, Act.Target);
+            Act.Method.ShouldFail(new object[] { o1 }, Act.Target);
             }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2>(this Action<T1, T2> Act, T1 o1, T2 o2)
             {
-            Act.Method.ShouldFail(new object[] {o1, o2}, Act.Target);
+            Act.Method.ShouldFail(new object[] { o1, o2 }, Act.Target);
             }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, T3>(this Action<T1, T2, T3> Act, T1 o1, T2 o2, T3 o3)
             {
-            Act.Method.ShouldFail(new object[] {o1, o2, o3}, Act.Target);
+            Act.Method.ShouldFail(new object[] { o1, o2, o3 }, Act.Target);
             }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, T3, T4>(this Action<T1, T2, T3, T4> Act, T1 o1, T2 o2, T3 o3, T4 o4)
             {
-            Act.Method.ShouldFail(new object[] {o1, o2, o3, o4}, Act.Target);
+            Act.Method.ShouldFail(new object[] { o1, o2, o3, o4 }, Act.Target);
             }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<E>(this Action Act) where E : Exception
             {
-            Act.Method.ShouldFail<E>(new object[] {}, Act.Target);
+            Act.Method.ShouldFail<E>(new object[] { }, Act.Target);
             }
 
         /// <summary>
@@ -258,7 +258,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, E>(this Action<T1> Act, T1 o1) where E : Exception
             {
-            Act.Method.ShouldFail<E>(new object[] {o1}, Act.Target);
+            Act.Method.ShouldFail<E>(new object[] { o1 }, Act.Target);
             }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, E>(this Action<T1, T2> Act, T1 o1, T2 o2) where E : Exception
             {
-            Act.Method.ShouldFail<E>(new object[] {o1, o2}, Act.Target);
+            Act.Method.ShouldFail<E>(new object[] { o1, o2 }, Act.Target);
             }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, T3, E>(this Action<T1, T2, T3> Act, T1 o1, T2 o2, T3 o3) where E : Exception
             {
-            Act.Method.ShouldFail<E>(new object[] {o1, o2, o3}, Act.Target);
+            Act.Method.ShouldFail<E>(new object[] { o1, o2, o3 }, Act.Target);
             }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, T3, T4, E>(this Action<T1, T2, T3, T4> Act, T1 o1, T2 o2, T3 o3, T4 o4) where E : Exception
             {
-            Act.Method.ShouldFail<E>(new object[] {o1, o2, o3, o4}, Act.Target);
+            Act.Method.ShouldFail<E>(new object[] { o1, o2, o3, o4 }, Act.Target);
             }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<U>(this Func<U> Func)
             {
-            Func.Method.ShouldFail(new object[] {}, Func.Target);
+            Func.Method.ShouldFail(new object[] { }, Func.Target);
             }
 
         /// <summary>
@@ -308,7 +308,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, U>(this Func<T1, U> Func, T1 o1)
             {
-            Func.Method.ShouldFail(new object[] {o1}, Func.Target);
+            Func.Method.ShouldFail(new object[] { o1 }, Func.Target);
             }
 
         /// <summary>
@@ -318,7 +318,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, U>(this Func<T1, T2, U> Func, T1 o1, T2 o2)
             {
-            Func.Method.ShouldFail(new object[] {o1, o2}, Func.Target);
+            Func.Method.ShouldFail(new object[] { o1, o2 }, Func.Target);
             }
 
         /// <summary>
@@ -328,7 +328,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, T3, U>(this Func<T1, T2, T3, U> Func, T1 o1, T2 o2, T3 o3)
             {
-            Func.Method.ShouldFail(new object[] {o1, o2, o3}, Func.Target);
+            Func.Method.ShouldFail(new object[] { o1, o2, o3 }, Func.Target);
             }
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, T3, T4, U>(this Func<T1, T2, T3, T4, U> Func, T1 o1, T2 o2, T3 o3, T4 o4)
             {
-            Func.Method.ShouldFail(new object[] {o1, o2, o3, o4}, Func.Target);
+            Func.Method.ShouldFail(new object[] { o1, o2, o3, o4 }, Func.Target);
             }
 
         /// <summary>
@@ -348,7 +348,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<U, E>(this Func<U> Func) where E : Exception
             {
-            Func.Method.ShouldFail<E>(new object[] {}, Func.Target);
+            Func.Method.ShouldFail<E>(new object[] { }, Func.Target);
             }
 
         /// <summary>
@@ -358,7 +358,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, U, E>(this Func<T1, U> Func, T1 o1) where E : Exception
             {
-            Func.Method.ShouldFail<E>(new object[] {o1}, Func.Target);
+            Func.Method.ShouldFail<E>(new object[] { o1 }, Func.Target);
             }
 
         /// <summary>
@@ -368,7 +368,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, U, E>(this Func<T1, T2, U> Func, T1 o1, T2 o2) where E : Exception
             {
-            Func.Method.ShouldFail<E>(new object[] {o1, o2}, Func.Target);
+            Func.Method.ShouldFail<E>(new object[] { o1, o2 }, Func.Target);
             }
 
         /// <summary>
@@ -378,7 +378,7 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static void ShouldFail<T1, T2, T3, U, E>(this Func<T1, T2, T3, U> Func, T1 o1, T2 o2, T3 o3) where E : Exception
             {
-            Func.Method.ShouldFail<E>(new object[] {o1, o2, o3}, Func.Target);
+            Func.Method.ShouldFail<E>(new object[] { o1, o2, o3 }, Func.Target);
             }
 
         /// <summary>
@@ -389,7 +389,7 @@ namespace LCore.LUnit.Fluent
         public static void ShouldFail<T1, T2, T3, T4, U, E>(this Func<T1, T2, T3, T4, U> Func, T1 o1, T2 o2, T3 o3, T4 o4)
             where E : Exception
             {
-            Func.Method.ShouldFail<E>(new object[] {o1, o2, o3, o4}, Func.Target);
+            Func.Method.ShouldFail<E>(new object[] { o1, o2, o3, o4 }, Func.Target);
             }
 
         #endregion
@@ -426,12 +426,12 @@ namespace LCore.LUnit.Fluent
         /// <exception cref="InternalTestFailureException">The test fails</exception>
         public static async void ShouldBe<U>(this Func<U> Func, U ExpectedResult, TimeSpan? WithinTimeSpan = null, TimeSpan? Period = null)
             {
-            Period = Period ?? new TimeSpan(days: 0, hours: 0, minutes: 0, seconds: 0, milliseconds: 100);
-
             if (WithinTimeSpan == null || WithinTimeSpan <= TimeSpan.Zero)
                 Func().Should().Be(ExpectedResult);
             else
                 {
+                Period = Period ?? new TimeSpan(days: 0, hours: 0, minutes: 0, seconds: 0, milliseconds: 100);
+
                 bool Success = false;
                 U Result;
 
@@ -439,27 +439,27 @@ namespace LCore.LUnit.Fluent
                 int TotalWaited = 0;
                 var Watcher = new Task(async () =>
                     {
-                    while (TotalWaited < ((TimeSpan) WithinTimeSpan).TotalMilliseconds)
-                        {
-                        Result = Func();
-
-                        if (Result.Equals(ExpectedResult))
+                        while (TotalWaited < ((TimeSpan)WithinTimeSpan).TotalMilliseconds)
                             {
-                            Success = true;
-                            break;
+                            Result = Func();
+
+                            if (Result.Equals(ExpectedResult))
+                                {
+                                Success = true;
+                                break;
+                                }
+
+                            await Task.Delay((TimeSpan)Period);
+
+                            TotalWaited += (int)((TimeSpan)Period).TotalMilliseconds;
                             }
-
-                        await Task.Delay((TimeSpan) Period);
-
-                        TotalWaited += (int) ((TimeSpan) Period).TotalMilliseconds;
-                        }
                     });
 
                 await Watcher;
 
-                    Success.ShouldBeTrue("the expected result was not found within the time limit");
+                Success.ShouldBeTrue("the expected result was not found within the time limit");
 
-            }
+                }
             }
 
         /// <summary>

@@ -9,6 +9,7 @@ LCore.LUnit
 # [AssemblyCoverage](docs/AssemblyCoverage.md)
 # [AssemblyTester](docs/AssemblyTester.md)
 # [Categories](docs/Categories.md)
+# [CodeCoverageMetaData](docs/CodeCoverageMetaData.md)
 # [Format](docs/Format.md)
 # [ITestAttribute](docs/ITestAttribute.md)
 # [LUnit](docs/LUnit.md)
