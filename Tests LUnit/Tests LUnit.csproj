@@ -52,20 +52,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LUnit\bin\Debug\L Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="L, Version=0.9.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LUnit\bin\Debug\L.dll</HintPath>
-    </Reference>
-    <Reference Include="LDoc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LDoc.2016.8.25.7\lib\net451\LDoc.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.8.2584324.1\lib\net451\L Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LUnit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LUnit\bin\Debug\LUnit.dll</HintPath>
+    <Reference Include="L, Version=0.9.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LCore.2016.8.2584324.1\lib\net451\L.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LDoc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LDoc.2016.8.25.10\lib\net451\LDoc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.UnitTestFramework.Extensions.1.0.0.3\lib\net40\Microsoft.UnitTestFramework.Extensions.dll</HintPath>
@@ -115,9 +111,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\L Banner original.png" />
+    <Content Include="Content\L Logo.png" />
+    <Content Include="Content\LCore-banner-large.png" />
+    <Content Include="Content\LCore-banner-small.png" />
     <Content Include="Content\LDoc Banner Original.png" />
     <Content Include="Content\LDoc-banner-large.png" />
     <Content Include="Content\LDoc-banner-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LUnit\LUnit.csproj">
+      <Project>{0275fcea-4312-4003-8447-5cad2e333616}</Project>
+      <Name>LUnit</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
