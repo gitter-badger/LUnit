@@ -2,6 +2,7 @@
 <img align="right" src="LUnit/Content/LUnit-logo-small.png">
 ##Home
 ###Installation Instructions
+Add LUnit as a nuget package:
 ```cs
 Install-Package LUnit
 ```

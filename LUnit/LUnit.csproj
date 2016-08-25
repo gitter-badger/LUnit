@@ -45,11 +45,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.23.2\lib\net451\L Utilities.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.8.23.5\lib\net451\L Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="L, Version=0.9.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.23.2\lib\net451\L.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.8.23.5\lib\net451\L.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
@@ -100,6 +100,10 @@
     <Compile Include="Coverage\MethodCoverage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\L Banner original.png" />
+    <Content Include="Content\L Logo.png" />
+    <Content Include="Content\LCore-banner-large.png" />
+    <Content Include="Content\LCore-banner-small.png" />
     <Content Include="Content\LUnit-banner.pdn" />
     <Content Include="Content\LUnit-logo-large.png" />
     <Content Include="Content\LUnit-logo-small.png" />
