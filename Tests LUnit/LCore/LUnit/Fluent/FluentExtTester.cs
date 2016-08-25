@@ -9,6 +9,8 @@ using LCore.LUnit.Fluent;
 using LCore.Naming;
 using Xunit;
 using Xunit.Abstractions;
+// ReSharper disable UnusedParameter.Global
+// ReSharper disable UnusedVariable
 
 // ReSharper disable ExpressionIsAlwaysNull
 
@@ -320,14 +322,14 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
             L.A(() => this._TestFunc4.ShouldBe("abc", "abc", "abc", "abcd")).ShouldFail();
             L.A(() => this._TestFunc5.ShouldBe("abc", "abc", "abc", "abc", "abcd")).ShouldFail();
 
-            var ResultToTest = 0;
+            int ResultToTest = 0;
             var TestAction = new Action(async () =>
                 {
-                await Task.Delay(1000);
+                await Task.Delay(millisecondsDelay: 1000);
                 ResultToTest = 5;
                 });
 
-            var TestWithinTimespan = new Func<string, string, string, string, int>((o1, o2, o3, o4) => { return ResultToTest; });
+            var TestWithinTimespan = new Func<string, string, string, string, int>((o1, o2, o3, o4) => ResultToTest);
 
 
             CancellationTokenSource TokenSource = null;
@@ -344,7 +346,7 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
                 ResultToTest = 0;
                 StartAction = Task.Factory.StartNew(() =>
                     {
-                    Thread.Sleep(300);
+                    Thread.Sleep(millisecondsTimeout: 300);
                     ResultToTest = 5;
                     }, TokenSource.Token);
                 });

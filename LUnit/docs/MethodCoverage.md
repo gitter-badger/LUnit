@@ -1,10 +1,11 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](../LUnit.md)
-###MethodCoverage
-![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Documented 94%](http://b.repl.ca/v1/Documented-94%25-green.png "") ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
+### MethodCoverage
+![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Documented 94%](http://b.repl.ca/v1/Documented-94%25-green.png "")
+![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
 [View Source](../Coverage/MethodCoverage.cs)
-######Summary
+###### Summary
 
             Represents method coverage information, given a method
             to be tested, along with any Test Assemblies covering it.

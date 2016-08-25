@@ -1,9 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](Format.md)
-###Format
-[View Source](Format.md)
-#Namespace
+### Format
+# Namespace
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

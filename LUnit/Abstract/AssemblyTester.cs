@@ -10,6 +10,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xunit;
 using Xunit.Abstractions;
 using static LCore.LUnit.LUnit.Categories;
+// ReSharper disable VirtualMemberNeverOverridden.Global
 
 // ReSharper disable UnusedParameter.Global
 

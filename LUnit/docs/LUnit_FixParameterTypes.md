@@ -1,28 +1,29 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](LUnit.md)
-###LUnit
-[View Source](../LUnit.csproj)
-#FixParameterTypes
+### LUnit
+[View Source](../Extensions/LUnit.cs)
+# FixParameterTypes
+#### Static Method
+###### public static [void] FixParameterTypes([MethodInfo] Method, [Object[]] Parameters);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](../LUnit.csproj) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../LUnit.csproj)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/LUnit.cs)
 
-####Static Method
-######public static [void] FixParameterTypes([MethodInfo] Method, [Object[]] Parameters);
-######Summary
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Extensions/LUnit.cs)
+###### Summary
 
             Attempts to resolve parameter types for a method test.
             This corrects parameter types, converts arrays to lists if needed.
             
-######Parameters
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Method | No | [MethodInfo] | 
 Parameters | No | [Object[]] | 
 
-####Returns
-######[void]
+#### Returns
+###### [void]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

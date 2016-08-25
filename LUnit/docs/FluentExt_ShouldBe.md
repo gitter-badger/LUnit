@@ -1,16 +1,17 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](FluentExt.md)
-###FluentExt
-[View Source](FluentExt.md)
-#ShouldBe
+### FluentExt
+[View Source](../Extensions/FluentExt.cs)
+# ShouldBe
+#### Static Method
+###### public static [void] ShouldBe([MethodInfo] Method, [Object] Target, [Object[]] Params, [Object] ExpectedResult, [Func<Object, Boolean>[]] AdditionalResultChecks);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](FluentExt.md) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](FluentExt.md)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs)
 
-####Static Method
-######public static [void] ShouldBe([MethodInfo] Method, [Object] Target, [Object[]] Params, [Object] ExpectedResult, [Func<Object, Boolean>[]] AdditionalResultChecks);
-######Summary
-######Parameters
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 1](http://b.repl.ca/v1/Assertions-1-brightgreen.png "")](../Extensions/FluentExt.cs)
+###### Summary
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
@@ -20,8 +21,8 @@ Params | Yes | [Object[]] |
 ExpectedResult | Yes | [Object] | 
 AdditionalResultChecks | No | [Func<Object, Boolean>[]] | 
 
-####Returns
-######[void]
+#### Returns
+###### [void]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

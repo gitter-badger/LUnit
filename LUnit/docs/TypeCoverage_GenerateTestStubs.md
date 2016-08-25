@@ -1,26 +1,27 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](TypeCoverage.md)
-###TypeCoverage
+### TypeCoverage
 [View Source](../Coverage/TypeCoverage.cs)
-#GenerateTestStubs
+# GenerateTestStubs
+#### InstanceMethod
+###### public [void] GenerateTestStubs([String] GeneratedCodeFullPath);
 
-![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](../Coverage/TypeCoverage.cs) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Coverage/TypeCoverage.cs)
+![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Coverage/TypeCoverage.cs)
 
-####InstanceMethod
-######public [void] GenerateTestStubs([String] GeneratedCodeFullPath);
-######Summary
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Coverage/TypeCoverage.cs)
+###### Summary
 
             Generate test stubs for all types in the assembly.
             
-######Parameters
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 GeneratedCodeFullPath | No | [String] | 
 
-####Returns
-######[void]
+#### Returns
+###### [void]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

@@ -280,5 +280,14 @@ namespace LCore.LUnit
 
             return TraitGetter(TestAssemblies);
             }
+
+
+        [CanBeNull]
+        public static CodeCoverageMetaData GatherCodeCoverageMetaData([CanBeNullAttribute]this MemberInfo Member)
+            {
+            return Member == null
+                ? null
+                : new CodeCoverageMetaData(Member);
+            }
         }
     }

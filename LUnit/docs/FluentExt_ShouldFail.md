@@ -1,16 +1,17 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](FluentExt.md)
-###FluentExt
-[View Source](FluentExt.md)
-#ShouldFail
+### FluentExt
+[View Source](../Extensions/FluentExt.cs)
+# ShouldFail
+#### Static Method
+###### public static [void] ShouldFail([MethodInfo] Method, [Object[]] Params, [Object] Target, [Func<Boolean>[]] AdditionalChecks);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](FluentExt.md) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](FluentExt.md)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs)
 
-####Static Method
-######public static [void] ShouldFail([MethodInfo] Method, [Object[]] Params, [Object] Target, [Func<Boolean>[]] AdditionalChecks);
-######Summary
-######Parameters
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Extensions/FluentExt.cs)
+###### Summary
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
@@ -19,8 +20,8 @@ Params | No | [Object[]] |
 Target | No | [Object] | 
 AdditionalChecks | No | [Func<Boolean>[]] | 
 
-####Returns
-######[void]
+#### Returns
+###### [void]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

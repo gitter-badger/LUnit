@@ -1,10 +1,11 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](../LUnit.md)
-###TypeCoverage
-![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Documented 100%](http://b.repl.ca/v1/Documented-100%25-brightgreen.png "") ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
+### TypeCoverage
+![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Documented 100%](http://b.repl.ca/v1/Documented-100%25-brightgreen.png "")
+![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
 [View Source](../Coverage/TypeCoverage.cs)
-######Summary
+###### Summary
 
             Represents Type coverage information, given a Type
             to be tested, along with any Test Assemblies covering it.

@@ -1,13 +1,8 @@
 ![](LUnit/Content/LUnit-banner-large.png "")
 <img align="right" src="LUnit/Content/LUnit-logo-small.png">
-##Home
-###Installation Instructions
-Add LUnit as a nuget package:
-```cs
-Install-Package LUnit
-```
-##LUnit
-![Framework Version v4.0.30319](http://b.repl.ca/v1/Framework-Version%20v4.0.30319-blue.png "")
+## Home
+## LUnit
+
  - [LUnit](LUnit/LUnit.md)
 ---
 

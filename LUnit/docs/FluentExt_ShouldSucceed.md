@@ -1,19 +1,20 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](FluentExt.md)
-###FluentExt
-[View Source](FluentExt.md)
-#ShouldSucceed
+### FluentExt
+[View Source](../Extensions/FluentExt.cs)
+# ShouldSucceed
+#### Static Method
+###### public static [void] ShouldSucceed([MethodInfo] Method, [Object] Target, [Object[]] Params);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](FluentExt.md) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](FluentExt.md)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs)
 
-####Static Method
-######public static [void] ShouldSucceed([MethodInfo] Method, [Object] Target, [Object[]] Params);
-######Summary
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 1](http://b.repl.ca/v1/Assertions-1-brightgreen.png "")](../Extensions/FluentExt.cs)
+###### Summary
 
             Assert that a metod succeeds (does not throw an exception)
             
-######Parameters
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
@@ -21,8 +22,8 @@ Method | No | [MethodInfo] |
 Target | Yes | [Object] | 
 Params | Yes | [Object[]] | 
 
-####Returns
-######[void]
+#### Returns
+###### [void]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

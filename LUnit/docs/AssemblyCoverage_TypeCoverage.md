@@ -1,9 +1,9 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](AssemblyCoverage.md)
-###AssemblyCoverage
+### AssemblyCoverage
 [View Source](../Coverage/AssemblyCoverage.cs)
-#TypeCoverage
+# TypeCoverage
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

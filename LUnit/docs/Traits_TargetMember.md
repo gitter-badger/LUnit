@@ -1,9 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](Traits.md)
-###Traits
-[View Source](Traits.md)
-#TargetMember
+### Traits
+# TargetMember
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

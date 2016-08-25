@@ -1,10 +1,11 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](../LUnit.md)
-###AssemblyCoverage
+### AssemblyCoverage
 ![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "") ![Documented 100%](http://b.repl.ca/v1/Documented-100%25-brightgreen.png "")
+![Type Object Class](http://b.repl.ca/v1/Type-Object%20Class-lightgrey.png "")
 [View Source](../Coverage/AssemblyCoverage.cs)
-######Summary
+###### Summary
 
             Represents Assembly coverage information, given an Assembly 
             to be tested, along with any Test Assemblies covering it.

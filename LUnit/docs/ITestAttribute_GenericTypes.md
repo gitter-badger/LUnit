@@ -1,9 +1,9 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](ITestAttribute.md)
-###ITestAttribute
+### ITestAttribute
 [View Source](../Attributes/ITestAttribute.cs)
-#GenericTypes
+# GenericTypes
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

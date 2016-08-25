@@ -1,27 +1,28 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](TestExt.md)
-###TestExt
-[View Source](TestExt.md)
-#RunTest
+### TestExt
+[View Source](../Extensions/TestExt.cs)
+# RunTest
+#### Static Method
+###### public static [void] RunTest([ITestResultAttribute] Attr, [MethodInfo] Method);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](TestExt.md) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](TestExt.md)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs)
 
-####Static Method
-######public static [void] RunTest([ITestResultAttribute] Attr, [MethodInfo] Method);
-######Summary
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 3](http://b.repl.ca/v1/Assertions-3-brightgreen.png "")](../Extensions/TestExt.cs)
+###### Summary
 
             Execute an ITestResultAttribute and compare ActualResult with ExpectedResult.
             
-######Parameters
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Attr | No | [ITestResultAttribute] | 
 Method | No | [MethodInfo] | 
 
-####Returns
-######[void]
+#### Returns
+###### [void]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

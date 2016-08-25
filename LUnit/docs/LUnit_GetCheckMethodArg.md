@@ -1,28 +1,29 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](LUnit.md)
-###LUnit
-[View Source](../LUnit.csproj)
-#GetCheckMethodArg
+### LUnit
+[View Source](../Extensions/LUnit.cs)
+# GetCheckMethodArg
+#### Static Method
+###### public static [Func<Object, Boolean>] GetCheckMethodArg([MethodInfo] SourceMethod, [String] MethodName);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](../LUnit.csproj) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../LUnit.csproj)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/LUnit.cs)
 
-####Static Method
-######public static [Func<Object, Boolean>] GetCheckMethodArg([MethodInfo] SourceMethod, [String] MethodName);
-######Summary
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Extensions/LUnit.cs)
+###### Summary
 
             Locates the method to be tested.
             Its argument input is set to object.
             
-######Parameters
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 SourceMethod | No | [MethodInfo] | 
 MethodName | No | [String] | 
 
-####Returns
-######[Func<Object, Boolean>]
+#### Returns
+###### [Func<Object, Boolean>]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

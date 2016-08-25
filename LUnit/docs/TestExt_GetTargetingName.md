@@ -1,21 +1,22 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](TestExt.md)
-###TestExt
-[View Source](TestExt.md)
-#GetTargetingName
+### TestExt
+[View Source](../Extensions/TestExt.cs)
+# GetTargetingName
+#### Static Method
+###### public static [Tuple<String, String, String>] GetTargetingName([MemberInfo] Member, [String] TestNamespaceFormat, [String] TestClassFormat, [String] TestMethodFormat);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](TestExt.md) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](TestExt.md)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs)
 
-####Static Method
-######public static [Tuple<String, String, String>] GetTargetingName([MemberInfo] Member, [String] TestNamespaceFormat, [String] TestClassFormat, [String] TestMethodFormat);
-######Summary
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Extensions/TestExt.cs)
+###### Summary
 
             Returns a Tuple of strings representing the:
             Namespace, Class Name, Member Name to target the specified MemberInfo.
             Use this to directly target members for testing.
             
-######Parameters
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
@@ -24,8 +25,8 @@ TestNamespaceFormat | Yes | [String] |
 TestClassFormat | Yes | [String] | 
 TestMethodFormat | Yes | [String] | 
 
-####Returns
-######[Tuple<String, String, String>]
+#### Returns
+###### [Tuple<String, String, String>]
 
 ---
 

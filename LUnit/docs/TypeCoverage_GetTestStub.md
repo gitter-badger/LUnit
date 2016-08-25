@@ -1,27 +1,28 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](TypeCoverage.md)
-###TypeCoverage
+### TypeCoverage
 [View Source](../Coverage/TypeCoverage.cs)
-#GetTestStub
+# GetTestStub
+#### InstanceMethod
+###### public [String[]] GetTestStub([Boolean] UseXunitOutputBase);
 
-![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](../Coverage/TypeCoverage.cs) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Coverage/TypeCoverage.cs)
+![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-lightgrey.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Coverage/TypeCoverage.cs)
 
-####InstanceMethod
-######public [String[]] GetTestStub([Boolean] UseXunitOutputBase);
-######Summary
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Coverage/TypeCoverage.cs)
+###### Summary
 
             Retrieves the empty test stub for this class. 
             If all members are covered then an empty string[] will be returned.
             
-######Parameters
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 UseXunitOutputBase | Yes | [Boolean] | 
 
-####Returns
-######[String[]]
+#### Returns
+###### [String[]]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

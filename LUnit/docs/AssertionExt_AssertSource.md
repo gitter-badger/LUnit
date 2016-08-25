@@ -1,16 +1,17 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](AssertionExt.md)
-###AssertionExt
-[View Source](AssertionExt.md)
-#AssertSource
+### AssertionExt
+[View Source](../Extensions/AssertionExt.cs)
+# AssertSource
+#### Static Method
+###### public static [void] AssertSource([MethodInfo] Method, [Object] Target, [Object[]] Params, [Object] ExpectedSource, [Func<Object, Boolean>[]] AdditionalSourceChecks);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](AssertionExt.md) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](AssertionExt.md)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/AssertionExt.cs)
 
-####Static Method
-######public static [void] AssertSource([MethodInfo] Method, [Object] Target, [Object[]] Params, [Object] ExpectedSource, [Func<Object, Boolean>[]] AdditionalSourceChecks);
-######Summary
-######Parameters
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Extensions/AssertionExt.cs)
+###### Summary
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
@@ -20,8 +21,8 @@ Params | Yes | [Object[]] |
 ExpectedSource | Yes | [Object] | 
 AdditionalSourceChecks | No | [Func<Object, Boolean>[]] | 
 
-####Returns
-######[void]
+#### Returns
+###### [void]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

@@ -5,7 +5,6 @@ using System.Collections;
 // ReSharper disable once RedundantUsingDirective
 using System.Diagnostics;
 using System.Reflection;
-using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using FluentAssertions.Primitives;

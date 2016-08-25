@@ -1,9 +1,8 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](Categories.md)
-###Categories
-[View Source](Categories.md)
-#Internal
+### Categories
+# Internal
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 

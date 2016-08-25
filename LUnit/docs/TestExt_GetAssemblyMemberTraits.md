@@ -1,23 +1,24 @@
 ![](../Content/LUnit-banner-small.png "")
 [<img align="right" src="../Content/LUnit-logo-small.png">](../../README.md)
 [Up](TestExt.md)
-###TestExt
-[View Source](TestExt.md)
-#GetAssemblyMemberTraits
+### TestExt
+[View Source](../Extensions/TestExt.cs)
+# GetAssemblyMemberTraits
+#### Static Method
+###### public static [List<String>] GetAssemblyMemberTraits([IEnumerable<Assembly>] TestAssemblies);
 
-![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Source code Available](http://b.repl.ca/v1/Source%20code-Available-brightgreen.png "")](TestExt.md) [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](TestExt.md)
+![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-lightgrey.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs)
 
-####Static Method
-######public static [List<String>] GetAssemblyMemberTraits([IEnumerable<Assembly>] TestAssemblies);
-######Summary
-######Parameters
+![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 0](http://b.repl.ca/v1/Assertions-0-brightgreen.png "")](../Extensions/TestExt.cs)
+###### Summary
+###### Parameters
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 TestAssemblies | No | [IEnumerable<Assembly>] | 
 
-####Returns
-######[List<String>]
+#### Returns
+###### [List<String>]
 ---
 
 [Home](../../README.md) | [Table of Contents](../../TableOfContents.md) | 
