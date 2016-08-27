@@ -52,15 +52,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.2584324.1\lib\net451\L Utilities.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.8.25103237.1\lib\net451\L Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="L, Version=0.9.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.2584324.1\lib\net451\L.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.8.25103237.1\lib\net451\L.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="LDoc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LDoc.2016.8.25.10\lib\net451\LDoc.dll</HintPath>
+      <HintPath>..\packages\LDoc.2016.8.25191313.1\lib\net451\LDoc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
@@ -73,7 +73,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
+      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
