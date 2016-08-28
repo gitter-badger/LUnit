@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions" alt="" target="_blank">AndConstraint&lt;T&gt;</a>&lt;<a href="https://github.com/dennisdoomen/fluentassertions/wiki#booleans" alt="" target="_blank">BooleanAssertions</a>&gt; ShouldBeTrue([Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx) Boolean, [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) Because, [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) BecauseArgs);
+###### public static <a href="https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions" alt="" target="_blank">AndConstraint&lt;T&gt;</a>&lt;<a href="https://github.com/dennisdoomen/fluentassertions/wiki#booleans" alt="" target="_blank">BooleanAssertions</a>&gt; ShouldBeTrue([Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx) Boolean, [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) Because, [Object[]](https://msdn.microsoft.com/en-us/library/system.object.aspx) BecauseArgs);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 25](http://b.repl.ca/v1/Lines%20of%20Code-25-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs#L626)
 
@@ -28,7 +28,7 @@ Boolean | No | [Boolean](https://msdn.microsoft.com/en-us/library/system.boolean
 Because | Yes | [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) | A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
                 explaining why the assertion is needed. If the phrase does not start with the
                 word because, it is prepended automatically.
-BecauseArgs | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) | Zero or more objects to format using the placeholders in because.
+BecauseArgs | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object.aspx) | Zero or more objects to format using the placeholders in because.
 
 
 #### Returns

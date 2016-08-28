@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) AssertFails([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) Method, [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) Params, [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) Target, <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;[Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;[] AdditionalChecks);
+###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) AssertFails([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) Method, [Object[]](https://msdn.microsoft.com/en-us/library/system.object.aspx) Params, [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) Target, <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;[Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;[] AdditionalChecks);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 0](http://b.repl.ca/v1/Lines%20of%20Code-0-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/AssertionExt.cs#L203)
 
@@ -20,7 +20,7 @@
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Method | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
-Params | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) | 
+Params | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
 Target | No | [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
 AdditionalChecks | No | <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;[Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;[] | 
 

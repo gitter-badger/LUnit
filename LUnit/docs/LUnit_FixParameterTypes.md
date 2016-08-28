@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) FixParameterTypes([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) Method, [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) Parameters);
+###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) FixParameterTypes([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) Method, [Object[]](https://msdn.microsoft.com/en-us/library/system.object.aspx) Parameters);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 11](http://b.repl.ca/v1/Lines%20of%20Code-11-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/LUnit.cs#L30)
 
@@ -26,7 +26,7 @@
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Method | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
-Parameters | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) | 
+Parameters | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
 
 
 #### Returns

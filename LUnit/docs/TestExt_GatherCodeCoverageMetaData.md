@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static **[CodeCoverageMetaData](CodeCoverageMetaData.md)** GatherCodeCoverageMetaData([MemberInfo](https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx) Member, [String[]](https://msdn.microsoft.com/en-us/library/system.string[].aspx) CustomCommentTags);
+###### public static **[CodeCoverageMetaData](CodeCoverageMetaData.md)** GatherCodeCoverageMetaData([MemberInfo](https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx) Member, [String[]](https://msdn.microsoft.com/en-us/library/system.string.aspx) CustomCommentTags);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 8](http://b.repl.ca/v1/Lines%20of%20Code-8-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs#L288)
 
@@ -25,7 +25,7 @@
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Member | No | [MemberInfo](https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx) | 
-CustomCommentTags | No | [String[]](https://msdn.microsoft.com/en-us/library/system.string[].aspx) | 
+CustomCommentTags | No | [String[]](https://msdn.microsoft.com/en-us/library/system.string.aspx) | 
 
 
 #### Returns
