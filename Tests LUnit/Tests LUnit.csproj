@@ -52,11 +52,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.27233417.1\lib\net451\L Utilities.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.241.3.4\lib\net451\L Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="L, Version=0.9.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.27233417.1\lib\net451\L.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.241.3.4\lib\net451\L.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="LDoc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -111,8 +111,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\LCore small logo.png" />
-    <Content Include="Content\LCore-small-logo.ico" />
     <Content Include="Content\LDoc Banner Original.png" />
     <Content Include="Content\LDoc small logo.png" />
     <Content Include="Content\LDoc-banner-large.png" />
