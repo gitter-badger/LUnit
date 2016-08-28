@@ -9,7 +9,7 @@
 
 #### InstanceMethod
 
-###### public <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String[]</a> GetTestStub(<a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>&gt; Usings);
+###### public [String[]](https://msdn.microsoft.com/en-us/library/system.string[].aspx) GetTestStub(<a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;[String](https://msdn.microsoft.com/en-us/library/system.string.aspx)&gt; Usings);
 
 ![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-blue.png "") ![Lines of Code 36](http://b.repl.ca/v1/Lines%20of%20Code-36-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Coverage/MethodCoverage.cs#L114)
 
@@ -19,12 +19,12 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-Usings | No | <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>&gt; | 
+Usings | No | <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;[String](https://msdn.microsoft.com/en-us/library/system.string.aspx)&gt; | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String[]</a>
+###### [String[]](https://msdn.microsoft.com/en-us/library/system.string[].aspx)
 
 
 

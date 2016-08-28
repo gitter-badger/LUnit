@@ -9,7 +9,7 @@
 
 #### InstanceMethod
 
-###### public <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String[]</a> GetTestStub(<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a> UseXunitOutputBase);
+###### public [String[]](https://msdn.microsoft.com/en-us/library/system.string[].aspx) GetTestStub([Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx) UseXunitOutputBase);
 
 ![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-blue.png "") ![Lines of Code 58](http://b.repl.ca/v1/Lines%20of%20Code-58-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Coverage/TypeCoverage.cs#L93)
 
@@ -25,12 +25,12 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-UseXunitOutputBase | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a> | 
+UseXunitOutputBase | Yes | [Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx) | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String[]</a>
+###### [String[]](https://msdn.microsoft.com/en-us/library/system.string[].aspx)
 
 
 

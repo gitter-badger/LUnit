@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://msdn.microsoft.com/en-us/library/dd387150.aspx" alt="" target="_blank">Tuple&lt;T1, T2, T3&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>&gt; GetTargetingName(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="" target="_blank">MemberInfo</a> Member, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> TestNamespaceFormat, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> TestClassFormat, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> TestMethodFormat);
+###### public static <a href="https://msdn.microsoft.com/en-us/library/dd387150(v=vs.110).aspx" alt="" target="_blank">Tuple&lt;T1, T2, T3&gt;</a>&lt;[String](https://msdn.microsoft.com/en-us/library/system.string.aspx), [String](https://msdn.microsoft.com/en-us/library/system.string.aspx), [String](https://msdn.microsoft.com/en-us/library/system.string.aspx)&gt; GetTargetingName([MemberInfo](https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx) Member, [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) TestNamespaceFormat, [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) TestClassFormat, [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) TestMethodFormat);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 0](http://b.repl.ca/v1/Lines%20of%20Code-0-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs#L177)
 
@@ -26,15 +26,15 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-Member | No | <a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="" target="_blank">MemberInfo</a> | 
-TestNamespaceFormat | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> | 
-TestClassFormat | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> | 
-TestMethodFormat | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> | 
+Member | No | [MemberInfo](https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx) | 
+TestNamespaceFormat | Yes | [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) | 
+TestClassFormat | Yes | [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) | 
+TestMethodFormat | Yes | [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/dd387150.aspx" alt="" target="_blank">Tuple&lt;T1, T2, T3&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>&gt;
+###### <a href="https://msdn.microsoft.com/en-us/library/dd387150(v=vs.110).aspx" alt="" target="_blank">Tuple&lt;T1, T2, T3&gt;</a>&lt;[String](https://msdn.microsoft.com/en-us/library/system.string.aspx), [String](https://msdn.microsoft.com/en-us/library/system.string.aspx), [String](https://msdn.microsoft.com/en-us/library/system.string.aspx)&gt;
 
 
 

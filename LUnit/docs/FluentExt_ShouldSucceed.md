@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a> ShouldSucceed(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> Method, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> Target, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> Params);
+###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) ShouldSucceed([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) Method, [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) Target, [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) Params);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 84](http://b.repl.ca/v1/Lines%20of%20Code-84-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs#L28)
 
@@ -24,14 +24,14 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-Method | No | <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> | 
-Target | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> | 
-Params | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> | 
+Method | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
+Target | Yes | [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
+Params | Yes | [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a>
+###### [void](https://msdn.microsoft.com/en-us/library/system.void.aspx)
 
 #### Exceptions
 T:Microsoft.VisualStudio.TestTools.UnitTesting.InternalTestFailureException The test fails

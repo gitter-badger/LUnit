@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a> ShouldFail(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> Method, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> Params, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> Target, <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a>&gt;[] AdditionalChecks);
+###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) ShouldFail([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) Method, [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) Params, [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) Target, <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;[Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;[] AdditionalChecks);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 0](http://b.repl.ca/v1/Lines%20of%20Code-0-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs#L173)
 
@@ -19,15 +19,15 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-Method | No | <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> | 
-Params | No | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> | 
-Target | No | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> | 
-AdditionalChecks | No | <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a>&gt;[] | 
+Method | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
+Params | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) | 
+Target | No | [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
+AdditionalChecks | No | <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;[Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;[] | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a>
+###### [void](https://msdn.microsoft.com/en-us/library/system.void.aspx)
 
 
 

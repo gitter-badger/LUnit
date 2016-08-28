@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions" alt="" target="_blank">AndConstraint&lt;T&gt;</a>&lt;<a href="https://github.com/dennisdoomen/fluentassertions/wiki#type-method-and-property-assertions" alt="" target="_blank">TypeAssertions</a>&gt; HaveAttribute(<a href="https://github.com/dennisdoomen/fluentassertions/wiki#type-method-and-property-assertions" alt="" target="_blank">TypeAssertions</a> Type, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> Because, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> BecauseArgs);
+###### public static <a href="https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions" alt="" target="_blank">AndConstraint&lt;T&gt;</a>&lt;<a href="https://github.com/dennisdoomen/fluentassertions/wiki#type-method-and-property-assertions" alt="" target="_blank">TypeAssertions</a>&gt; HaveAttribute(<a href="https://github.com/dennisdoomen/fluentassertions/wiki#type-method-and-property-assertions" alt="" target="_blank">TypeAssertions</a> Type, [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) Because, [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) BecauseArgs);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 0](http://b.repl.ca/v1/Lines%20of%20Code-0-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs#L525)
 
@@ -25,11 +25,11 @@
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
 Type | No | <a href="https://github.com/dennisdoomen/fluentassertions/wiki#type-method-and-property-assertions" alt="" target="_blank">TypeAssertions</a> | 
-Because | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> | A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
+Because | Yes | [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) | A formatted phrase as is supported by System.String.Format(System.String,System.Object[])
                 explaining why the assertion is needed. If the phrase does not start with the
                 word because, it is prepended automatically.
             
-BecauseArgs | No | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> | Zero or more objects to format using the placeholders in because.
+BecauseArgs | No | [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) | Zero or more objects to format using the placeholders in because.
 
 
 #### Returns

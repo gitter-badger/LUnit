@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a>&gt; GetCheckMethod(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> MethodName);
+###### public static <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;[Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt; GetCheckMethod([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) SourceMethod, [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) MethodName);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 10](http://b.repl.ca/v1/Lines%20of%20Code-10-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/LUnit.cs#L200)
 
@@ -24,13 +24,13 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-SourceMethod | No | <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> | 
-MethodName | No | <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> | 
+SourceMethod | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
+MethodName | No | [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a>&gt;
+###### <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func&lt;TResult&gt;</a>&lt;[Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;
 
 
 

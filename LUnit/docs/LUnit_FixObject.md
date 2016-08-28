@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a> FixObject(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="" target="_blank">Type</a> ObjectType, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> Obj);
+###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) FixObject([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) SourceMethod, [Type](https://msdn.microsoft.com/en-us/library/system.type.aspx) ObjectType, [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) Obj);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 33](http://b.repl.ca/v1/Lines%20of%20Code-33-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/LUnit.cs#L47)
 
@@ -19,14 +19,14 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-SourceMethod | No | <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> | 
-ObjectType | No | <a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="" target="_blank">Type</a> | 
-Obj | No | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> | 
+SourceMethod | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
+ObjectType | No | [Type](https://msdn.microsoft.com/en-us/library/system.type.aspx) | 
+Obj | No | [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a>
+###### [void](https://msdn.microsoft.com/en-us/library/system.void.aspx)
 
 
 

@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>&gt; GetAssemblyMemberTraits(<a href="https://msdn.microsoft.com/en-us/library/78dfe2yb.aspx" alt="" target="_blank">IEnumerable&lt;T&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.reflection.assembly.aspx" alt="" target="_blank">Assembly</a>&gt; TestAssemblies);
+###### public static <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;[String](https://msdn.microsoft.com/en-us/library/system.string.aspx)&gt; GetAssemblyMemberTraits(<a href="https://msdn.microsoft.com/en-us/library/78dfe2yb.aspx" alt="" target="_blank">IEnumerable&lt;T&gt;</a>&lt;[Assembly](https://msdn.microsoft.com/en-us/library/system.reflection.assembly.aspx)&gt; TestAssemblies);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 21](http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs#L256)
 
@@ -19,12 +19,12 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-TestAssemblies | No | <a href="https://msdn.microsoft.com/en-us/library/78dfe2yb.aspx" alt="" target="_blank">IEnumerable&lt;T&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.reflection.assembly.aspx" alt="" target="_blank">Assembly</a>&gt; | 
+TestAssemblies | No | <a href="https://msdn.microsoft.com/en-us/library/78dfe2yb.aspx" alt="" target="_blank">IEnumerable&lt;T&gt;</a>&lt;[Assembly](https://msdn.microsoft.com/en-us/library/system.reflection.assembly.aspx)&gt; | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a>&gt;
+###### <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List&lt;T&gt;</a>&lt;[String](https://msdn.microsoft.com/en-us/library/system.string.aspx)&gt;
 
 
 

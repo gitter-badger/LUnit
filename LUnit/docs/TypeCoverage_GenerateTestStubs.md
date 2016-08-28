@@ -9,7 +9,7 @@
 
 #### InstanceMethod
 
-###### public <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a> GenerateTestStubs(<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> GeneratedCodeFullPath);
+###### public [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) GenerateTestStubs([String](https://msdn.microsoft.com/en-us/library/system.string.aspx) GeneratedCodeFullPath);
 
 ![Type Public Method](http://b.repl.ca/v1/Type-Public%20Method-blue.png "") ![Lines of Code 14](http://b.repl.ca/v1/Lines%20of%20Code-14-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Coverage/TypeCoverage.cs#L66)
 
@@ -24,12 +24,12 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-GeneratedCodeFullPath | No | <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="" target="_blank">String</a> | 
+GeneratedCodeFullPath | No | [String](https://msdn.microsoft.com/en-us/library/system.string.aspx) | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a>
+###### [void](https://msdn.microsoft.com/en-us/library/system.void.aspx)
 
 
 

@@ -9,7 +9,7 @@
 
 #### Static Method
 
-###### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a> ShouldBe(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> Method, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> Target, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> Params, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> ExpectedResult, <a href="https://msdn.microsoft.com/en-us/library/bb549151.aspx" alt="" target="_blank">Func&lt;T, TResult&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a>, <a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a>&gt;[] AdditionalResultChecks);
+###### public static [void](https://msdn.microsoft.com/en-us/library/system.void.aspx) ShouldBe([MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) Method, [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) Target, [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) Params, [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) ExpectedResult, <a href="https://msdn.microsoft.com/en-us/library/bb549151.aspx" alt="" target="_blank">Func&lt;T, TResult&gt;</a>&lt;[Object](https://msdn.microsoft.com/en-us/library/system.object.aspx), [Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;[] AdditionalResultChecks);
 
 ![Type Static Method](http://b.repl.ca/v1/Type-Static%20Method-blue.png "") ![Lines of Code 112](http://b.repl.ca/v1/Lines%20of%20Code-112-blue.png "") ![TODOs 0](http://b.repl.ca/v1/TODOs-0-green.png "") ![Bugs 0](http://b.repl.ca/v1/Bugs-0-green.png "") ![Not Implemented 0](http://b.repl.ca/v1/Not%20Implemented-0-green.png "") ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs#L401)
 
@@ -19,16 +19,16 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-Method | No | <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="" target="_blank">MethodInfo</a> | 
-Target | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> | 
-Params | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object[]</a> | 
-ExpectedResult | Yes | <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a> | 
-AdditionalResultChecks | No | <a href="https://msdn.microsoft.com/en-us/library/bb549151.aspx" alt="" target="_blank">Func&lt;T, TResult&gt;</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="" target="_blank">Object</a>, <a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="" target="_blank">Boolean</a>&gt;[] | 
+Method | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
+Target | Yes | [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
+Params | Yes | [Object[]](https://msdn.microsoft.com/en-us/library/system.object[].aspx) | 
+ExpectedResult | Yes | [Object](https://msdn.microsoft.com/en-us/library/system.object.aspx) | 
+AdditionalResultChecks | No | <a href="https://msdn.microsoft.com/en-us/library/bb549151.aspx" alt="" target="_blank">Func&lt;T, TResult&gt;</a>&lt;[Object](https://msdn.microsoft.com/en-us/library/system.object.aspx), [Boolean](https://msdn.microsoft.com/en-us/library/system.boolean.aspx)&gt;[] | 
 
 
 #### Returns
 
-###### <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="" target="_blank">void</a>
+###### [void](https://msdn.microsoft.com/en-us/library/system.void.aspx)
 
 
 
