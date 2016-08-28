@@ -60,7 +60,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="LDoc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LDoc.2016.241.11.19\lib\net451\LDoc.dll</HintPath>
+      <HintPath>..\packages\LDoc.2016.241.11.28\lib\net451\LDoc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
