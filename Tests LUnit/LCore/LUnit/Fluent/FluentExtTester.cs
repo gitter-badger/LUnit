@@ -335,8 +335,6 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
             CancellationTokenSource TokenSource = null;
             CancellationToken Token;
 
-            Task StartAction = null;
-
             var Reset = new Action(() =>
                 {
                     TokenSource?.Cancel();
@@ -344,11 +342,11 @@ namespace LUnit_Tests.LCore.LUnit.Fluent
                     Token = TokenSource.Token;
 
                     ResultToTest = 0;
-                    StartAction = Task.Factory.StartNew(() =>
+                    Task.Factory.StartNew(() =>
                         {
-                            Thread.Sleep(millisecondsTimeout: 300);
-                            if (!Token.IsCancellationRequested)
-                                ResultToTest = 5;
+                        Thread.Sleep(millisecondsTimeout: 300);
+                        if (!Token.IsCancellationRequested)
+                            ResultToTest = 5;
                         }, TokenSource.Token);
                 });
 

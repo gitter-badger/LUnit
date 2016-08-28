@@ -4,6 +4,9 @@
 ## LUnit
 
  - [LUnit](LUnit/LUnit.md)
+### Related Projects
+- [LCore](https://github.com/CodeSingularity/LCore) 
+- [LDoc](https://github.com/CodeSingularity/LDoc) 
 
 
 ---
