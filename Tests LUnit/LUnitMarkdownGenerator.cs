@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using FluentAssertions;
+using FluentAssertions.Primitives;
+using FluentAssertions.Types;
 using LCore.Extensions;
 using LCore.LDoc.Markdown;
 
@@ -50,5 +53,18 @@ namespace LCore.LUnit.Tests
         /// </summary>
         public override string LogoImage_Small(GitHubMarkdown MD) =>
             MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LCore.LUnit)}-logo-small.png");
+
+        public override bool RequireDirectLinksToAllForeignTypes => true;
+
+        public override Dictionary<Type, string> CustomTypeLinks => new Dictionary<Type, string>
+            {
+            [typeof(TypeAssertions)] = "https://github.com/dennisdoomen/fluentassertions/wiki#type-method-and-property-assertions",
+            [typeof(AndConstraint<>)] = "https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions",
+            [typeof(BooleanAssertions)] = "https://github.com/dennisdoomen/fluentassertions/wiki#booleans",
+            [typeof(ObjectAssertions)] = "https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions",
+
+            [typeof(ILUnitAttribute)] = "", // TODO once LCore is documented.
+            [typeof(ITestResultAttribute)] = "", // TODO once LCore is documented.
+            };
         }
     }
