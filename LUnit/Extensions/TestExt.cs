@@ -281,9 +281,11 @@ namespace LCore.LUnit
             return TraitGetter(TestAssemblies);
             }
 
-
+        /// <summary>
+        /// Collects information from a <see cref="MemberInfo"/>.
+        /// </summary>
         [CanBeNull]
-        public static CodeCoverageMetaData GatherCodeCoverageMetaData([CanBeNullAttribute]this MemberInfo Member, string[] CustomCommentTags)
+        public static CodeCoverageMetaData GatherCodeCoverageMetaData([CanBeNull]this MemberInfo Member, string[] CustomCommentTags)
             {
             return Member == null
                 ? null

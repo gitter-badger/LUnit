@@ -45,11 +45,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.244.2.18\lib\net451\L Utilities.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.241.10.50\lib\net451\L Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="L, Version=0.9.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.244.2.18\lib\net451\L.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.241.10.50\lib\net451\L.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
@@ -67,7 +67,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
+      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
@@ -91,7 +91,7 @@
     <Compile Include="Coverage\AssemblyCoverage.cs" />
     <Compile Include="Attributes\ITestAttribute.cs" />
     <Compile Include="Attributes\TestAttribute.cs" />
-    <Compile Include="Extensions\CodeMetaData.cs" />
+    <Compile Include="Extensions\CodeCoverageMetaData.cs" />
     <Compile Include="Extensions\FluentExt.cs" />
     <Compile Include="Extensions\LUnit.cs" />
     <Compile Include="Extensions\AssertionExt.cs" />
@@ -101,6 +101,8 @@
     <Compile Include="Coverage\MethodCoverage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\LUnit small logo.pdn" />
+    <None Include="Content\LUnit-banner.pdn" />
     <None Include="docs\AssemblyCoverage.md" />
     <None Include="docs\AssemblyCoverage_AssertionsMade.md" />
     <None Include="docs\AssemblyCoverage_CoveringAssembly.md" />
@@ -270,6 +272,11 @@
     <None Include="docs\XUnitOutputTester.md" />
     <None Include="LUnit.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\LUnit banner original.png" />
+    <None Include="Content\LUnit-small-logo.ico" />
+    <None Include="Content\LUnit-banner-large.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

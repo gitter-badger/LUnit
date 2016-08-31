@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using LCore.Extensions;
-using System.Collections;
 // ReSharper disable once RedundantUsingDirective
-using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
 using FluentAssertions;
 using FluentAssertions.Primitives;
 using FluentAssertions.Types;
@@ -434,14 +430,13 @@ namespace LCore.LUnit.Fluent
                 Period = Period ?? new TimeSpan(days: 0, hours: 0, minutes: 0, seconds: 0, milliseconds: 100);
 
                 bool Success = false;
-                U Result;
 
 
                 int TotalWaited = 0;
 
                 while (TotalWaited < ((TimeSpan)WithinTimeSpan).TotalMilliseconds)
                     {
-                    Result = Func();
+                    var Result = Func();
 
                     if (Result.Equals(ExpectedResult))
                         {

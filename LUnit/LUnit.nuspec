@@ -8,9 +8,9 @@
     <owners>Code Singularity</owners>
     <licenseUrl>https://github.com/CodeSingularity/LUnit/LICENSE</licenseUrl>
     <projectUrl>https://github.com/CodeSingularity/LUnit</projectUrl>
-    <iconUrl>http://codesingularity.info/Content/Icon.ico</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/CodeSingularity/LUnit/master/LUnit/Content/LUnit-small-logo.ico</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Attribute-based testing, nullability testing, trait-based code coverage</description>
+    <description>Unit test stub autogeneration, automatic attribute-based testing, automatic nullability testing, trait-based code coverage</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags></tags>
