@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LUnit_Tests</RootNamespace>
     <AssemblyName>Tests LUnit</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -52,11 +52,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="L Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.2584324.1\lib\net451\L Utilities.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.244.2.18\lib\net451\L Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="L, Version=0.9.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LCore.2016.8.2584324.1\lib\net451\L.dll</HintPath>
+      <HintPath>..\packages\LCore.2016.244.2.18\lib\net451\L.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="LDoc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -111,10 +111,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\L Banner original.png" />
-    <Content Include="Content\L Logo.png" />
-    <Content Include="Content\LCore-banner-large.png" />
-    <Content Include="Content\LCore-banner-small.png" />
     <Content Include="Content\LDoc Banner Original.png" />
     <Content Include="Content\LDoc-banner-large.png" />
     <Content Include="Content\LDoc-banner-small.png" />
