@@ -13,7 +13,7 @@ namespace LCore.LUnit.Tests
     /// <summary>
     /// Generates markdown for the LUnit project
     /// </summary>
-    public class LUnitMarkdownGenerator : MarkdownGenerator_L
+    public class LUnitMarkdownGenerator : SolutionMarkdownGenerator_L
         {
         /// <summary>
         /// Override this member to specify the assemblies to generae documentation.
