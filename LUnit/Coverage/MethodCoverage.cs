@@ -120,7 +120,7 @@ namespace LCore.LUnit
 
             if (this.TestedFlag || this.MemberTraitFound)
                 {
-                return new string[] { };
+                return new string[] {};
                 }
 
             string Content = this.AttributeCoverage > 0
@@ -164,6 +164,11 @@ namespace LCore.LUnit
             }
 
         /// <summary>
+        /// The test method(s) this member is tested by
+        /// </summary>
+        public List<MethodInfo> MemberTraitTestedBy { get; set; }
+
+        /// <summary>
         /// Creates a new MemberCoverage object, given a Member to be tested, 
         /// along with any Test Assemblies covering it.
         /// </summary>
@@ -190,13 +195,19 @@ namespace LCore.LUnit
 
             this.MemberTraitValue = this.CoveringMember.ToInvocationSignature(FullyQualify: true);
 
-            this.MemberTraitFound = this._TestAssemblies.GetAssemblyMemberTraits().Has(this.MemberTraitValue);
+            Dictionary<MethodInfo, List<string>> AllTraits = this._TestAssemblies.GetAssemblyMemberTraits();
+
+            this.MemberTraitTestedBy = AllTraits
+                .Select(Trait => Trait.Value.Has(this.MemberTraitValue))
+                .Convert(Trait => Trait.Key);
+
+            this.MemberTraitFound = AllTraits.Has(this.MemberTraitValue);
 
             this.AttributeCoverage =
-                (uint)this.TestResultAttributes.Count +
-                (uint)this.TestSourceAttributes.Count +
-                (uint)this.TestSucceedsAttributes.Count +
-                (uint)this.TestFailsAttributes.Count;
+                (uint) this.TestResultAttributes.Count +
+                (uint) this.TestSourceAttributes.Count +
+                (uint) this.TestSucceedsAttributes.Count +
+                (uint) this.TestFailsAttributes.Count;
 
             string SourceCode = this.CoveringMember.FindSourceCode();
             if (SourceCode != null)

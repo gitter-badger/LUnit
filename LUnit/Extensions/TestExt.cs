@@ -253,12 +253,12 @@ namespace LCore.LUnit
         /// Retrieves a list of Trait Values targeting members being tested.
         /// <see cref="Traits.TargetMember"/>
         /// </summary>
-        public static Dictionary<MemberInfo, List<string>> GetAssemblyMemberTraits(this IEnumerable<Assembly> TestAssemblies)
+        public static Dictionary<MethodInfo, List<string>> GetAssemblyMemberTraits(this IEnumerable<Assembly> TestAssemblies)
             {
             var TraitGetter =
-                new Func<IEnumerable<Assembly>, Dictionary<MemberInfo, List<string>>>(Assemblies =>
+                new Func<IEnumerable<Assembly>, Dictionary<MethodInfo, List<string>>>(Assemblies =>
                     {
-                    var Out = new Dictionary<MemberInfo, List<string>>();
+                    var Out = new Dictionary<MethodInfo, List<string>>();
                     Assemblies.Each(Assembly =>
                         {
                         Assembly.GetExportedTypes().Each(Type =>
