@@ -17,7 +17,7 @@
 <table>
 <tr><td>Public Static Methods (9)</td>
 <td></td>
-<td><img src="http://b.repl.ca/v1/Total%20Lines%20of%20Code-151-blue.png" alt="Total Lines of Code 151" /></td>
+<td><img src="http://b.repl.ca/v1/Total%20Lines%20of%20Code-152-blue.png" alt="Total Lines of Code 152" /></td>
 <td><img src="http://b.repl.ca/v1/Total%20Documented-88%25-green.png" alt="Total Documented 88%" /></td>
 <td><img src="http://b.repl.ca/v1/Total%20Coverage-0%25-red.png" alt="Total Coverage 0%" /></td></tr>
 <tr><td><strong><a href="TestExt_GetTestMembers.md" alt="">GetTestMembers</a></strong></td>
@@ -71,10 +71,10 @@
 </tr>
 <tr><td><strong><a href="TestExt_GetAssemblyMemberTraits.md" alt="">GetAssemblyMemberTraits</a></strong></td>
 <td>   </td>
-<td><a href="../Extensions/TestExt.cs#L256" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png" alt="Lines of Code 21" /></a></td>
+<td><a href="../Extensions/TestExt.cs#L256" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-22-blue.png" alt="Lines of Code 22" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-No-red.png" alt="Documented No" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public static <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a>&gt; GetAssemblyMemberTraits(<a href="https://msdn.microsoft.com/en-us/library/78dfe2yb.aspx" alt="" target="_blank">IEnumerable</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.reflection.assembly.aspx" alt="">Assembly</a>&gt; TestAssemblies);</td>
+<tr><td colspan="5">public static <a href="https://msdn.microsoft.com/en-us/library/xfhwa508.aspx" alt="" target="_blank">Dictionary</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="">MemberInfo</a>, <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a>&gt;&gt; GetAssemblyMemberTraits(<a href="https://msdn.microsoft.com/en-us/library/78dfe2yb.aspx" alt="" target="_blank">IEnumerable</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.reflection.assembly.aspx" alt="">Assembly</a>&gt; TestAssemblies);</td>
 </tr>
 <tr><td><strong><a href="TestExt_GatherCodeCoverageMetaData.md" alt="">GatherCodeCoverageMetaData</a></strong></td>
 <td>   </td>
