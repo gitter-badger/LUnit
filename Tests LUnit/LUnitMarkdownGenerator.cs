@@ -65,8 +65,6 @@ namespace LCore.LUnit.Tests
             [typeof(AndConstraint<>)] = "https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions",
             [typeof(BooleanAssertions)] = "https://github.com/dennisdoomen/fluentassertions/wiki#booleans",
             [typeof(ObjectAssertions)] = "https://github.com/dennisdoomen/fluentassertions/wiki#basic-assertions",
-            [typeof(ILUnitAttribute)] = "", // TODO once LCore is documented.
-            [typeof(ITestResultAttribute)] = "" // TODO once LCore is documented.
             };
         }
     }

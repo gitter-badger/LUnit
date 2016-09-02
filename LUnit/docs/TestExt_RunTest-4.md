@@ -9,7 +9,7 @@
 
 #### Public Static Method
 
-##### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> RunTest(<a href="https://www.google.com/#q=C%23+LCore.LUnit.IValidateAttribute" alt="Search for 'LCore.LUnit.IValidateAttribute'" target="_blank">IValidateAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="">MemberInfo</a> Member);
+##### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> RunTest(<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/IValidateAttribute.md" alt="">IValidateAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="">MemberInfo</a> Member);
 
 ![Type Public Static Method](http://b.repl.ca/v1/Type-Public%20Static%20Method-blue.png "") [![Lines of Code 21](http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png "")](../Extensions/TestExt.cs#L58)    ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![Source Code Available](http://b.repl.ca/v1/Source%20Code-Available-brightgreen.png "")](../Extensions/TestExt.cs#L58)
 
@@ -24,7 +24,7 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-Attr | No | <a href="https://www.google.com/#q=C%23+LCore.LUnit.IValidateAttribute" alt="Search for 'LCore.LUnit.IValidateAttribute'" target="_blank">IValidateAttribute</a> | 
+Attr | No | [IValidateAttribute](https://github.com/CodeSingularity/LCore/blob/master/L/docs/IValidateAttribute.md) | 
 Member | No | [MemberInfo](https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx) | 
 
 

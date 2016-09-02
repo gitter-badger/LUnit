@@ -26,7 +26,7 @@
 <td><a href="../Extensions/TestExt.cs#L28" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-17-blue.png" alt="Lines of Code 17" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/xfhwa508.aspx" alt="" target="_blank">Dictionary</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="">MemberInfo</a>, <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List</a>&lt;<a href="" alt="" target="_blank">ILUnitAttribute</a>&gt;&gt; <a href="TestExt_GetTestMembers.md" alt="">GetTestMembers</a>(<a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="">Type</a> Type);</h6>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/xfhwa508.aspx" alt="" target="_blank">Dictionary</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="">MemberInfo</a>, <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx" alt="" target="_blank">List</a>&lt;<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/ILUnitAttribute.md" alt="">ILUnitAttribute</a>&gt;&gt; <a href="TestExt_GetTestMembers.md" alt="">GetTestMembers</a>(<a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="">Type</a> Type);</h6>
 </td>
 </tr>
 <tr><td><h4><strong><a href="TestExt_RunTest-0.md" alt="">RunTest</a></strong></h4></td>
@@ -34,7 +34,7 @@
 <td><a href="../Extensions/TestExt.cs#L58" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png" alt="Lines of Code 21" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-0.md" alt="">RunTest</a>(<a href="" alt="" target="_blank">ITestResultAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-0.md" alt="">RunTest</a>(<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/ITestResultAttribute.md" alt="">ITestResultAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
 </td>
 </tr>
 <tr><td><h4><strong><a href="TestExt_RunTest-1.md" alt="">RunTest</a></strong></h4></td>
@@ -42,7 +42,7 @@
 <td><a href="../Extensions/TestExt.cs#L58" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png" alt="Lines of Code 21" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-1.md" alt="">RunTest</a>(<a href="https://www.google.com/#q=C%23+LCore.LUnit.ITestFailsAttribute" alt="Search for 'LCore.LUnit.ITestFailsAttribute'" target="_blank">ITestFailsAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-1.md" alt="">RunTest</a>(<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/ITestFailsAttribute.md" alt="">ITestFailsAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
 </td>
 </tr>
 <tr><td><h4><strong><a href="TestExt_RunTest-2.md" alt="">RunTest</a></strong></h4></td>
@@ -50,7 +50,7 @@
 <td><a href="../Extensions/TestExt.cs#L58" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png" alt="Lines of Code 21" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-2.md" alt="">RunTest</a>(<a href="https://www.google.com/#q=C%23+LCore.LUnit.ITestSucceedsAttribute" alt="Search for 'LCore.LUnit.ITestSucceedsAttribute'" target="_blank">ITestSucceedsAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-2.md" alt="">RunTest</a>(<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/ITestSucceedsAttribute.md" alt="">ITestSucceedsAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
 </td>
 </tr>
 <tr><td><h4><strong><a href="TestExt_RunTest-3.md" alt="">RunTest</a></strong></h4></td>
@@ -58,7 +58,7 @@
 <td><a href="../Extensions/TestExt.cs#L58" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png" alt="Lines of Code 21" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-3.md" alt="">RunTest</a>(<a href="https://www.google.com/#q=C%23+LCore.LUnit.ITestSourceAttribute" alt="Search for 'LCore.LUnit.ITestSourceAttribute'" target="_blank">ITestSourceAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-3.md" alt="">RunTest</a>(<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/ITestSourceAttribute.md" alt="">ITestSourceAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);</h6>
 </td>
 </tr>
 <tr><td><h4><strong><a href="TestExt_RunTest-4.md" alt="">RunTest</a></strong></h4></td>
@@ -66,7 +66,7 @@
 <td><a href="../Extensions/TestExt.cs#L58" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png" alt="Lines of Code 21" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-4.md" alt="">RunTest</a>(<a href="https://www.google.com/#q=C%23+LCore.LUnit.IValidateAttribute" alt="Search for 'LCore.LUnit.IValidateAttribute'" target="_blank">IValidateAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="">MemberInfo</a> Member);</h6>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TestExt_RunTest-4.md" alt="">RunTest</a>(<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/IValidateAttribute.md" alt="">IValidateAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo.aspx" alt="">MemberInfo</a> Member);</h6>
 </td>
 </tr>
 <tr><td><h4><strong><a href="TestExt_GetTargetingName.md" alt="">GetTargetingName</a></strong></h4></td>

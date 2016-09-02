@@ -9,7 +9,7 @@
 
 #### Public Static Method
 
-##### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> RunTest(<a href="https://www.google.com/#q=C%23+LCore.LUnit.ITestFailsAttribute" alt="Search for 'LCore.LUnit.ITestFailsAttribute'" target="_blank">ITestFailsAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);
+##### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> RunTest(<a href="https://github.com/CodeSingularity/LCore/blob/master/L/docs/ITestFailsAttribute.md" alt="">ITestFailsAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);
 
 ![Type Public Static Method](http://b.repl.ca/v1/Type-Public%20Static%20Method-blue.png "") [![Lines of Code 21](http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png "")](../Extensions/TestExt.cs#L58)    ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![Source Code Available](http://b.repl.ca/v1/Source%20Code-Available-brightgreen.png "")](../Extensions/TestExt.cs#L58)
 
@@ -24,7 +24,7 @@
 
 Parameter | Optional | Type | Description
 :---  | :---  | :---  | :--- 
-Attr | No | <a href="https://www.google.com/#q=C%23+LCore.LUnit.ITestFailsAttribute" alt="Search for 'LCore.LUnit.ITestFailsAttribute'" target="_blank">ITestFailsAttribute</a> | 
+Attr | No | [ITestFailsAttribute](https://github.com/CodeSingularity/LCore/blob/master/L/docs/ITestFailsAttribute.md) | 
 Method | No | [MethodInfo](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx) | 
 
 

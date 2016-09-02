@@ -221,7 +221,7 @@
 
 Generation Time | Total
 :---  | :--- 
-Duration | 12 seconds
+Duration | 14 seconds
 
 
 Documents | Total
@@ -246,45 +246,17 @@ Links | Total
 Links | 3969
 Local Links | 2918
 System Links | 861
-External Links | 12
+External Links | 0
 
 
-### Errors (36)
+### Errors (8)
 - Could not find code line count for LCore.LUnit.TestAttribute.RunTest
 - Could not find code line number for LCore.LUnit.LUnit.GetMethodDelegate
 - Could not find code line number for LCore.LUnit.LUnit.GetCheckMethodArg
-- Could not find type link for LCore.LUnit.ITestFailsAttribute
-- Could not find type link for LCore.LUnit.ITestSucceedsAttribute
-- Could not find type link for LCore.LUnit.ITestSourceAttribute
-- Could not find type link for LCore.LUnit.IValidateAttribute
 - Could not find code line count for LCore.LUnit.Fluent.FluentExt.HaveAttribute
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.HaveAttribute
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.NotHaveAttribute
 - Could not find code line count for LCore.LUnit.Fluent.FluentExt.NotHaveAttribute
 - Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldBe
 - Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldBeNull
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldBeNull
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldNotBeNull
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldNotBeNull
-- Could not find code line count for LCore.LUnit.TestAttribute.RunTest
-- Could not find code line number for LCore.LUnit.LUnit.GetMethodDelegate
-- Could not find code line number for LCore.LUnit.LUnit.GetCheckMethodArg
-- Could not find type link for LCore.LUnit.ITestFailsAttribute
-- Could not find type link for LCore.LUnit.ITestFailsAttribute
-- Could not find type link for LCore.LUnit.ITestSucceedsAttribute
-- Could not find type link for LCore.LUnit.ITestSucceedsAttribute
-- Could not find type link for LCore.LUnit.ITestSourceAttribute
-- Could not find type link for LCore.LUnit.ITestSourceAttribute
-- Could not find type link for LCore.LUnit.IValidateAttribute
-- Could not find type link for LCore.LUnit.IValidateAttribute
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.HaveAttribute
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.HaveAttribute
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.NotHaveAttribute
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.NotHaveAttribute
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldBe
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldBeNull
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldBeNull
-- Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldNotBeNull
 - Could not find code line count for LCore.LUnit.Fluent.FluentExt.ShouldNotBeNull
 
 
