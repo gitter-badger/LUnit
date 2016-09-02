@@ -11,9 +11,9 @@
 
 ##### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> RunTest(<a href="https://www.google.com/#q=C%23+LCore.LUnit.ITestFailsAttribute" alt="Search for 'LCore.LUnit.ITestFailsAttribute'" target="_blank">ITestFailsAttribute</a> Attr, <a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method);
 
-![Type Public Static Method](http://b.repl.ca/v1/Type-Public%20Static%20Method-blue.png "") [![Lines of Code 21](http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png "")](../Extensions/TestExt.cs#L58)    ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/TestExt.cs#L58)
+![Type Public Static Method](http://b.repl.ca/v1/Type-Public%20Static%20Method-blue.png "") [![Lines of Code 21](http://b.repl.ca/v1/Lines%20of%20Code-21-blue.png "")](../Extensions/TestExt.cs#L58)    ![Documented Yes](http://b.repl.ca/v1/Documented-Yes-brightgreen.png "") [![Source Code Available](http://b.repl.ca/v1/Source%20Code-Available-brightgreen.png "")](../Extensions/TestExt.cs#L58)
 
-![Covered No](http://b.repl.ca/v1/Covered-No-red.png "") ![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 3](http://b.repl.ca/v1/Assertions-3-brightgreen.png "")](../Extensions/TestExt.cs)
+![Covered No](http://b.repl.ca/v1/Covered-No-red.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Assertions 3](http://b.repl.ca/v1/Assertions-3-brightgreen.png "")](../Extensions/TestExt.cs)
 
 ##### Summary
 

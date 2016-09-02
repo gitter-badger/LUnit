@@ -8,6 +8,7 @@
 
 
 
+[View Source](../Coverage/AssemblyCoverage.cs#L)
 
 ###### Summary
 

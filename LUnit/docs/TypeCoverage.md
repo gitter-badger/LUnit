@@ -8,6 +8,7 @@
 
 ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
 
+[View Source](../Coverage/TypeCoverage.cs#L)
 
 ###### Summary
 
@@ -16,26 +17,28 @@
             
 
 <table>
-<tr><td>Public Methods (2)</td>
+<thead><tr><td>Public Methods (2)</td>
 <td></td>
-<td><img src="http://b.repl.ca/v1/Total%20Lines%20of%20Code-72-blue.png" alt="Total Lines of Code 72" /></td>
-<td><img src="http://b.repl.ca/v1/Total%20Documented-100%25-brightgreen.png" alt="Total Documented 100%" /></td>
-<td><img src="http://b.repl.ca/v1/Total%20Coverage-0%25-red.png" alt="Total Coverage 0%" /></td></tr>
-<tr><td><strong><a href="TypeCoverage_GenerateTestStubs.md" alt="">GenerateTestStubs</a></strong></td>
+<td><img src="http://b.repl.ca/v1/Total%20Code%20Lines-72-blue.png" alt="Total Code Lines 72" /></td>
+<td><img src="http://b.repl.ca/v1/Total%20Documentation-100%25-brightgreen.png" alt="Total Documentation 100%" /></td>
+<td><img src="http://b.repl.ca/v1/Total%20Coverage-0%25-red.png" alt="Total Coverage 0%" /></td></tr></thead>
+<tr><td><h4><strong><a href="TypeCoverage_GenerateTestStubs.md" alt="">GenerateTestStubs</a></strong></h4></td>
 <td>   </td>
 <td><a href="../Coverage/TypeCoverage.cs#L66" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-14-blue.png" alt="Lines of Code 14" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> GenerateTestStubs(<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> GeneratedCodeFullPath);</td>
+<tr><td colspan="5"><h6>public <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="TypeCoverage_GenerateTestStubs.md" alt="">GenerateTestStubs</a>(<a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> GeneratedCodeFullPath);</h6>
+</td>
 </tr>
-<tr><td><strong><a href="TypeCoverage_GetTestStub.md" alt="">GetTestStub</a></strong></td>
+<tr><td><h4><strong><a href="TypeCoverage_GetTestStub.md" alt="">GetTestStub</a></strong></h4></td>
 <td>   </td>
 <td><a href="../Coverage/TypeCoverage.cs#L93" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-58-blue.png" alt="Lines of Code 58" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a>[] GetTestStub(<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="">Boolean</a> UseXunitOutputBase);</td>
+<tr><td colspan="5"><h6>public <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a>[] <a href="TypeCoverage_GetTestStub.md" alt="">GetTestStub</a>(<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="">Boolean</a> UseXunitOutputBase);</h6>
+</td>
 </tr>
-<tr><td width="850px" colspan="361"></td></tr>
+<tr><td width="850px" colspan="5"></td></tr>
 </table>
 
 

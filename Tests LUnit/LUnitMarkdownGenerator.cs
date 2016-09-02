@@ -59,8 +59,6 @@ namespace LCore.LUnit.Tests
         public override string LogoImage_Small(GeneratedDocument MD) =>
             MD.GetRelativePath($"{typeof(LUnit).GetAssembly().GetRootPath()}\\Content\\{nameof(LCore.LUnit)}-logo-small.png");
 
-        public override bool RequireDirectLinksToAllForeignTypes => true;
-
         public override Dictionary<Type, string> CustomTypeLinks => new Dictionary<Type, string>
             {
             [typeof(TypeAssertions)] = "https://github.com/dennisdoomen/fluentassertions/wiki#type-method-and-property-assertions",

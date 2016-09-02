@@ -11,9 +11,9 @@
 
 ##### public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> ShouldBe(<a href="https://msdn.microsoft.com/en-us/library/bb549430.aspx" alt="" target="_blank">Func</a>&lt;T1, T2, T3, U&gt; Func, T1 o1, T2 o2, T3 o3, U ExpectedResult, <a href="https://msdn.microsoft.com/en-us/library/b3h38hb0.aspx" alt="" target="_blank">Nullable</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.timespan.aspx" alt="">TimeSpan</a>&gt; WithinTimeSpan, <a href="https://msdn.microsoft.com/en-us/library/b3h38hb0.aspx" alt="" target="_blank">Nullable</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.timespan.aspx" alt="">TimeSpan</a>&gt; Period);
 
-![Type Public Static Method](http://b.repl.ca/v1/Type-Public%20Static%20Method-blue.png "") [![Lines of Code 16](http://b.repl.ca/v1/Lines%20of%20Code-16-blue.png "")](../Extensions/FluentExt.cs#L401)    ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![SourceCode Available](http://b.repl.ca/v1/SourceCode-Available-brightgreen.png "")](../Extensions/FluentExt.cs#L401)
+![Type Public Static Method](http://b.repl.ca/v1/Type-Public%20Static%20Method-blue.png "") [![Lines of Code 2](http://b.repl.ca/v1/Lines%20of%20Code-2-blue.png "")](../Extensions/FluentExt.cs#L401)    ![Documented No](http://b.repl.ca/v1/Documented-No-red.png "") [![Source Code Available](http://b.repl.ca/v1/Source%20Code-Available-brightgreen.png "")](../Extensions/FluentExt.cs#L401)
 
-![Covered No](http://b.repl.ca/v1/Covered-No-red.png "") ![UnitTested No](http://b.repl.ca/v1/UnitTested-No-lightgrey.png "") ![AttributeTests 0](http://b.repl.ca/v1/AttributeTests-0-lightgrey.png "") [![Assertions 1](http://b.repl.ca/v1/Assertions-1-brightgreen.png "")](../Extensions/FluentExt.cs)
+![Covered No](http://b.repl.ca/v1/Covered-No-red.png "") ![Unit Tested No](http://b.repl.ca/v1/Unit%20Tested-No-lightgrey.png "") ![Attribute Tests 0](http://b.repl.ca/v1/Attribute%20Tests-0-lightgrey.png "") [![Assertions 1](http://b.repl.ca/v1/Assertions-1-brightgreen.png "")](../Extensions/FluentExt.cs)
 
 ###### Parameters
 

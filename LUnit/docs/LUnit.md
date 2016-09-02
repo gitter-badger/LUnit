@@ -8,6 +8,7 @@
 
 ![Covered 0%](http://b.repl.ca/v1/Covered-0%25-red.png "")
 
+[View Source](../Extensions/LUnit.cs#L)
 
 ###### Summary
 
@@ -15,78 +16,86 @@
             
 
 <table>
-<tr><td>Public Static Methods (5)</td>
+<thead><tr><td>Public Static Methods (5)</td>
 <td></td>
-<td><img src="http://b.repl.ca/v1/Total%20Lines%20of%20Code-54-blue.png" alt="Total Lines of Code 54" /></td>
-<td><img src="http://b.repl.ca/v1/Total%20Documented-80%25-green.png" alt="Total Documented 80%" /></td>
-<td><img src="http://b.repl.ca/v1/Total%20Coverage-0%25-red.png" alt="Total Coverage 0%" /></td></tr>
-<tr><td><strong><a href="LUnit_FixParameterTypes.md" alt="">FixParameterTypes</a></strong></td>
+<td><img src="http://b.repl.ca/v1/Total%20Code%20Lines-54-blue.png" alt="Total Code Lines 54" /></td>
+<td><img src="http://b.repl.ca/v1/Total%20Documentation-80%25-green.png" alt="Total Documentation 80%" /></td>
+<td><img src="http://b.repl.ca/v1/Total%20Coverage-0%25-red.png" alt="Total Coverage 0%" /></td></tr></thead>
+<tr><td><h4><strong><a href="LUnit_FixParameterTypes.md" alt="">FixParameterTypes</a></strong></h4></td>
 <td>   </td>
 <td><a href="../Extensions/LUnit.cs#L30" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-11-blue.png" alt="Lines of Code 11" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> FixParameterTypes(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a>[] Parameters);</td>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="LUnit_FixParameterTypes.md" alt="">FixParameterTypes</a>(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> Method, <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a>[] Parameters);</h6>
+</td>
 </tr>
-<tr><td><strong><a href="LUnit_FixObject.md" alt="">FixObject</a></strong></td>
+<tr><td><h4><strong><a href="LUnit_FixObject.md" alt="">FixObject</a></strong></h4></td>
 <td>   </td>
 <td><a href="../Extensions/LUnit.cs#L47" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-33-blue.png" alt="Lines of Code 33" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-No-red.png" alt="Documented No" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> FixObject(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="">Type</a> ObjectType, ref <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a> Obj);</td>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.void.aspx" alt="">void</a> <a href="LUnit_FixObject.md" alt="">FixObject</a>(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="">Type</a> ObjectType, ref <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a> Obj);</h6>
+</td>
 </tr>
-<tr><td><strong><a href="LUnit_GetMethodDelegate.md" alt="">GetMethodDelegate</a></strong></td>
+<tr><td><h4><strong><a href="LUnit_GetMethodDelegate.md" alt="">GetMethodDelegate</a></strong></h4></td>
 <td>   </td>
-<td><a href="../Extensions/LUnit.cs#L" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-0-red.png" alt="Lines of Code 0" /></a></td>
+<td></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public static <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a> GetMethodDelegate(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="">Type</a> ObjectType, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> MethodName);</td>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a> <a href="LUnit_GetMethodDelegate.md" alt="">GetMethodDelegate</a>(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.type.aspx" alt="">Type</a> ObjectType, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> MethodName);</h6>
+</td>
 </tr>
-<tr><td><strong><a href="LUnit_GetCheckMethod.md" alt="">GetCheckMethod</a></strong></td>
+<tr><td><h4><strong><a href="LUnit_GetCheckMethod.md" alt="">GetCheckMethod</a></strong></h4></td>
 <td>   </td>
 <td><a href="../Extensions/LUnit.cs#L200" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-10-blue.png" alt="Lines of Code 10" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public static <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="">Boolean</a>&gt; GetCheckMethod(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> MethodName);</td>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/bb534960.aspx" alt="" target="_blank">Func</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="">Boolean</a>&gt; <a href="LUnit_GetCheckMethod.md" alt="">GetCheckMethod</a>(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> MethodName);</h6>
+</td>
 </tr>
-<tr><td><strong><a href="LUnit_GetCheckMethodArg.md" alt="">GetCheckMethodArg</a></strong></td>
+<tr><td><h4><strong><a href="LUnit_GetCheckMethodArg.md" alt="">GetCheckMethodArg</a></strong></h4></td>
 <td>   </td>
-<td><a href="../Extensions/LUnit.cs#L" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-0-red.png" alt="Lines of Code 0" /></a></td>
+<td></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5">public static <a href="https://msdn.microsoft.com/en-us/library/bb549151.aspx" alt="" target="_blank">Func</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a>, <a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="">Boolean</a>&gt; GetCheckMethodArg(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> MethodName);</td>
+<tr><td colspan="5"><h6>public static <a href="https://msdn.microsoft.com/en-us/library/bb549151.aspx" alt="" target="_blank">Func</a>&lt;<a href="https://msdn.microsoft.com/en-us/library/system.object.aspx" alt="">Object</a>, <a href="https://msdn.microsoft.com/en-us/library/system.boolean.aspx" alt="">Boolean</a>&gt; <a href="LUnit_GetCheckMethodArg.md" alt="">GetCheckMethodArg</a>(<a href="https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.aspx" alt="">MethodInfo</a> SourceMethod, <a href="https://msdn.microsoft.com/en-us/library/system.string.aspx" alt="">String</a> MethodName);</h6>
+</td>
 </tr>
-<tr><td width="850px" colspan="360"></td></tr>
+<tr><td width="850px" colspan="5"></td></tr>
 </table>
 
 
 <table>
-<tr><td>Public Static Abstract Classes (3)</td>
+<thead><tr><td>Public Static Classes (3)</td>
 <td></td>
-<td><img src="http://b.repl.ca/v1/Total%20Lines%20of%20Code-44-blue.png" alt="Total Lines of Code 44" /></td>
-<td><img src="http://b.repl.ca/v1/Total%20Documented-100%25-brightgreen.png" alt="Total Documented 100%" /></td>
-<td><img src="http://b.repl.ca/v1/Total%20Coverage-0%25-red.png" alt="Total Coverage 0%" /></td></tr>
-<tr><td><strong><a href="LUnit_Categories.md" alt="">Categories</a></strong></td>
+<td><img src="http://b.repl.ca/v1/Total%20Code%20Lines-68-blue.png" alt="Total Code Lines 68" /></td>
+<td><img src="http://b.repl.ca/v1/Total%20Documentation-100%25-brightgreen.png" alt="Total Documentation 100%" /></td>
+<td><img src="http://b.repl.ca/v1/Total%20Coverage-0%25-red.png" alt="Total Coverage 0%" /></td></tr></thead>
+<tr><td><h4><strong><a href="LUnit_Categories.md" alt="">Categories</a></strong></h4></td>
 <td>   </td>
-<td><a href="../Extensions/LUnit.cs#L236" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-2-blue.png" alt="Lines of Code 2" /></a></td>
+<td><a href="../Extensions/LUnit.cs#L236" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-36-blue.png" alt="Lines of Code 36" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"></td>
+<tr><td colspan="5"><h6></h6>
+</td>
 </tr>
-<tr><td><strong><a href="LUnit_Format.md" alt="">Format</a></strong></td>
+<tr><td><h4><strong><a href="LUnit_Format.md" alt="">Format</a></strong></h4></td>
 <td>   </td>
-<td><a href="../Extensions/LUnit.cs#L287" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-23-blue.png" alt="Lines of Code 23" /></a></td>
+<td><a href="../Extensions/LUnit.cs#L287" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-20-blue.png" alt="Lines of Code 20" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"></td>
+<tr><td colspan="5"><h6></h6>
+</td>
 </tr>
-<tr><td><strong><a href="LUnit_Urls.md" alt="">Urls</a></strong></td>
+<tr><td><h4><strong><a href="LUnit_Urls.md" alt="">Urls</a></strong></h4></td>
 <td>   </td>
-<td><a href="../Extensions/LUnit.cs#L312" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-19-blue.png" alt="Lines of Code 19" /></a></td>
+<td><a href="../Extensions/LUnit.cs#L312" alt=""><img src="http://b.repl.ca/v1/Lines%20of%20Code-12-blue.png" alt="Lines of Code 12" /></a></td>
 <td><img src="http://b.repl.ca/v1/Documented-Yes-brightgreen.png" alt="Documented Yes" /></td>
 <td><img src="http://b.repl.ca/v1/Covered-No-red.png" alt="Covered No" /></td></tr>
-<tr><td colspan="5"></td>
+<tr><td colspan="5"><h6></h6>
+</td>
 </tr>
-<tr><td width="850px" colspan="377"></td></tr>
+<tr><td width="850px" colspan="5"></td></tr>
 </table>
 
 
