@@ -66,7 +66,7 @@ namespace LUnit_Tests.LCore.LUnit
         }
 
         [Fact]
-        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(TestExt)+ "." + nameof(TestExt.GetAssemblyMemberTraits) + "(IEnumerable<Assembly>) => List<String>")]
+        [Trait(Traits.TargetMember,nameof(LCore)+ "." + nameof(global::LCore.LUnit)+ "." + nameof(TestExt)+ "." + nameof(TestExt.GetAssemblyMemberTraits) + "(IEnumerable<Assembly>) => Dictionary<MemberInfo, List<String>>")]
         public void GetAssemblyMemberTraits()
         {
             // TODO: Implement method test LCore.LUnit.TestExt.GetAssemblyMemberTraits

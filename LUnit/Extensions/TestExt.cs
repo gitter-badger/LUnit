@@ -33,15 +33,15 @@ namespace LCore.LUnit
                 {
                 Type.GetMembers().Each(Member =>
                     {
-                        // Base Type members should not be returned. Only type-specific methods included for direct tests.
-                        if (Member.DeclaringType != Type || Member is ConstructorInfo || Member is FieldInfo)
-                            return;
+                    // Base Type members should not be returned. Only type-specific methods included for direct tests.
+                    if (Member.DeclaringType != Type || Member is ConstructorInfo || Member is FieldInfo)
+                        return;
 
-                        if (!Tests.ContainsKey(Member))
-                            Tests.Add(Member, new List<ILUnitAttribute>());
+                    if (!Tests.ContainsKey(Member))
+                        Tests.Add(Member, new List<ILUnitAttribute>());
 
-                        Member.GetAttributes<ILUnitAttribute>(IncludeBaseTypes: false)
-                            .Each(Attr => { Tests[Member].Add(Attr); });
+                    Member.GetAttributes<ILUnitAttribute>(IncludeBaseTypes: false)
+                        .Each(Attr => { Tests[Member].Add(Attr); });
                     });
                 }
 
@@ -143,7 +143,7 @@ namespace LCore.LUnit
             LUnit.FixParameterTypes(Method, Parameters);
             LUnit.FixObject(Method, Method.GetParameters()[0].ParameterType, ref ExpectedSource);
 
-            OutMethod?.Invoke(obj: null, parameters: new[] { Method, null, Parameters, ExpectedSource, Checks });
+            OutMethod?.Invoke(obj: null, parameters: new[] {Method, null, Parameters, ExpectedSource, Checks});
             }
 
         /// <summary>
@@ -201,9 +201,9 @@ namespace LCore.LUnit
 
             if (Member is Type)
                 return new Tuple<string, string, string>(
-                    string.Format(TestNamespaceFormat, ((Type)Member).GetAssembly()?.GetName().Name,
-                        ((Type)Member).Namespace),
-                    string.Format(TestClassFormat, ((Type)Member).GetNestedNames())
+                    string.Format(TestNamespaceFormat, ((Type) Member).GetAssembly()?.GetName().Name,
+                        ((Type) Member).Namespace),
+                    string.Format(TestClassFormat, ((Type) Member).GetNestedNames())
                         .ReplaceAll(Replacements),
                     "");
 
@@ -234,13 +234,13 @@ namespace LCore.LUnit
                         string.Format(TestClassFormat, Member.DeclaringType?.GetNestedNames(), "")
                             .ReplaceAll(Replacements),
                         ($"{string.Format(TestMethodFormat, Member.Name)}_" +
-                         $"{((MethodInfo)Member).ToParameterSignature()}").ReplaceAll(Replacements).Trim("_")
+                         $"{((MethodInfo) Member).ToParameterSignature()}").ReplaceAll(Replacements).Trim("_")
                         //  $"{((MethodInfo) Member).GetParameters().Convert(Param => $"{Param.ParameterType.Name}{(Param.ParameterType.IsArray ? "Array" : "")}").Combine("_")}" +
                         /* (((MethodInfo) Member).ReturnType == typeof(void)
                              ? ""
                              : $"_{((MethodInfo) Member).ReturnType.Name}"))
                             .ReplaceAll(Replacements)*/
-                        );
+                    );
                     }
                 }
 
@@ -253,28 +253,28 @@ namespace LCore.LUnit
         /// Retrieves a list of Trait Values targeting members being tested.
         /// <see cref="Traits.TargetMember"/>
         /// </summary>
-        public static List<string> GetAssemblyMemberTraits(this IEnumerable<Assembly> TestAssemblies)
+        public static Dictionary<MemberInfo, List<string>> GetAssemblyMemberTraits(this IEnumerable<Assembly> TestAssemblies)
             {
             var TraitGetter =
-                new Func<IEnumerable<Assembly>, List<string>>(Assemblies => Assemblies.Convert(Assembly =>
+                new Func<IEnumerable<Assembly>, Dictionary<MemberInfo, List<string>>>(Assemblies =>
                     {
-                        return
-                            Assembly.GetExportedTypes().Convert<Type, IReadOnlyList<KeyValuePair<string, string>>>(Type =>
+                    var Out = new Dictionary<MemberInfo, List<string>>();
+                    Assemblies.Each(Assembly =>
+                        {
+                        Assembly.GetExportedTypes().Each(Type =>
+                            {
+                            Type.GetMethods().Each(Method =>
                                 {
-                                    try
-                                        {
-                                        return Type.GetMethods().Convert(TraitHelper.GetTraits)
-                                        .Flatten<KeyValuePair<string, string>>();
-                                        }
-                                    catch
-                                        {
-                                        return null;
-                                        }
-                                }).Flatten<KeyValuePair<string, string>>();
-                    }).Flatten<KeyValuePair<string, string>>()
-                    .Convert(TraitKey => TraitKey.Key == Traits.TargetMember
-                        ? TraitKey.Value
-                        : null));
+                                List<KeyValuePair<string, string>> Traits = TraitHelper.GetTraits(Method)
+                                    .Select(Trait => Trait.Key == LCore.LUnit.Traits.TargetMember);
+
+                                if (Traits.Count > 0)
+                                    Out.Add(Method, Traits.Convert(Trait => Trait.Value));
+                                });
+                            });
+                        });
+                    return Out;
+                    });
 
             TraitGetter = TraitGetter.Cache($"{nameof(TestExt)}.{nameof(GetAssemblyMemberTraits)}");
 
@@ -285,7 +285,7 @@ namespace LCore.LUnit
         /// Collects information from a <see cref="MemberInfo"/>.
         /// </summary>
         [CanBeNull]
-        public static CodeCoverageMetaData GatherCodeCoverageMetaData([CanBeNull]this MemberInfo Member, string[] CustomCommentTags)
+        public static CodeCoverageMetaData GatherCodeCoverageMetaData([CanBeNull] this MemberInfo Member, string[] CustomCommentTags)
             {
             return Member == null
                 ? null
